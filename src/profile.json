@@ -1,0 +1,234 @@
+{
+  "person": {
+    "name": "Artjom Warkentin",
+    "title": "Technischer IT-Service & Elektronikdiagnose",
+    "tagline": "IT-Infrastruktur, Server/NAS/Linux/Windows, Elektronikdiagnose und technische Dokumentation",
+    "currentRegion": "Plauen",
+    "targetRegion": "Soltau / Heidekreis / Niedersachsen",
+    "birthYear": "1983",
+    "citizenship": "deutsch",
+    "driverLicense": "Klasse B",
+    "car": "eigener PKW vorhanden"
+  },
+  "contact": {
+    "email": "aco.art@gmail.com",
+    "github": "https://github.com/aco-art/",
+    "h618Project": "https://github.com/aco-art/vontar-h618-armbian-patche",
+    "pagesUrl": "https://aco-art.github.io/artjom-warkentin-cv/"
+  },
+  "assets": {
+    "photo": "assets/profile-photo.jpeg",
+    "h618Front": "assets/project-images/vontar-h618-frontside.jpg",
+    "h618Back": "assets/project-images/vontar-h618-backside.jpg"
+  },
+  "summary": [
+    "Technischer Spezialist mit Schwerpunkt IT-Service, IT-Infrastruktur und Elektronikdiagnose.",
+    "Mehr als zehn Jahre praktische Erfahrung in Diagnose, Reparatur und Werkstattprozessen für Computertechnik, Peripherie und elektronische Baugruppen.",
+    "Aktuelle Praxis in Deutschland mit technischer Systembetreuung, Schnittstellen, Datenflüssen, Tests, Dokumentation und interner Prozessqualität.",
+    "Sicher im Umgang mit Windows Server, Linux, TrueNAS/NAS, SMB-Ablagen, Benutzer- und Rechtekonzepten, RDP, VPN, DNS- und Backup-Grundlagen.",
+    "Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework und Firmware-/BIOS-Arbeiten.",
+    "Nutzt KI-gestützte Werkzeuge pragmatisch für Recherche, Dokumentation, Skripte, API-Analyse, Testvorbereitung und Codebase-Verständnis."
+  ],
+  "targetRoles": [
+    "IT-Systembetreuer",
+    "Technischer IT-Service",
+    "Technischer Support / Serviceinnendienst",
+    "Servicetechniker Elektronik",
+    "Prüftechniker Elektronik",
+    "IT-nahe Systemdiagnose"
+  ],
+  "competencies": [
+    {
+      "title": "IT-Infrastruktur",
+      "items": ["Windows Server", "Linux", "TrueNAS/NAS", "SMB-Shares", "Benutzer/Rechte", "RDP"]
+    },
+    {
+      "title": "Netzwerk & Betrieb",
+      "items": ["Netzwerk-Basics", "VPN", "Caching DNS", "Backups", "Remote-Support", "Dokumentation"]
+    },
+    {
+      "title": "Elektronikdiagnose",
+      "items": ["Schaltplanlesen", "Stromversorgung", "Mainboards", "Netzteile", "Monitore", "Router"]
+    },
+    {
+      "title": "Mess- und Reparaturtechnik",
+      "items": ["Multimeter", "Oszilloskop", "SMD/THT", "Heißluft", "Mikroskop", "BGA-Rework"]
+    },
+    {
+      "title": "Web/API Testing",
+      "items": ["Postman", "Manual API Testing", "Browser DevTools", "Website Testing", "HTML/CSS/JS/PHP lesen"]
+    },
+    {
+      "title": "AI-assisted Workflows",
+      "items": ["Technische Dokumentation", "Scripting", "Codebase Analysis", "Parser", "README", "Projektgraphen"]
+    }
+  ],
+  "experience": [
+    {
+      "period": "01/2023 - heute",
+      "role": "Technische Systembetreuung, IT- und Prozessanalyse",
+      "employer": "INFORMA GmbH & Co. KG",
+      "location": "Oelsnitz/Vogtland, Deutschland",
+      "focus": "Technische Anforderungen, Systemintegration, UAT, Dokumentation, interne IT-nahe Infrastruktur.",
+      "bullets": [
+        "Aufbau und Betrieb eines TrueNAS-basierten Projektspeichers mit Ablage-, Zugriffs- und Nutzungskonzept für Fachbereiche.",
+        "Analyse technischer Anforderungen, Schnittstellen, Datenflüsse und Systemprozesse; Erstellung von Pflichtenheften, Prozessskizzen und Abnahmekriterien.",
+        "Testvorbereitung, UAT, Fehlernachverfolgung, Abnahmen und nachvollziehbare Dokumentation von Änderungen und Ergebnissen.",
+        "KI-gestützte Strukturierung von Spezifikationen, technische Recherche, Konsistenzprüfung und Unterstützung bei Skripten, Checklisten und Dokumentation.",
+        "Kommunikation zwischen Fachbereichen, Anwendern und technischer Umsetzung mit Fokus auf Klärung, Servicefähigkeit und Qualität."
+      ]
+    },
+    {
+      "period": "06/2022 - 01/2023",
+      "role": "Technische Koordination IT",
+      "employer": "INFORMA GmbH & Co. KG",
+      "location": "Oelsnitz/Vogtland, Deutschland",
+      "focus": "Stabilisierung von Aufgabensteuerung, Fehlerklärung, Tests und Release-Abstimmung in einer Übergangsphase.",
+      "bullets": [
+        "Strukturierte Abstimmungen, Testbegleitung, Nutzerabnahmen und technische Klaerung offener Punkte.",
+        "Verbesserung der Nachvollziehbarkeit von Aufgaben, Rückfragen und Ergebnisdokumentation."
+      ]
+    },
+    {
+      "period": "08/2021 - 06/2022",
+      "role": "Technische Assistenz im IT-/Projektumfeld",
+      "employer": "INFORMA GmbH & Co. KG",
+      "location": "Oelsnitz/Vogtland, Deutschland",
+      "focus": "Anforderungsanalyse, technische Konzepte und strukturierte Übergaben.",
+      "bullets": [
+        "Analyse und Dokumentation interner Systemanforderungen, Stakeholder-Abstimmung und Übergabe an die technische Umsetzung.",
+        "Erstellung von Konzepten und Pflichtenheften für interne Anwendungen und Prozessverbesserungen."
+      ]
+    },
+    {
+      "period": "10/2018 - 06/2019",
+      "role": "Handelsautomatisierung, Systemadministration und Webshop-Integration",
+      "employer": "MEGA GmbH",
+      "location": "Tscheljabinsk, Russland",
+      "focus": "Automatisierung, Serverbetrieb, Webshop, CRM-Integration und technische Umsetzung.",
+      "bullets": [
+        "Administration von Windows Server 2012 R2 sowie Linux/CentOS mit NGINX/Apache, MySQL und Mailserver.",
+        "Webshop-Einführung, CRM-Anbindung und technische Integration mit 1C, PHP, JavaScript, HTML und CSS."
+      ]
+    },
+    {
+      "period": "06/2013 - 08/2018",
+      "role": "Technischer Direktor & Oberingenieur",
+      "employer": "Innovation Service Center",
+      "location": "Tscheljabinsk, Russland",
+      "focus": "Elektronik-/IT-Service, Werkstattprozesse, Diagnose, Qualität und Wissenstransfer.",
+      "bullets": [
+        "Fachliche Verantwortung für Diagnose und Instandsetzung von Computertechnik, Notebooks, Monitoren, Tablets, Smartphones und Peripherie.",
+        "Bearbeitung komplexer Fehlerbilder, Reparaturprozesse, Qualitätssicherung, SOPs, Arbeitsanweisungen, Ersatzteilmanagement und Reklamationsklärung.",
+        "OEM-autorisiertes Serviceumfeld mit Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer; laufende Trainings im Hersteller-Serviceumfeld.",
+        "Einarbeitung und Schulung von Mitarbeitenden sowie Aufbau strukturierter Abläufe für Werkstatt, Dokumentation und Servicequalität."
+      ]
+    },
+    {
+      "period": "11/2008 - 05/2013",
+      "role": "Ober-Servicetechniker",
+      "employer": "Innovation Service Center",
+      "location": "Tscheljabinsk, Russland",
+      "focus": "Komplexe Instandsetzung von Computer-/IT-Technik und elektronischen Baugruppen.",
+      "bullets": [
+        "Systematische Fehlersuche, Reparaturmethoden, Funktionstests, Wissenstransfer und Einarbeitung neuer Mitarbeitender.",
+        "Arbeit im autorisierten Serviceumfeld mit dokumentierten Diagnose- und Qualitätsstandards."
+      ]
+    },
+    {
+      "period": "11/2006 - 10/2008",
+      "role": "Servicetechniker",
+      "employer": "Einzelunternehmer Badin - Reparatur & Elektronik",
+      "location": "Tscheljabinsk, Russland",
+      "focus": "Garantie- und kostenpflichtige Reparaturen von Computertechnik.",
+      "bullets": [
+        "Fehlersuche, Baugruppen- und Komponententausch, Tests, Dokumentation und kundenorientierte Serviceabwicklung."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "TrueNAS / zentraler Projektspeicher",
+      "type": "Infrastruktur",
+      "description": "Planung, Aufbau und Betrieb eines TrueNAS-basierten zentralen Projektspeichers mit Ablagekonzept, Benutzer-/Rechteverwaltung, Performance-Tuning und Dokumentation."
+    },
+    {
+      "title": "AI-assisted Codebase Analysis & Dokumentation",
+      "type": "Technische Workflows",
+      "description": "KI-gestützte Analyse neuer und bestehender Projekte, API-Analyse, Refactoring-Vorbereitung, Parser- und Skriptunterstützung, README-Erstellung, Projektgraphen und Testvorbereitung."
+    },
+    {
+      "title": "Embedded-Linux-/Hardware-Bring-up für H618-TV-Box",
+      "type": "Privates technisches Projekt",
+      "link": "https://github.com/aco-art/vontar-h618-armbian-patche",
+      "description": "Private Embedded-Linux-/Hardware-Bring-up-Projekt für eine H618-TV-Box: Armbian userpatches, U-Boot/SPL-/Kernel-/DTB-Anpassungen, Diagnose über LAN/UART/ADB und reproduzierbare Build-Dokumentation."
+    },
+    {
+      "title": "Web/API Testing und technische Dokumentation",
+      "type": "Testing",
+      "description": "Manuelle API-Prüfung mit Postman, Browser DevTools, Website-Tests, technische Dokumentation, Fehlereingrenzung und Vorbereitung nachvollziehbarer Testfälle."
+    },
+    {
+      "title": "Android-/Armbian-Referenzanalyse",
+      "type": "Interne technische Analyse",
+      "description": "Private Analyse von Android-/Armbian-Runtime-Verhalten für Hardwarediagnose, Bootpfade, LAN/UART/ADB-Vergleich und reproduzierbare technische Dokumentation. Keine privaten Logs oder Dumps werden veröffentlicht."
+    }
+  ],
+  "electronics": {
+    "intro": "Praktische Werkstatterfahrung in Diagnose und Reparatur elektronischer Baugruppen mit Fokus auf Computertechnik, Mainboards, Monitore, Smartphones, Tablets, Netzteile, Grafikkarten, Router und TV-Boxes.",
+    "items": [
+      "Schaltplanlesen und Lesen technischer Dokumentation",
+      "Diagnose von Stromversorgung, Kurzschlüssen, Start- und Firmwareproblemen",
+      "Multimeter, Oszilloskop, Laborpraxis und ESD-sicheres Arbeiten",
+      "SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework, Reflow und Reballing",
+      "Firmware-/BIOS-/EEPROM-Flashing, Funktionsprüfung und technische Befundung"
+    ]
+  },
+  "education": [
+    {
+      "period": "2010 - 2016",
+      "degree": "Diplom-Ingenieur",
+      "institution": "Staatliche Universität Südural / Süduraler Staatliche Universität",
+      "details": "Steuerung und Informatik in Techniksystemen"
+    },
+    {
+      "period": "2000 - 2003",
+      "degree": "Radioelektroniker",
+      "institution": "Tomsker Staatliche Universität für Steuerungssysteme und Radioelektronik (TUSUR)",
+      "details": "Tomsk, Russland"
+    }
+  ],
+  "training": [
+    "2019 - 2021: Integrations- und Deutschkurse A1-B2, Abschluss B2.",
+    "2023 - 2024: interne DSGVO-Schulungen.",
+    "Frühere Rolle: laufende OEM-Trainings und Hersteller-Schulungen im autorisierten Serviceumfeld."
+  ],
+  "languages": [
+    "Deutsch: B2 / sichere Projekt- und Geschäftskommunikation",
+    "Russisch: Muttersprache",
+    "Englisch: gutes bis sehr gutes Leseverständnis, Schreiben mit KI-Unterstützung, mündlich eingeschränkt"
+  ],
+  "cvVariants": [
+    {
+      "id": "master",
+      "label": "Master CV",
+      "title": "Technischer IT-Service & Elektronikdiagnose",
+      "filenameBase": "Artjom_Warkentin_Lebenslauf_Technischer_IT_Service_Elektronik",
+      "focus": "IT-Service, Elektronikdiagnose, Infrastruktur, technische Dokumentation und AI-assisted technische Workflows."
+    },
+    {
+      "id": "soltau",
+      "label": "Soltau IT-Service CV",
+      "title": "IT-Systembetreuung & Technischer IT-Service",
+      "filenameBase": "Artjom_Warkentin_Lebenslauf_Soltau_IT_Service",
+      "focus": "IT-Systembetreuung, Infrastruktur, Service, Dokumentation und elektroniknahe Systemdiagnose für Soltau / Heidekreis / Niedersachsen."
+    },
+    {
+      "id": "rheinmetall",
+      "label": "Rheinmetall Elektronik CV",
+      "title": "Elektronikdiagnose, Prüftechnik & Technischer Service",
+      "filenameBase": "Artjom_Warkentin_Lebenslauf_Rheinmetall_Elektronik",
+      "focus": "Elektronikdiagnose, Reparatur, Mess- und Prüftechnik, Inbetriebnahme, technische Dokumentation und Qualität."
+    }
+  ]
+}

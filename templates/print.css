@@ -1,0 +1,25 @@
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .cv {
+    max-width: none;
+    padding: 0;
+  }
+
+  .entry,
+  .grid-two,
+  .project-card {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+  }
+}

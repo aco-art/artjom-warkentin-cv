@@ -1,0 +1,22 @@
+node_modules/
+
+# Local/private source material
+.android/
+facebook/
+vontar-h618-armbian-patches/
+Lebenslauf*.docx
+private/
+
+# Local experiments from the original workspace
+mcp_check.py
+ollama_toolcheck.py
+
+# Generated private/export helper files
+dist/html/
+dist/for_application/
+
+# Tool caches and reports
+.cache/
+playwright-report/
+test-results/
+npm-debug.log*
