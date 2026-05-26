@@ -2,7 +2,7 @@
 
 ## Kurzprofil
 
-Technischer IT-Service & Elektronikdiagnose. Mehr als zehn Jahre Praxis in Elektronikreparatur, Diagnose und Werkstattprozessen; aktuelle Erfahrung in IT-Systembetreuung, TrueNAS/NAS, Linux/Windows, technischer Dokumentation, UAT, Web/API Testing und AI-assisted technischen Workflows.
+Technischer IT-Service & Elektronikdiagnose. Mehr als zehn Jahre Praxis in Elektronikreparatur, Diagnose und Werkstattprozessen; aktuelle Erfahrung in IT-Systembetreuung, TrueNAS/NAS, Linux/Windows, technischer Dokumentation, UAT, Web/API-Tests und KI-gestützten technischen Workflows.
 
 ## Zielrollen
 

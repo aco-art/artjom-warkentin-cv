@@ -209,7 +209,8 @@ h1 {
   margin: 0;
 }
 
-.role-grid,
+.bring-grid,
+.role-group-grid,
 .skill-grid,
 .project-grid,
 .download-grid {
@@ -217,12 +218,13 @@ h1 {
   gap: 14px;
 }
 
-.role-grid {
+.bring-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.role-group-grid,
 .skill-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .project-grid {
@@ -234,7 +236,7 @@ h1 {
 }
 
 .card,
-.role,
+.role-group,
 .download {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -242,17 +244,23 @@ h1 {
   padding: 18px;
 }
 
-.role {
-  font-weight: 700;
+.bring-card {
+  min-height: 260px;
+}
+
+.role-group {
+  border-top: 3px solid var(--accent);
 }
 
 .card h3,
+.role-group h3,
 .download h3 {
   margin: 0 0 9px;
   font-size: 16px;
 }
 
 .card p,
+.role-group p,
 .download p {
   margin: 0;
   color: var(--muted);
@@ -281,6 +289,25 @@ h1 {
   color: var(--muted);
   background: var(--surface-strong);
   font-size: 12px;
+}
+
+.statement-band {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.statement {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.statement p {
+  margin: 0;
+  font-size: 18px;
+  color: var(--ink);
 }
 
 .timeline {
@@ -338,6 +365,12 @@ h1 {
   border-color: rgba(255, 255, 255, 0.16);
 }
 
+.workshop-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 14px;
+}
+
 .contact-band {
   background: var(--surface);
   border-top: 1px solid var(--line);
@@ -381,12 +414,15 @@ h1 {
   }
 
   .section-head,
-  .timeline-item {
+  .timeline-item,
+  .statement,
+  .workshop-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .role-grid,
+  .bring-grid,
+  .role-group-grid,
   .skill-grid,
   .project-grid,
   .download-grid {

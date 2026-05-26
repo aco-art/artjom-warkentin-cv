@@ -19,13 +19,14 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
-  line-height: 1.45;
+  font-size: 10.4px;
+  line-height: 1.28;
 }
 
 .cv {
   max-width: 880px;
   margin: 0 auto;
-  padding: 34px 42px;
+  padding: 24px 32px;
 }
 
 .cv-header {
@@ -34,20 +35,20 @@ body {
   gap: 22px;
   align-items: start;
   border-bottom: 2px solid var(--ink);
-  padding-bottom: 18px;
-  margin-bottom: 22px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .cv h1 {
-  margin: 0 0 6px;
-  font-size: 32px;
+  margin: 0 0 4px;
+  font-size: 26px;
   line-height: 1.1;
   letter-spacing: 0;
 }
 
 .cv .title {
-  margin: 0 0 10px;
-  font-size: 18px;
+  margin: 0 0 6px;
+  font-size: 15px;
   color: var(--accent);
   font-weight: 700;
 }
@@ -55,77 +56,77 @@ body {
 .cv .meta,
 .cv .contact {
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 9.7px;
 }
 
 .cv h2 {
-  margin: 22px 0 9px;
-  font-size: 15px;
+  margin: 12px 0 5px;
+  font-size: 11.6px;
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--ink);
   border-bottom: 1px solid var(--line);
-  padding-bottom: 5px;
+  padding-bottom: 3px;
 }
 
 .cv h3 {
-  margin: 0 0 4px;
-  font-size: 13.8px;
+  margin: 0 0 2px;
+  font-size: 10.7px;
 }
 
 .cv p {
-  margin: 0 0 8px;
+  margin: 0 0 4px;
 }
 
 .cv ul {
-  margin: 6px 0 0 18px;
+  margin: 3px 0 0 14px;
   padding: 0;
 }
 
 .cv li {
-  margin: 0 0 4px;
+  margin: 0 0 2px;
 }
 
 .grid-two {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px 22px;
+  gap: 5px 14px;
 }
 
 .pill-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
 }
 
 .pill {
   border: 1px solid var(--line);
   background: var(--soft);
   border-radius: 4px;
-  padding: 4px 7px;
-  font-size: 12px;
+  padding: 2px 5px;
+  font-size: 9.5px;
 }
 
 .entry {
   break-inside: avoid;
-  margin-bottom: 13px;
+  margin-bottom: 6px;
 }
 
 .entry-head {
   display: grid;
-  grid-template-columns: 125px 1fr;
-  gap: 12px;
+  grid-template-columns: 95px 1fr;
+  gap: 8px;
   align-items: start;
 }
 
 .period {
   color: var(--accent);
   font-weight: 700;
-  font-size: 12.5px;
+  font-size: 9.7px;
 }
 
 .small {
-  font-size: 12.5px;
+  font-size: 9.7px;
   color: var(--muted);
 }
 

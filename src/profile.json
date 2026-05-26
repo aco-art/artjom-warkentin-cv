@@ -2,7 +2,7 @@
   "person": {
     "name": "Artjom Warkentin",
     "title": "Technischer IT-Service & Elektronikdiagnose",
-    "tagline": "IT-Infrastruktur, Server/NAS/Linux/Windows, Elektronikdiagnose und technische Dokumentation",
+    "tagline": "Hands-on IT-Infrastruktur, Elektronikdiagnose und KI-gestützte technische Dokumentation",
     "currentRegion": "Plauen",
     "targetRegion": "Soltau / Heidekreis / Niedersachsen",
     "birthYear": "1983",
@@ -21,13 +21,49 @@
     "h618Front": "assets/project-images/vontar-h618-frontside.jpg",
     "h618Back": "assets/project-images/vontar-h618-backside.jpg"
   },
+  "shortStatement": "Erfahrener technischer Praktiker mit einer seltenen Kombination aus Elektronikdiagnose, IT-Infrastruktur und moderner KI-gestützter Dokumentations- und Analysearbeit. Besonders passend für Rollen, in denen Systeme verstanden, stabil betrieben, Fehler sauber eingegrenzt und technische Ergebnisse nachvollziehbar dokumentiert werden müssen.",
   "summary": [
     "Technischer Spezialist mit Schwerpunkt IT-Service, IT-Infrastruktur und Elektronikdiagnose.",
     "Mehr als zehn Jahre praktische Erfahrung in Diagnose, Reparatur und Werkstattprozessen für Computertechnik, Peripherie und elektronische Baugruppen.",
     "Aktuelle Praxis in Deutschland mit technischer Systembetreuung, Schnittstellen, Datenflüssen, Tests, Dokumentation und interner Prozessqualität.",
     "Sicher im Umgang mit Windows Server, Linux, TrueNAS/NAS, SMB-Ablagen, Benutzer- und Rechtekonzepten, RDP, VPN, DNS- und Backup-Grundlagen.",
-    "Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework und Firmware-/BIOS-Arbeiten.",
-    "Nutzt KI-gestützte Werkzeuge pragmatisch für Recherche, Dokumentation, Skripte, API-Analyse, Testvorbereitung und Codebase-Verständnis."
+    "Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework und Firmware-/BIOS-/EEPROM-Arbeiten.",
+    "Nutzt KI-gestützte Werkzeuge pragmatisch für Recherche, Dokumentation, Skripte, API-Analyse, Testvorbereitung und technische Orientierung in fremden Projekten."
+  ],
+  "bringCards": [
+    {
+      "title": "IT-Infrastruktur & Systembetreuung",
+      "description": "Windows Server, Linux, TrueNAS/NAS, SMB-Shares, Benutzer- und Rechtekonzepte, RDP, VPN, DNS, Backups und technische Dokumentation für stabile interne Betriebsabläufe.",
+      "items": ["Windows Server", "Linux", "TrueNAS/NAS", "SMB", "Benutzer/Rechte", "RDP", "VPN", "DNS", "Backups"]
+    },
+    {
+      "title": "Elektronikdiagnose & Reparatur",
+      "description": "10+ Jahre Werkstattpraxis mit systematischer Fehlersuche, Schaltplanlesen, Mess- und Löttechnik, Baugruppenreparatur und dokumentierter Befundung.",
+      "items": ["Schaltplanlesen", "Multimeter/Oszilloskop", "SMD/THT", "Heißluft", "Mikroskop", "BGA-Rework", "Firmware/BIOS/EEPROM"]
+    },
+    {
+      "title": "KI-gestützte technische Workflows",
+      "description": "Moderne technische Arbeitsweise für API-Analyse, Parser, Dokumentation, Skripte, Web/API-Tests, Postman, Browser DevTools, Projektgraphen und technische Unterlagen.",
+      "items": ["API-Analyse", "Parser", "Skripte", "Postman", "Browser DevTools", "Projektgraphen", "README/Unterlagen"]
+    }
+  ],
+  "roleGroups": [
+    {
+      "title": "IT-Systembetreuer / IT-Service",
+      "description": "Interne Infrastruktur, Arbeitsplatz- und Systembetreuung, NAS/Storage, Dokumentation und Betrieb."
+    },
+    {
+      "title": "Technischer Support / Serviceinnendienst",
+      "description": "Fehleraufnahme, technische Klärung, Remote-Support, strukturierte Übergabe und nachvollziehbare Servicekommunikation."
+    },
+    {
+      "title": "Servicetechniker Elektronik / Prüftechniker",
+      "description": "Baugruppennahe Diagnose, Mess- und Prüftechnik, Reparaturqualität, Befundung und Funktionsprüfung."
+    },
+    {
+      "title": "IT-nahe Systemdiagnose / Infrastrukturservice",
+      "description": "Rollen, in denen IT-Systeme, Hardware, Dokumentation und saubere Fehleranalyse zusammenkommen."
+    }
   ],
   "targetRoles": [
     "IT-Systembetreuer",
@@ -39,28 +75,28 @@
   ],
   "competencies": [
     {
-      "title": "IT-Infrastruktur",
-      "items": ["Windows Server", "Linux", "TrueNAS/NAS", "SMB-Shares", "Benutzer/Rechte", "RDP"]
+      "title": "IT-Infrastruktur & Betrieb",
+      "items": ["Windows Server", "Linux", "TrueNAS/NAS", "SMB-Shares", "Benutzer/Rechte", "Active Directory-Grundlagen", "RDP", "USB-over-RDP/Port-Weiterleitung"]
     },
     {
-      "title": "Netzwerk & Betrieb",
-      "items": ["Netzwerk-Basics", "VPN", "Caching DNS", "Backups", "Remote-Support", "Dokumentation"]
+      "title": "Netzwerk, Zugriff & Datensicherheit",
+      "items": ["Netzwerk-Basics", "VPN", "Caching DNS", "Backups", "Ablagekonzepte", "Berechtigungen", "DSGVO-Bewusstsein", "technische Dokumentation"]
     },
     {
       "title": "Elektronikdiagnose",
-      "items": ["Schaltplanlesen", "Stromversorgung", "Mainboards", "Netzteile", "Monitore", "Router"]
+      "items": ["Schaltplanlesen", "technische Dokumentation lesen", "Stromversorgungsdiagnose", "Kurzschlussanalyse", "Mainboards", "Netzteile", "Monitore", "Router"]
     },
     {
       "title": "Mess- und Reparaturtechnik",
-      "items": ["Multimeter", "Oszilloskop", "SMD/THT", "Heißluft", "Mikroskop", "BGA-Rework"]
+      "items": ["Multimeter", "Oszilloskop", "SMD/THT-Löten", "Heißluft", "Mikroskop", "BGA-Rework", "Reflow/Reballing", "ESD-sicheres Arbeiten"]
     },
     {
-      "title": "Web/API Testing",
-      "items": ["Postman", "Manual API Testing", "Browser DevTools", "Website Testing", "HTML/CSS/JS/PHP lesen"]
+      "title": "Web/API-Tests & Tools",
+      "items": ["Postman", "manuelle API-Prüfung", "Browser DevTools", "Website-Tests", "Fehlernachverfolgung", "HTML/CSS/JS/PHP lesen", "Python-Skripte"]
     },
     {
-      "title": "AI-assisted Workflows",
-      "items": ["Technische Dokumentation", "Scripting", "Codebase Analysis", "Parser", "README", "Projektgraphen"]
+      "title": "KI-gestützte technische Arbeit",
+      "items": ["technische Recherche", "Dokumentation", "Skripte", "Codebase-Analyse", "Parser", "Testvorbereitung", "Projektgraphen", "README/technische Unterlagen"]
     }
   ],
   "experience": [
@@ -69,13 +105,12 @@
       "role": "Technische Systembetreuung, IT- und Prozessanalyse",
       "employer": "INFORMA GmbH & Co. KG",
       "location": "Oelsnitz/Vogtland, Deutschland",
-      "focus": "Technische Anforderungen, Systemintegration, UAT, Dokumentation, interne IT-nahe Infrastruktur.",
+      "focus": "Technische Anforderungen, interne IT-nahe Infrastruktur, Systemintegration, Tests, Dokumentation und Qualität.",
       "bullets": [
-        "Aufbau und Betrieb eines TrueNAS-basierten Projektspeichers mit Ablage-, Zugriffs- und Nutzungskonzept für Fachbereiche.",
-        "Analyse technischer Anforderungen, Schnittstellen, Datenflüsse und Systemprozesse; Erstellung von Pflichtenheften, Prozessskizzen und Abnahmekriterien.",
-        "Testvorbereitung, UAT, Fehlernachverfolgung, Abnahmen und nachvollziehbare Dokumentation von Änderungen und Ergebnissen.",
-        "KI-gestützte Strukturierung von Spezifikationen, technische Recherche, Konsistenzprüfung und Unterstützung bei Skripten, Checklisten und Dokumentation.",
-        "Kommunikation zwischen Fachbereichen, Anwendern und technischer Umsetzung mit Fokus auf Klärung, Servicefähigkeit und Qualität."
+        "TrueNAS-basierten Projektspeicher aufgebaut und betrieben: Ablagekonzept, Zugriffsstruktur, Nutzung durch Fachbereiche, Performance-Tuning und technische Dokumentation.",
+        "Schnittstellen, Datenflüsse und Systemprozesse analysiert und in Pflichtenheften, Prozessskizzen, Funktionsmatrizen und Abnahmekriterien nachvollziehbar dokumentiert.",
+        "UAT, Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und Ergebnisse strukturiert dokumentiert.",
+        "KI-gestützte Spezifikations- und Dokumentationsarbeit eingesetzt, um Konsistenz, technische Recherche, Checklisten, Skripte und Testvorbereitung schneller und sauberer umzusetzen."
       ]
     },
     {
@@ -83,10 +118,11 @@
       "role": "Technische Koordination IT",
       "employer": "INFORMA GmbH & Co. KG",
       "location": "Oelsnitz/Vogtland, Deutschland",
-      "focus": "Stabilisierung von Aufgabensteuerung, Fehlerklärung, Tests und Release-Abstimmung in einer Übergangsphase.",
+      "focus": "Stabilisierung technischer Abläufe, Aufgabenklärung, Tests und Release-Abstimmung in einer Übergangsphase.",
       "bullets": [
-        "Strukturierte Abstimmungen, Testbegleitung, Nutzerabnahmen und technische Klaerung offener Punkte.",
-        "Verbesserung der Nachvollziehbarkeit von Aufgaben, Rückfragen und Ergebnisdokumentation."
+        "Technische Abstimmungen strukturiert, offene Punkte geklärt und Aufgaben für Umsetzung, Tests und Abnahmen nachvollziehbar gemacht.",
+        "Nutzertests begleitet, Fehlerrückmeldungen eingeordnet und technische Ergebnisse für Fachbereiche verständlich dokumentiert.",
+        "Service- und Qualitätsdenken aus dem Werkstattumfeld in interne IT-Abläufe übertragen: klare Zustände, reproduzierbare Fehlerbilder, saubere Übergaben."
       ]
     },
     {
@@ -94,10 +130,11 @@
       "role": "Technische Assistenz im IT-/Projektumfeld",
       "employer": "INFORMA GmbH & Co. KG",
       "location": "Oelsnitz/Vogtland, Deutschland",
-      "focus": "Anforderungsanalyse, technische Konzepte und strukturierte Übergaben.",
+      "focus": "Anforderungsanalyse, technische Konzepte, Systemverständnis und strukturierte Übergaben.",
       "bullets": [
-        "Analyse und Dokumentation interner Systemanforderungen, Stakeholder-Abstimmung und Übergabe an die technische Umsetzung.",
-        "Erstellung von Konzepten und Pflichtenheften für interne Anwendungen und Prozessverbesserungen."
+        "Interne Systemanforderungen aufgenommen, technisch analysiert und in klare Konzepte, Pflichtenhefte und Übergaben übersetzt.",
+        "Fachliche Rückfragen mit technischer Umsetzbarkeit abgeglichen und dokumentierte Entscheidungsgrundlagen vorbereitet.",
+        "Prozess- und Systemzusammenhänge visualisiert, damit Umsetzung, Test und Abnahme sauber anschließen konnten."
       ]
     },
     {
@@ -105,10 +142,12 @@
       "role": "Handelsautomatisierung, Systemadministration und Webshop-Integration",
       "employer": "MEGA GmbH",
       "location": "Tscheljabinsk, Russland",
-      "focus": "Automatisierung, Serverbetrieb, Webshop, CRM-Integration und technische Umsetzung.",
+      "focus": "Serverbetrieb, Systemintegration, Webshop, CRM-Anbindung und technische Umsetzung im Handelsumfeld.",
       "bullets": [
-        "Administration von Windows Server 2012 R2 sowie Linux/CentOS mit NGINX/Apache, MySQL und Mailserver.",
-        "Webshop-Einführung, CRM-Anbindung und technische Integration mit 1C, PHP, JavaScript, HTML und CSS."
+        "Windows Server 2012 R2 sowie Linux/CentOS mit NGINX, Apache, MySQL und Mailserver administriert.",
+        "Webshop, CRM-Anbindung und 1C-Integration technisch begleitet und Schnittstellen zwischen Warenwirtschaft, Web und internen Abläufen stabilisiert.",
+        "PHP, JavaScript, HTML und CSS im Integrations- und Anpassungskontext gelesen und genutzt, ohne diese Tätigkeit als Zielrichtung zu positionieren.",
+        "Server-, Web- und Prozesssicht verbunden, um technische Handelsabläufe nachvollziehbar und wartbarer zu machen."
       ]
     },
     {
@@ -116,12 +155,12 @@
       "role": "Technischer Direktor & Oberingenieur",
       "employer": "Innovation Service Center",
       "location": "Tscheljabinsk, Russland",
-      "focus": "Elektronik-/IT-Service, Werkstattprozesse, Diagnose, Qualität und Wissenstransfer.",
+      "focus": "Elektronik-/IT-Service, Werkstattprozesse, Diagnose, Qualitätsstandards, Ersatzteile und Wissenstransfer.",
       "bullets": [
-        "Fachliche Verantwortung für Diagnose und Instandsetzung von Computertechnik, Notebooks, Monitoren, Tablets, Smartphones und Peripherie.",
-        "Bearbeitung komplexer Fehlerbilder, Reparaturprozesse, Qualitätssicherung, SOPs, Arbeitsanweisungen, Ersatzteilmanagement und Reklamationsklärung.",
-        "OEM-autorisiertes Serviceumfeld mit Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer; laufende Trainings im Hersteller-Serviceumfeld.",
-        "Einarbeitung und Schulung von Mitarbeitenden sowie Aufbau strukturierter Abläufe für Werkstatt, Dokumentation und Servicequalität."
+        "Service- und Werkstattpraxis für Notebooks, Mainboards, Monitore, Tablets, Smartphones, Peripherie und elektronische Baugruppen fachlich verantwortet.",
+        "Komplexe Fehlerbilder analysiert, Reparaturwege bewertet, Qualitätsstandards, SOPs, Arbeitsanweisungen und Reklamationsklärung strukturiert.",
+        "OEM-Serviceumfeld mit Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer betreut; jährliche Trainings und Herstellervorgaben in die Werkstattpraxis übertragen.",
+        "Ersatzteilmanagement, Lager- und Reparaturbuchführung, Schulung neuer Mitarbeitender und Wissenstransfer im Serviceteam aufgebaut und optimiert."
       ]
     },
     {
@@ -131,8 +170,9 @@
       "location": "Tscheljabinsk, Russland",
       "focus": "Komplexe Instandsetzung von Computer-/IT-Technik und elektronischen Baugruppen.",
       "bullets": [
-        "Systematische Fehlersuche, Reparaturmethoden, Funktionstests, Wissenstransfer und Einarbeitung neuer Mitarbeitender.",
-        "Arbeit im autorisierten Serviceumfeld mit dokumentierten Diagnose- und Qualitätsstandards."
+        "Schwierige Fehlerbilder an Computertechnik, Peripherie und Baugruppen systematisch eingegrenzt, instandgesetzt, geprüft und dokumentiert.",
+        "Reparaturmethoden, Prüfabläufe und praktische Diagnosewege im Werkstattbetrieb weiterentwickelt.",
+        "Neue Mitarbeitende eingearbeitet und technisches Wissen zu Diagnose, Löt-/Rework-Verfahren, Qualität und Dokumentation weitergegeben."
       ]
     },
     {
@@ -142,46 +182,54 @@
       "location": "Tscheljabinsk, Russland",
       "focus": "Garantie- und kostenpflichtige Reparaturen von Computertechnik.",
       "bullets": [
-        "Fehlersuche, Baugruppen- und Komponententausch, Tests, Dokumentation und kundenorientierte Serviceabwicklung."
+        "Computertechnik diagnostiziert, Baugruppen und Komponenten instandgesetzt oder ausgetauscht und Funktionstests durchgeführt.",
+        "Reparaturergebnisse dokumentiert, Ersatzteile abgestimmt und Kundenrückfragen technisch sauber beantwortet.",
+        "Grundlage für die spätere Spezialisierung auf strukturierte Elektronikdiagnose und Werkstattqualität aufgebaut."
       ]
     }
   ],
   "projects": [
     {
+      "id": "truenas",
       "title": "TrueNAS / zentraler Projektspeicher",
-      "type": "Infrastruktur",
-      "description": "Planung, Aufbau und Betrieb eines TrueNAS-basierten zentralen Projektspeichers mit Ablagekonzept, Benutzer-/Rechteverwaltung, Performance-Tuning und Dokumentation."
+      "type": "Infrastrukturprojekt",
+      "description": "Aufbau eines zentralen Projektspeichers mit Ablagekonzept, Rechte- und Zugriffstruktur, Betrieb, Performance-Tuning und technischer Dokumentation. Nutzen: weniger lokale Dateiinseln, klarere Zuständigkeiten und nachvollziehbare Projektablage."
     },
     {
-      "title": "AI-assisted Codebase Analysis & Dokumentation",
-      "type": "Technische Workflows",
-      "description": "KI-gestützte Analyse neuer und bestehender Projekte, API-Analyse, Refactoring-Vorbereitung, Parser- und Skriptunterstützung, README-Erstellung, Projektgraphen und Testvorbereitung."
+      "id": "ai-docs",
+      "title": "KI-gestützte Codebase-Analyse & Dokumentation",
+      "type": "Moderne technische Arbeitsweise",
+      "description": "API-Analyse, Parser, Projektgraphen, README-Erstellung, Testvorbereitung und technische Orientierung in fremden Projekten mit KI-Unterstützung. Ziel: schnelleres Verständnis, bessere Dokumentation und belastbarere technische Entscheidungen."
     },
     {
+      "id": "h618",
       "title": "Embedded-Linux-/Hardware-Bring-up für H618-TV-Box",
       "type": "Privates technisches Projekt",
       "link": "https://github.com/aco-art/vontar-h618-armbian-patche",
       "description": "Private Embedded-Linux-/Hardware-Bring-up-Projekt für eine H618-TV-Box: Armbian userpatches, U-Boot/SPL-/Kernel-/DTB-Anpassungen, Diagnose über LAN/UART/ADB und reproduzierbare Build-Dokumentation."
     },
     {
-      "title": "Web/API Testing und technische Dokumentation",
-      "type": "Testing",
-      "description": "Manuelle API-Prüfung mit Postman, Browser DevTools, Website-Tests, technische Dokumentation, Fehlereingrenzung und Vorbereitung nachvollziehbarer Testfälle."
-    },
+      "id": "testing-docs",
+      "title": "Web/API-Tests und technische Dokumentation",
+      "type": "Tests & Dokumentation",
+      "description": "Postman, Browser DevTools, manuelle API-Prüfung, Website-Tests, Fehlernachverfolgung und testbare Dokumentation. Fokus: Fehler reproduzierbar machen, Schnittstellen verstehen und Ergebnisse so beschreiben, dass Umsetzung und Abnahme anschließen können."
+    }
+  ],
+  "internalProjects": [
     {
       "title": "Android-/Armbian-Referenzanalyse",
-      "type": "Interne technische Analyse",
       "description": "Private Analyse von Android-/Armbian-Runtime-Verhalten für Hardwarediagnose, Bootpfade, LAN/UART/ADB-Vergleich und reproduzierbare technische Dokumentation. Keine privaten Logs oder Dumps werden veröffentlicht."
     }
   ],
   "electronics": {
-    "intro": "Praktische Werkstatterfahrung in Diagnose und Reparatur elektronischer Baugruppen mit Fokus auf Computertechnik, Mainboards, Monitore, Smartphones, Tablets, Netzteile, Grafikkarten, Router und TV-Boxes.",
+    "intro": "Langjährige praktische Werkstatt- und Diagnoseerfahrung mit elektronischen Baugruppen und IT-naher Gerätetechnik.",
+    "devices": ["Notebooks", "Mainboards", "Monitore", "Smartphones", "Tablets", "Netzteile", "Grafikkarten", "Router", "TV-Boxes", "Peripherie"],
     "items": [
       "Schaltplanlesen und Lesen technischer Dokumentation",
-      "Diagnose von Stromversorgung, Kurzschlüssen, Start- und Firmwareproblemen",
+      "Stromversorgungsdiagnose, Kurzschlussanalyse und Eingrenzung von Start-/Boot-/Firmwareproblemen",
       "Multimeter, Oszilloskop, Laborpraxis und ESD-sicheres Arbeiten",
       "SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework, Reflow und Reballing",
-      "Firmware-/BIOS-/EEPROM-Flashing, Funktionsprüfung und technische Befundung"
+      "Firmware-/BIOS-/EEPROM-Flashing, Funktionsprüfung, Befundung und nachvollziehbare Reparaturdokumentation"
     ]
   },
   "education": [
@@ -214,21 +262,39 @@
       "label": "Master CV",
       "title": "Technischer IT-Service & Elektronikdiagnose",
       "filenameBase": "Artjom_Warkentin_Lebenslauf_Technischer_IT_Service_Elektronik",
-      "focus": "IT-Service, Elektronikdiagnose, Infrastruktur, technische Dokumentation und AI-assisted technische Workflows."
+      "focus": "Hands-on IT-Infrastruktur, Elektronikdiagnose, technische Dokumentation, Tests und KI-gestützte Arbeitsweise.",
+      "summary": [
+        "Technischer Spezialist mit Schwerpunkt IT-Service, IT-Infrastruktur und Elektronikdiagnose.",
+        "Mehr als zehn Jahre Werkstatt- und Servicepraxis in Diagnose, Reparatur, Qualität und Dokumentation elektronischer Baugruppen.",
+        "Aktuelle Erfahrung in technischer Systembetreuung, TrueNAS/NAS, Schnittstellen, UAT, Fehleranalyse und KI-gestützter Dokumentation."
+      ],
+      "targetRoles": ["IT-Systembetreuer", "Technischer IT-Service", "Technischer Support / Serviceinnendienst", "Servicetechniker Elektronik", "Prüftechniker Elektronik", "IT-nahe Systemdiagnose"]
     },
     {
       "id": "soltau",
       "label": "Soltau IT-Service CV",
       "title": "IT-Systembetreuung & Technischer IT-Service",
       "filenameBase": "Artjom_Warkentin_Lebenslauf_Soltau_IT_Service",
-      "focus": "IT-Systembetreuung, Infrastruktur, Service, Dokumentation und elektroniknahe Systemdiagnose für Soltau / Heidekreis / Niedersachsen."
+      "focus": "IT-Systembetreuung, Infrastrukturservice, Dokumentation und elektroniknahe Diagnose für Soltau / Heidekreis / Niedersachsen.",
+      "summary": [
+        "Technischer IT-Praktiker für lokale Betriebe, Serviceunternehmen, Betriebs-IT, Sicherheitstechnik, Gebäudeautomation, Systemhäuser oder technische Dienstleister.",
+        "Stark in Windows-/Linux-Grundlagen, TrueNAS/NAS, SMB-Shares, Benutzer-/Rechtekonzepten, RDP, VPN, DNS, Backups und sauberer Dokumentation.",
+        "Zusätzlicher Vorteil: langjährige Elektronikdiagnose und Werkstattpraxis für strukturierte Fehlereingrenzung an IT-naher Gerätetechnik."
+      ],
+      "targetRoles": ["IT-Systembetreuer", "Technischer IT-Service", "Technischer Support / Serviceinnendienst", "Infrastrukturservice", "IT-nahe Systemdiagnose"]
     },
     {
       "id": "rheinmetall",
       "label": "Rheinmetall Elektronik CV",
       "title": "Elektronikdiagnose, Prüftechnik & Technischer Service",
       "filenameBase": "Artjom_Warkentin_Lebenslauf_Rheinmetall_Elektronik",
-      "focus": "Elektronikdiagnose, Reparatur, Mess- und Prüftechnik, Inbetriebnahme, technische Dokumentation und Qualität."
+      "focus": "Elektronikdiagnose, Baugruppenreparatur, Mess-/Prüftechnik, Inbetriebnahme-Nähe, technische Dokumentation und Qualität.",
+      "summary": [
+        "Technischer Spezialist mit langjähriger Praxis in Elektronikdiagnose, Reparatur elektronischer Baugruppen, Werkstattqualität und dokumentierter Befundung.",
+        "Sicher im Lesen technischer Unterlagen, in Mess-/Prüftechnik, Stromversorgungsdiagnose, Löt-/Rework-Verfahren und systematischer Fehleranalyse.",
+        "IT-Erfahrung ergänzt das Profil durch Systemverständnis, Dokumentation, Tests/UAT, Tools und strukturierte technische Analyse."
+      ],
+      "targetRoles": ["Servicetechniker Elektronik", "Prüftechniker Elektronik", "Elektronikdiagnose", "Technischer Service", "Systemnahe Fehleranalyse"]
     }
   ]
 }

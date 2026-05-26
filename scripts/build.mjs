@@ -78,7 +78,7 @@ function renderIndex(data) {
   const master = data.cvVariants.find((variant) => variant.id === "master");
   const publicMasterPdf = `downloads/${master.filenameBase}_Public.pdf`;
   const publicMasterDocx = `downloads/${master.filenameBase}_Public.docx`;
-  const metaDescription = "Profil von Artjom Warkentin fuer technischen IT-Service, IT-Infrastruktur, Elektronikdiagnose und technische Dokumentation in der Zielregion Soltau / Heidekreis / Niedersachsen.";
+  const metaDescription = "Profil von Artjom Warkentin für technischen IT-Service, IT-Infrastruktur, Elektronikdiagnose und KI-gestützte technische Dokumentation in der Zielregion Soltau / Heidekreis / Niedersachsen.";
 
   return `<!doctype html>
 <html lang="de">
@@ -97,7 +97,7 @@ function renderIndex(data) {
           <span>${escapeHtml(data.person.title)}</span>
         </a>
         <div class="nav-links">
-          <a href="#profil">Profil</a>
+          <a href="#mitbringen">Mitbringen</a>
           <a href="#erfahrung">Erfahrung</a>
           <a href="#projekte">Projekte</a>
           <a href="#downloads">Downloads</a>
@@ -106,8 +106,8 @@ function renderIndex(data) {
       </nav>
     </header>
 
-    <!-- validate:hero:start -->
     <main id="top">
+      <!-- validate:hero:start -->
       <section class="hero" data-validate-section="hero">
         <div class="hero-inner">
           <div>
@@ -130,45 +130,43 @@ function renderIndex(data) {
       </section>
       <!-- validate:hero:end -->
 
-      <!-- validate:summary:start -->
-      <section id="profil" class="section compact" data-validate-section="summary">
+      <!-- validate:bring:start -->
+      <section id="mitbringen" class="section compact" data-validate-section="bring">
         <div class="section-head">
-          <h2>Kurzprofil</h2>
-          <div class="summary-lines">
-            ${data.summary.map((line) => `<p>${escapeHtml(line)}</p>`).join("\n            ")}
-          </div>
+          <h2>Was ich konkret mitbringe</h2>
+          <p class="section-lead">Eine belastbare Kombination aus Infrastrukturpraxis, Elektronikdiagnose und moderner technischer Dokumentation.</p>
+        </div>
+        <div class="bring-grid">
+          ${data.bringCards.map(renderBringCard).join("\n          ")}
         </div>
       </section>
-      <!-- validate:summary:end -->
+      <!-- validate:bring:end -->
+
+      <!-- validate:short:start -->
+      <section class="statement-band" data-validate-section="short">
+        <div class="section statement">
+          <h2>Kurz gesagt</h2>
+          <p>${escapeHtml(data.shortStatement)}</p>
+        </div>
+      </section>
+      <!-- validate:short:end -->
 
       <!-- validate:roles:start -->
       <section class="section" data-validate-section="roles">
         <div class="section-head">
-          <h2>Zielrollen</h2>
-          <p class="section-lead">Operative technische Rollen mit Fokus auf Service, Infrastruktur, Diagnose, Dokumentation und Qualität.</p>
+          <h2>Passende Rollen</h2>
+          <p class="section-lead">Keine Management-Zielrolle, sondern operative technische Arbeit mit Systemverständnis, Diagnose und Dokumentation.</p>
         </div>
-        <div class="role-grid">
-          ${data.targetRoles.map((role) => `<div class="role">${escapeHtml(role)}</div>`).join("\n          ")}
+        <div class="role-group-grid">
+          ${data.roleGroups.map(renderRoleGroup).join("\n          ")}
         </div>
       </section>
       <!-- validate:roles:end -->
 
-      <!-- validate:skills:start -->
-      <section class="section" data-validate-section="skills">
-        <div class="section-head">
-          <h2>Kernkompetenzen</h2>
-          <p class="section-lead">Breite technische Praxis zwischen IT-Betrieb, Elektronikdiagnose, Tests und moderner Dokumentation.</p>
-        </div>
-        <div class="skill-grid">
-          ${data.competencies.map(renderSkillCard).join("\n          ")}
-        </div>
-      </section>
-      <!-- validate:skills:end -->
-
       <section id="erfahrung" class="section">
         <div class="section-head">
-          <h2>Erfahrung</h2>
-          <p class="section-lead">Kompakte Timeline mit aktuellem IT-/Systemfokus und starkem hands-on Hintergrund aus Elektronikservice und Werkstattpraxis.</p>
+          <h2>Berufliche Erfahrung</h2>
+          <p class="section-lead">Aktuelle IT-Systempraxis in Deutschland, ergänzt durch langjährige Service- und Werkstatterfahrung im Elektronik-/IT-Umfeld.</p>
         </div>
         <div class="timeline">
           ${data.experience.map(renderTimelineItem).join("\n          ")}
@@ -177,8 +175,8 @@ function renderIndex(data) {
 
       <section id="projekte" class="section">
         <div class="section-head">
-          <h2>Projekte</h2>
-          <p class="section-lead">Ausgewählte technische Arbeiten mit Infrastruktur-, Dokumentations-, Diagnose- und Embedded-Linux-Bezug.</p>
+          <h2>Technische Projekte</h2>
+          <p class="section-lead">Ausgewählte Arbeiten mit Infrastruktur-, Analyse-, Test-, Dokumentations- und Hardware-Bring-up-Bezug.</p>
         </div>
         <div class="project-grid">
           ${data.projects.map(renderProjectCard).join("\n          ")}
@@ -191,10 +189,17 @@ function renderIndex(data) {
             <h2>Elektronik & Werkstatt</h2>
             <p class="section-lead">${escapeHtml(data.electronics.intro)}</p>
           </div>
-          <div class="card">
-            <ul>
-              ${data.electronics.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n              ")}
-            </ul>
+          <div class="workshop-grid">
+            <article class="card">
+              <h3>Geräte</h3>
+              <p>${escapeHtml(data.electronics.devices.join(" · "))}</p>
+            </article>
+            <article class="card">
+              <h3>Verfahren</h3>
+              <ul>
+                ${data.electronics.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("\n                ")}
+              </ul>
+            </article>
           </div>
         </div>
       </section>
@@ -214,12 +219,13 @@ function renderIndex(data) {
         <div class="section">
           <div class="section-head">
             <h2>Kontakt</h2>
-            <p class="section-lead">Öffentliche Kontaktangaben für erste technische Rückfragen und Bewerbungsdialoge.</p>
+            <p class="section-lead">Öffentliche Kontaktangaben für technische Rückfragen und Bewerbungsdialoge.</p>
           </div>
           <div class="contact-list">
+            <span class="contact-item">Region: ${escapeHtml(data.person.currentRegion)} → Zielregion ${escapeHtml(data.person.targetRegion)}</span>
             <a class="contact-item" href="mailto:${escapeHtml(data.contact.email)}">${escapeHtml(data.contact.email)}</a>
             <a class="contact-item" href="${escapeHtml(data.contact.github)}">GitHub Profil</a>
-            <span class="contact-item">Zielregion: ${escapeHtml(data.person.targetRegion)}</span>
+            <a class="contact-item" href="${escapeHtml(data.contact.h618Project)}">H618 Projekt</a>
           </div>
           <p class="note">Detaillierte Bewerbungsunterlagen können personenbezogene Daten enthalten und sollten vor Weitergabe geprüft werden.</p>
         </div>
@@ -229,10 +235,18 @@ function renderIndex(data) {
 </html>`;
 }
 
-function renderSkillCard(group) {
-  return `<article class="card">
+function renderBringCard(card) {
+  return `<article class="card bring-card">
+            <h3>${escapeHtml(card.title)}</h3>
+            <p>${escapeHtml(card.description)}</p>
+            <div class="chips">${card.items.map((item) => `<span class="chip">${escapeHtml(item)}</span>`).join("")}</div>
+          </article>`;
+}
+
+function renderRoleGroup(group) {
+  return `<article class="role-group">
             <h3>${escapeHtml(group.title)}</h3>
-            <div class="chips">${group.items.map((item) => `<span class="chip">${escapeHtml(item)}</span>`).join("")}</div>
+            <p>${escapeHtml(group.description)}</p>
           </article>`;
 }
 
@@ -243,14 +257,14 @@ function renderTimelineItem(item) {
               <h3>${escapeHtml(item.role)}</h3>
               <p class="meta">${escapeHtml(item.employer)} · ${escapeHtml(item.location)}</p>
               <p>${escapeHtml(item.focus)}</p>
-              <ul>${item.bullets.slice(0, 3).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+              <ul>${item.bullets.slice(0, 4).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
             </div>
           </article>`;
 }
 
 function renderProjectCard(project) {
-  const link = project.link ? `<p><a href="${escapeHtml(project.link)}">Projekt ansehen</a></p>` : "";
-  return `<article class="card">
+  const link = project.link ? `<p class="project-link"><a href="${escapeHtml(project.link)}">Projekt ansehen</a></p>` : "";
+  return `<article class="card project-card">
             <span class="tag">${escapeHtml(project.type)}</span>
             <h3>${escapeHtml(project.title)}</h3>
             <p>${escapeHtml(project.description)}</p>
@@ -269,6 +283,8 @@ function renderDownload(variant, type, filename, hrefOverride = null) {
 function renderCvDocument(data, variant, scope, privateData) {
   const css = fs.readFileSync(path.join(root, "templates", "cv.css"), "utf8");
   const printCss = fs.readFileSync(path.join(root, "templates", "print.css"), "utf8");
+  const summary = variant.summary ?? data.summary;
+  const targetRoles = variant.targetRoles ?? data.targetRoles;
   const contactLines = scope === "private"
     ? [
         privateData.applicationLocation || data.person.currentRegion,
@@ -305,16 +321,16 @@ function renderCvDocument(data, variant, scope, privateData) {
 
       <section>
         <h2>Kurzprofil</h2>
-        ${data.summary.map((line) => `<p>${escapeHtml(line)}</p>`).join("\n        ")}
+        ${summary.map((line) => `<p>${escapeHtml(line)}</p>`).join("\n        ")}
       </section>
 
       <section>
-        <h2>Zielpositionen</h2>
-        <div class="pill-row">${data.targetRoles.map((role) => `<span class="pill">${escapeHtml(role)}</span>`).join("")}</div>
+        <h2>Zielrollen</h2>
+        <div class="pill-row">${targetRoles.map((role) => `<span class="pill">${escapeHtml(role)}</span>`).join("")}</div>
       </section>
 
       <section>
-        <h2>Kernkompetenzen</h2>
+        <h2>Kompetenzprofil</h2>
         <div class="grid-two">
           ${data.competencies.map((group) => `<div><h3>${escapeHtml(group.title)}</h3><p>${escapeHtml(group.items.join(" · "))}</p></div>`).join("\n          ")}
         </div>
@@ -327,12 +343,13 @@ function renderCvDocument(data, variant, scope, privateData) {
 
       <section>
         <h2>Ausgewählte technische Projekte</h2>
-        ${data.projects.slice(0, 4).map((project) => `<div class="entry"><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}${project.link ? ` <a href="${escapeHtml(project.link)}">${escapeHtml(project.link)}</a>` : ""}</p></div>`).join("\n        ")}
+        ${data.projects.map((project) => `<div class="entry"><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}${project.link ? ` <a href="${escapeHtml(project.link)}">${escapeHtml(project.link)}</a>` : ""}</p></div>`).join("\n        ")}
       </section>
 
       <section>
         <h2>Elektronik & Werkstatt</h2>
         <p>${escapeHtml(data.electronics.intro)}</p>
+        <p><strong>Geräte:</strong> ${escapeHtml(data.electronics.devices.join(" · "))}</p>
         <ul>${data.electronics.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
       </section>
 

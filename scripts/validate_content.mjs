@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -7,6 +8,7 @@ const root = path.resolve(__dirname, "..");
 const publicOnly = process.env.PUBLIC_ONLY === "1";
 const profile = readJson("src/profile.json");
 const failures = [];
+const badTransliteration = "Kla" + "erung";
 
 const forbiddenTerms = [
   "Softwareentwickler",
@@ -23,11 +25,11 @@ const publicIndex = readText("public/index.html");
 const scopedParts = [
   extractTitle(publicIndex),
   extractMetaDescription(publicIndex),
-  extractValidateSection(publicIndex, "hero"),
-  extractValidateSection(publicIndex, "cta"),
-  extractValidateSection(publicIndex, "summary"),
-  extractValidateSection(publicIndex, "roles"),
-  extractValidateSection(publicIndex, "skills")
+  extractMarker(publicIndex, "hero"),
+  extractMarker(publicIndex, "cta"),
+  extractMarker(publicIndex, "bring"),
+  extractMarker(publicIndex, "short"),
+  extractMarker(publicIndex, "roles")
 ].join("\n");
 
 for (const term of forbiddenTerms) {
@@ -96,6 +98,54 @@ for (const [relative, text] of publicText) {
   }
 }
 
+for (const file of listFiles(path.join(root, "public"))) {
+  const relative = path.relative(root, file);
+  if (/Lebenslauf .*\.docx|\.android|vontar-h618-armbian-patches\//i.test(relative)) {
+    failures.push(`Public file path references private/source material: ${relative}`);
+  }
+}
+
+const publicDownloadFiles = listFiles(path.join(root, "public", "downloads"));
+for (const file of publicDownloadFiles) {
+  const artifactText = extractArtifactText(file);
+  if (/\+49|0176|65165602|Telefon|Tel\./.test(artifactText)) {
+    failures.push(`Public download appears to contain phone data: ${path.relative(root, file)}`);
+  }
+}
+
+const cvSourceFiles = [
+  "src/cv_master.de.md",
+  "src/cv_soltau_it_service.de.md",
+  "src/cv_rheinmetall_elektronik.de.md"
+];
+const placeholderPattern = /src\/profile\.json|generiert|Generator|Platzhalter|vollständige, aus/i;
+for (const relativePath of cvSourceFiles) {
+  const text = readText(relativePath);
+  if (placeholderPattern.test(text)) {
+    failures.push(`CV source contains generator/placeholder wording: ${relativePath}`);
+  }
+  if (!/^### Berufserfahrung$/m.test(text)) {
+    failures.push(`CV source lacks Berufserfahrung section: ${relativePath}`);
+  }
+  const stationCount = (text.match(/^####\s+\d{2}/gm) ?? []).length;
+  if (stationCount < 4) {
+    failures.push(`CV source has too few career stations (${stationCount}): ${relativePath}`);
+  }
+}
+
+const filesForTextQuality = [
+  ...publicText.map(([relative]) => relative),
+  ...cvSourceFiles,
+  "src/profile.json"
+];
+for (const relativePath of filesForTextQuality) {
+  if (!fs.existsSync(path.join(root, relativePath))) continue;
+  const text = fs.readFileSync(path.join(root, relativePath), "utf8");
+  if (text.includes(badTransliteration)) {
+    failures.push(`Forbidden transliteration found in ${relativePath}`);
+  }
+}
+
 const readme = fs.existsSync(path.join(root, "README.md")) ? readText("README.md") : "";
 if (!fs.existsSync(path.join(root, "assets", "profile-photo.jpeg")) && !/TODO: Add profile photo/i.test(readme)) {
   failures.push("Profile photo missing and README has no TODO.");
@@ -142,8 +192,8 @@ function extractMetaDescription(html) {
   return html.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']\s*>/i)?.[1] ?? "";
 }
 
-function extractValidateSection(html, sectionName) {
-  const pattern = new RegExp(`<[^>]+data-validate-section=["']${escapeRegExp(sectionName)}["'][^>]*>([\\s\\S]*?)<\\/[^>]+>`, "i");
+function extractMarker(html, sectionName) {
+  const pattern = new RegExp(`<!-- validate:${escapeRegExp(sectionName)}:start -->([\\s\\S]*?)<!-- validate:${escapeRegExp(sectionName)}:end -->`, "i");
   return html.match(pattern)?.[1] ?? "";
 }
 
@@ -162,4 +212,16 @@ function listFiles(dir) {
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function extractArtifactText(file) {
+  const ext = path.extname(file).toLowerCase();
+  if (ext === ".docx") {
+    try {
+      return execFileSync("unzip", ["-p", file], { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 });
+    } catch {
+      return fs.readFileSync(file).toString("latin1");
+    }
+  }
+  return fs.readFileSync(file).toString("latin1");
 }

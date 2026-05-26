@@ -68,10 +68,10 @@ function buildDocument(scope) {
   );
 
   addHeading(children, "Kurzprofil");
-  profile.summary.forEach((line) => children.push(paragraph(line)));
+  (master.summary ?? profile.summary).forEach((line) => children.push(paragraph(line)));
 
   addHeading(children, "Zielpositionen");
-  children.push(paragraph(profile.targetRoles.join(" · ")));
+  children.push(paragraph((master.targetRoles ?? profile.targetRoles).join(" · ")));
 
   addHeading(children, "Kernkompetenzen");
   for (const group of profile.competencies) {
@@ -94,6 +94,7 @@ function buildDocument(scope) {
 
   addHeading(children, "Elektronik & Werkstatt");
   children.push(paragraph(profile.electronics.intro));
+  children.push(paragraph(`Geräte: ${profile.electronics.devices.join(" · ")}`));
   profile.electronics.items.forEach((item) => children.push(bulletParagraph(item)));
 
   addHeading(children, "Ausbildung");
@@ -117,7 +118,7 @@ function buildDocument(scope) {
   return new Document({
     creator: "Artjom Warkentin",
     title: `${profile.person.name} - ${master.title}`,
-    description: "ATS-readable CV generated from structured profile data.",
+    description: "Lebenslauf für technische IT-Service- und Elektronikdiagnose-Rollen.",
     sections: [
       {
         properties: {
