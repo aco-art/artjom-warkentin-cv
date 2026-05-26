@@ -164,8 +164,8 @@ for (const document of profile.publicDocuments) {
 
 const cvSourceFiles = [
   "src/cv_master.de.md",
-  "src/cv_soltau_it_service.de.md",
-  "src/cv_rheinmetall_elektronik.de.md"
+  "src/cv_it_service.de.md",
+  "src/cv_elektronik.de.md"
 ];
 const placeholderPattern = /src\/profile\.json|generiert|Generator|Platzhalter|vollständige, aus/i;
 for (const relativePath of cvSourceFiles) {
