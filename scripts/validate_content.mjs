@@ -151,8 +151,8 @@ if (!fs.existsSync(path.join(root, "assets", "profile-photo.jpeg")) && !/TODO: A
   failures.push("Profile photo missing and README has no TODO.");
 }
 
-if (!/Add public GitLab Android project URL/.test(readme)) {
-  failures.push("README TODO for missing GitLab Android project URL is absent.");
+if (/\.android|Lebenslauf .*\.docx|\/home\/acoart|\/home\/warkentin|65165602|0176|\+49/i.test(readme)) {
+  failures.push("README contains private source names, local paths, or phone markers.");
 }
 
 if (failures.length) {

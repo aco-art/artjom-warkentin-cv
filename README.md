@@ -1,17 +1,43 @@
-# Artjom Warkentin CV / Portfolio
+# Artjom Warkentin - CV / Portfolio
 
-Static GitHub Pages project for a public professional CV and portfolio landing page.
+Public CV and portfolio site for **Artjom Warkentin**.
 
-Main positioning: **Technischer IT-Service & Elektronikdiagnose**  
-Target region: **Soltau / Heidekreis / Niedersachsen**
+**Positioning:** Technischer IT-Service & Elektronikdiagnose  
+**Target region:** Soltau / Heidekreis / Niedersachsen  
+**Live site:** https://aco-art.github.io/artjom-warkentin-cv/
 
-Expected public URL after deployment:
+## Profile
 
-```text
-https://aco-art.github.io/artjom-warkentin-cv/
-```
+Hands-on IT-Infrastruktur, Elektronikdiagnose und KI-gestützte technische Dokumentation.
 
-## Build
+This project presents a public, recruiter-readable portfolio for technical roles where system understanding, clean fault isolation, documentation quality and practical service experience matter.
+
+Relevant target areas:
+
+- IT-Systembetreuung / IT-Service
+- Technischer Support / Serviceinnendienst
+- Servicetechniker Elektronik / Prüftechnik
+- IT-nahe Systemdiagnose / Infrastrukturservice
+
+## Public Downloads
+
+The site provides public-safe CV downloads without phone number, full address or private application documents:
+
+- Master CV: Technischer IT-Service & Elektronikdiagnose
+- Soltau CV: IT-Systembetreuung & Technischer IT-Service
+- Rheinmetall/Elektronik CV: Elektronikdiagnose, Prüftechnik & Technischer Service
+- ATS-readable DOCX version
+
+Full application documents and educational certificates are shared directly with employers when needed.
+
+## Project Structure
+
+- `src/` contains structured profile and CV source content.
+- `scripts/` builds the static site and exports PDF/DOCX files.
+- `public/` is the GitHub Pages output directory.
+- `.github/workflows/pages.yml` deploys the site through GitHub Actions.
+
+## Local Build
 
 ```bash
 npm install
@@ -20,78 +46,13 @@ npm run validate
 npm run preview
 ```
 
-The public site is generated into `public/`. GitHub Pages deploys only that directory.
-
-For CI / Pages, use the public-only build:
+For GitHub Pages CI:
 
 ```bash
 npm run build:public
 npm run validate:public
 ```
 
-## Privacy Boundary
+## Privacy
 
-Public page is optimized for portfolio visibility; detailed CV PDFs may contain personal data and should be reviewed before public release.
-
-- `public/downloads/` contains only sanitized public-safe files.
-- `dist/for_application/` contains local full application exports and is ignored by Git.
-- `private/profile.private.json` is ignored by Git and may contain application-only contact data.
-- `.android/`, old DOCX originals, nested repositories, private logs, device dumps and machine-specific paths must not be published.
-
-## Source Material Reviewed
-
-- `Lebenslauf Elektronikreparateur Artjom Warketnin.docx`
-- `Lebenslauf IT Artjom Warketnin.docx`
-- `Lebenslauf_Artjom_Warkentin_Technischer_IT_Service_Elektronik.docx`
-- H618 public project README, hardware profile, known status and notice files
-- selected private `.android` summary documents, used only as internal fact context
-
-## Generated Outputs
-
-Public:
-
-- `public/index.html`
-- `public/assets/`
-- `public/downloads/*_Public.pdf`
-- `public/downloads/*_Public.docx`
-
-Local application exports:
-
-- `dist/for_application/*.pdf`
-- `dist/for_application/*.docx`
-
-## GitHub Pages Setup
-
-If the remote repository exists:
-
-```bash
-git init -b main
-git add README.md .gitignore package.json package-lock.json src assets templates scripts public .github
-git commit -m "Create CV portfolio site"
-git remote add origin git@github.com:aco-art/artjom-warkentin-cv.git
-git push -u origin main
-```
-
-If the repository does not exist yet, create a public GitHub repository named `aco-art/artjom-warkentin-cv`, then run the remote and push commands above.
-
-The workflow in `.github/workflows/pages.yml` builds the public site, exports PDFs, validates content, uploads `public/`, and deploys GitHub Pages.
-
-## Validation / Safety Gate
-
-Run before committing or publishing:
-
-```bash
-npm run build
-npm run validate
-find public -type f | sort
-find public/downloads -type f | sort
-rg -n "\\+49|0176|65165602|Tel\\.?|Telefon|Straße|Strasse|Hausnummer|[0-9]{5}" public || true
-rg -n "\\.android|Lebenslauf .*\\.docx|vontar-h618-armbian-patches/|/home/acoart|/home/warkentin" public || true
-```
-
-If any private data appears under `public/`, fix it, rebuild, and rerun validation.
-
-## TODO
-
-- Add public GitLab Android project URL.
-- Replace the extracted 312x310 DOCX portrait with a higher-resolution professional photo if available.
+Only the sanitized `public/` output is deployed. Private application exports, certificates, local source documents, logs and machine-specific files are intentionally excluded from the repository and from GitHub Pages.
