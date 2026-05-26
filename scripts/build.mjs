@@ -22,7 +22,7 @@ ensureDir(publicDownloadsDir);
 ensureDir(htmlDir);
 ensureDir(path.join(root, "dist", "for_application"));
 
-copyIfExists("assets/profile-photo.jpeg", "public/assets/profile-photo.jpeg");
+copyIfExists("assets/profile-photo.png", "public/assets/profile-photo.png");
 copyIfExists("assets/project-images/vontar-h618-frontside.jpg", "public/assets/project-images/vontar-h618-frontside.jpg");
 copyIfExists("assets/project-images/vontar-h618-backside.jpg", "public/assets/project-images/vontar-h618-backside.jpg");
 copyIfExists("src/site.css", "public/assets/site.css");
@@ -126,7 +126,7 @@ function renderIndex(data) {
             <!-- validate:cta:end -->
           </div>
           <figure class="hero-photo">
-            <img src="assets/profile-photo.jpeg" alt="Portrait von ${escapeHtml(data.person.name)}">
+            <img src="assets/profile-photo.png" alt="Portrait von ${escapeHtml(data.person.name)}">
           </figure>
         </div>
       </section>

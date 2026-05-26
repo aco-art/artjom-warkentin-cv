@@ -50,7 +50,7 @@ for (const file of listFiles(path.join(root, "public")).filter((item) => /\.(htm
 const requiredPublicFiles = [
   "public/index.html",
   "public/assets/site.css",
-  "public/assets/profile-photo.jpeg",
+  "public/assets/profile-photo.png",
   "public/assets/project-images/vontar-h618-frontside.jpg",
   "public/assets/project-images/vontar-h618-backside.jpg",
   "public/downloads/Artjom_Warkentin_Lebenslauf_Public.pdf",
@@ -200,7 +200,7 @@ for (const relativePath of filesForTextQuality) {
 }
 
 const readme = fs.existsSync(path.join(root, "README.md")) ? readText("README.md") : "";
-if (!fs.existsSync(path.join(root, "assets", "profile-photo.jpeg")) && !/TODO: Add profile photo/i.test(readme)) {
+if (!fs.existsSync(path.join(root, "assets", "profile-photo.png")) && !/TODO: Add profile photo/i.test(readme)) {
   failures.push("Profile photo missing and README has no TODO.");
 }
 if (/\.android|Lebenslauf .*\.docx|\/home\/acoart|\/home\/warkentin|65165602|0176|\+49/i.test(readme)) {
