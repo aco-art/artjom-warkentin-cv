@@ -20,8 +20,9 @@ const privateProfile = fs.existsSync(privateProfilePath)
   : {};
 
 const master = profile.cvVariants.find((variant) => variant.id === "master");
-await writeDocx("public", path.join(root, "public", "downloads", `${master.filenameBase}_Public.docx`));
-if (!publicOnly) {
+if (publicOnly) {
+  console.log("Skipped public DOCX export; public downloads are PDF-only.");
+} else {
   await writeDocx("private", path.join(root, "dist", "for_application", `${master.filenameBase}.docx`));
 }
 

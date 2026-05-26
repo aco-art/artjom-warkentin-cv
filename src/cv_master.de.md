@@ -82,9 +82,9 @@ IT-Systembetreuer · Technischer IT-Service · Technischer Support / Serviceinne
 
 **TrueNAS / zentraler Projektspeicher:** Aufbau eines zentralen Projektspeichers mit Ablagekonzept, Rechte- und Zugriffstruktur, Betrieb, Performance-Tuning und technischer Dokumentation.
 
-**KI-gestützte Codebase-Analyse & Dokumentation:** API-Analyse, Parser, Projektgraphen, README-Erstellung, Testvorbereitung und technische Orientierung in fremden Projekten mit KI-Unterstützung.
+**KI-gestützte Codebase- und API-Dokumentation:** Private/arbeitsnahe Tooling-Erfahrung zur technischen Orientierung in größeren Codebasen: Projektkarten, API-Kandidaten, Swagger/OpenAPI-Auswertung, Integrationsübersichten, Usecase-Indizes und dokumentierte UI↔Backend-Zusammenhänge.
 
-**Embedded-Linux-/Hardware-Bring-up für H618-TV-Box:** Private Embedded-Linux-/Hardware-Bring-up-Projekt für eine H618-TV-Box: Armbian userpatches, U-Boot/SPL-/Kernel-/DTB-Anpassungen, Diagnose über LAN/UART/ADB und reproduzierbare Build-Dokumentation.  
+**Embedded-Linux-/Hardware-Bring-up für H618-TV-Box:** Privates technisches Projekt mit Armbian userpatches, U-Boot/SPL-, Kernel- und DTB-Anpassungen, Diagnose über LAN/UART/ADB sowie reproduzierbarer Build-Dokumentation. Der Fokus liegt auf Hardwareverständnis, Bootpfaden, Diagnose und technischer Dokumentation.  
 Link: https://github.com/aco-art/vontar-h618-armbian-patche
 
 **Web/API-Tests und technische Dokumentation:** Postman, Browser DevTools, manuelle API-Prüfung, Website-Tests, Fehlernachverfolgung und testbare Dokumentation.

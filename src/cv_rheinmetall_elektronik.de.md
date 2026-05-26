@@ -79,14 +79,14 @@ Servicetechniker Elektronik · Prüftechniker Elektronik · Elektronikdiagnose �
 
 ### Ausgewählte technische Projekte
 
-**Embedded-Linux-/Hardware-Bring-up für H618-TV-Box:** Private Embedded-Linux-/Hardware-Bring-up-Projekt für eine H618-TV-Box: Armbian userpatches, U-Boot/SPL-/Kernel-/DTB-Anpassungen, Diagnose über LAN/UART/ADB und reproduzierbare Build-Dokumentation.  
+**Embedded-Linux-/Hardware-Bring-up für H618-TV-Box:** Privates technisches Projekt mit Armbian userpatches, U-Boot/SPL-, Kernel- und DTB-Anpassungen, Diagnose über LAN/UART/ADB sowie reproduzierbarer Build-Dokumentation. Der Fokus liegt auf Hardwareverständnis, Bootpfaden, Diagnose und technischer Dokumentation.  
 Link: https://github.com/aco-art/vontar-h618-armbian-patche
 
 **Elektronik- und Werkstattpraxis:** Langjährige Diagnose und Reparatur von Notebooks, Mainboards, Monitoren, Smartphones, Tablets, Netzteilen, Grafikkarten, Routern, TV-Boxes und Peripherie.
 
 **Web/API-Tests und technische Dokumentation:** Postman, Browser DevTools, manuelle API-Prüfung, Website-Tests, Fehlernachverfolgung und testbare Dokumentation als Zusatz für systemnahe Prüf- und Analyseaufgaben.
 
-**KI-gestützte technische Analyse:** Recherche, Skripte, Parser, Projektgraphen, Dokumentationsstruktur und Testvorbereitung mit KI-Unterstützung.
+**KI-gestützte technische Analyse:** API-Analyse, Swagger/OpenAPI-Auswertung, Parser/Skripte, Projektgraphen, Dokumentationsstruktur, Codebase-Verständnis und Testvorbereitung mit KI-Unterstützung.
 
 ### Ausbildung
 

@@ -8,7 +8,7 @@ Public CV and portfolio site for **Artjom Warkentin**.
 
 ## Profile
 
-Hands-on IT-Infrastruktur, Elektronikdiagnose und KI-gestützte technische Dokumentation.
+10+ Jahre Elektronikservice · IT-Infrastruktur · Server/NAS/Linux/Windows · KI-gestützte technische Dokumentation.
 
 This project presents a public, recruiter-readable portfolio for technical roles where system understanding, clean fault isolation, documentation quality and practical service experience matter.
 
@@ -21,12 +21,11 @@ Relevant target areas:
 
 ## Public Downloads
 
-The site provides public-safe CV downloads without phone number, full address or private application documents:
+The site provides public-safe PDFs without phone number, full address or private application documents:
 
-- Master CV: Technischer IT-Service & Elektronikdiagnose
-- Soltau CV: IT-Systembetreuung & Technischer IT-Service
-- Rheinmetall/Elektronik CV: Elektronikdiagnose, Prüftechnik & Technischer Service
-- ATS-readable DOCX version
+- `Artjom_Warkentin_Lebenslauf_Public.pdf`
+- `Artjom_Warkentin_Kurzprofil_Public.pdf`
+- `Artjom_Warkentin_Technikprofil_Public.pdf`
 
 Full application documents and educational certificates are shared directly with employers when needed.
 

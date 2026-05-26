@@ -2,7 +2,7 @@
   "person": {
     "name": "Artjom Warkentin",
     "title": "Technischer IT-Service & Elektronikdiagnose",
-    "tagline": "Hands-on IT-Infrastruktur, Elektronikdiagnose und KI-gestützte technische Dokumentation",
+    "tagline": "10+ Jahre Elektronikservice · IT-Infrastruktur · Server/NAS/Linux/Windows · KI-gestützte technische Dokumentation",
     "currentRegion": "Plauen",
     "targetRegion": "Soltau / Heidekreis / Niedersachsen",
     "birthYear": "1983",
@@ -21,36 +21,35 @@
     "h618Front": "assets/project-images/vontar-h618-frontside.jpg",
     "h618Back": "assets/project-images/vontar-h618-backside.jpg"
   },
-  "shortStatement": "Erfahrener technischer Praktiker mit einer seltenen Kombination aus Elektronikdiagnose, IT-Infrastruktur und moderner KI-gestützter Dokumentations- und Analysearbeit. Besonders passend für Rollen, in denen Systeme verstanden, stabil betrieben, Fehler sauber eingegrenzt und technische Ergebnisse nachvollziehbar dokumentiert werden müssen.",
+  "shortStatement": "Technischer Praktiker mit über zehn Jahren Elektronikservice-Erfahrung und aktueller IT-Systempraxis in Deutschland: stark in Diagnose, Infrastruktur, Tests, Dokumentation und pragmatischer KI-gestützter Analysearbeit.",
   "summary": [
-    "Technischer Spezialist mit Schwerpunkt IT-Service, IT-Infrastruktur und Elektronikdiagnose.",
+    "Technischer Spezialist für IT-Service, IT-Infrastruktur und Elektronikdiagnose mit aktueller Systempraxis in Deutschland.",
     "Mehr als zehn Jahre praktische Erfahrung in Diagnose, Reparatur und Werkstattprozessen für Computertechnik, Peripherie und elektronische Baugruppen.",
-    "Aktuelle Praxis in Deutschland mit technischer Systembetreuung, Schnittstellen, Datenflüssen, Tests, Dokumentation und interner Prozessqualität.",
-    "Sicher im Umgang mit Windows Server, Linux, TrueNAS/NAS, SMB-Ablagen, Benutzer- und Rechtekonzepten, RDP, VPN, DNS- und Backup-Grundlagen.",
-    "Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework und Firmware-/BIOS-/EEPROM-Arbeiten.",
-    "Nutzt KI-gestützte Werkzeuge pragmatisch für Recherche, Dokumentation, Skripte, API-Analyse, Testvorbereitung und technische Orientierung in fremden Projekten."
+    "Sicher im Umgang mit Windows Server, Linux/CentOS/KDE/Termux, TrueNAS/NAS, SMB-Shares, Benutzer- und Rechtekonzepten, RDP, USB-over-RDP, VPN, Caching DNS und Backups.",
+    "Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework/Reflow/Reballing und Firmware-/BIOS-/EEPROM-Arbeiten.",
+    "Setzt KI-gestützte Werkzeuge konkret für API-Analyse, Swagger/OpenAPI-Auswertung, Parser/Skripte, README- und Dokumentationsgenerierung, Projektgraphen, Testvorbereitung und Codebase-Verständnis ein."
   ],
   "bringCards": [
     {
-      "title": "IT-Infrastruktur & Systembetreuung",
-      "description": "Windows Server, Linux, TrueNAS/NAS, SMB-Shares, Benutzer- und Rechtekonzepte, RDP, VPN, DNS, Backups und technische Dokumentation für stabile interne Betriebsabläufe.",
-      "items": ["Windows Server", "Linux", "TrueNAS/NAS", "SMB", "Benutzer/Rechte", "RDP", "VPN", "DNS", "Backups"]
+      "title": "IT-Infrastruktur",
+      "description": "Windows Server, Linux/CentOS/KDE/Termux, TrueNAS/NAS, SMB-Shares, Benutzer- und Rechtekonzepte, RDP, USB-over-RDP, VPN, Caching DNS, Backups und technische Dokumentation.",
+      "items": ["Windows Server", "Linux/CentOS", "KDE/Termux", "TrueNAS/NAS", "SMB", "Benutzer/Rechte", "RDP", "VPN", "DNS", "Backups"]
     },
     {
-      "title": "Elektronikdiagnose & Reparatur",
-      "description": "10+ Jahre Werkstattpraxis mit systematischer Fehlersuche, Schaltplanlesen, Mess- und Löttechnik, Baugruppenreparatur und dokumentierter Befundung.",
-      "items": ["Schaltplanlesen", "Multimeter/Oszilloskop", "SMD/THT", "Heißluft", "Mikroskop", "BGA-Rework", "Firmware/BIOS/EEPROM"]
+      "title": "Elektronikdiagnose",
+      "description": "10+ Jahre Werkstattpraxis mit Notebooks, Mainboards, Monitoren, Smartphones, Tablets, Netzteilen, Grafikkarten, Routern, TV-Boxes und Peripherie.",
+      "items": ["Schaltplanlesen", "Multimeter/Oszilloskop", "SMD/THT", "Heißluft", "Mikroskop", "BGA-Rework", "Firmware/BIOS/EEPROM", "OEM-Service"]
     },
     {
-      "title": "KI-gestützte technische Workflows",
-      "description": "Moderne technische Arbeitsweise für API-Analyse, Parser, Dokumentation, Skripte, Web/API-Tests, Postman, Browser DevTools, Projektgraphen und technische Unterlagen.",
-      "items": ["API-Analyse", "Parser", "Skripte", "Postman", "Browser DevTools", "Projektgraphen", "README/Unterlagen"]
+      "title": "KI-gestützte technische Analyse",
+      "description": "API-Analyse, Swagger/OpenAPI parsing, Parser/Skripte, README- und Dokumentationsgenerierung, Projektgraphen, Codebase-Verständnis, UI↔Backend/API-Zusammenhänge und Testvorbereitung.",
+      "items": ["API-Analyse", "OpenAPI", "Parser", "Skripte", "Postman", "Browser DevTools", "Projektgraphen", "Testvorbereitung"]
     }
   ],
   "roleGroups": [
     {
       "title": "IT-Systembetreuer / IT-Service",
-      "description": "Interne Infrastruktur, Arbeitsplatz- und Systembetreuung, NAS/Storage, Dokumentation und Betrieb."
+      "description": "Interne Infrastruktur, Arbeitsplatz- und Systembetreuung, NAS/Storage, Dokumentation, Betrieb und strukturierte Fehleranalyse."
     },
     {
       "title": "Technischer Support / Serviceinnendienst",
@@ -62,7 +61,7 @@
     },
     {
       "title": "IT-nahe Systemdiagnose / Infrastrukturservice",
-      "description": "Rollen, in denen IT-Systeme, Hardware, Dokumentation und saubere Fehleranalyse zusammenkommen."
+      "description": "Rollen, in denen IT-Systeme, Hardware, Dokumentation, Tests und saubere Fehleranalyse zusammenkommen."
     }
   ],
   "targetRoles": [
@@ -107,10 +106,10 @@
       "location": "Oelsnitz/Vogtland, Deutschland",
       "focus": "Technische Anforderungen, interne IT-nahe Infrastruktur, Systemintegration, Tests, Dokumentation und Qualität.",
       "bullets": [
-        "TrueNAS-basierten Projektspeicher aufgebaut und betrieben: Ablagekonzept, Zugriffsstruktur, Nutzung durch Fachbereiche, Performance-Tuning und technische Dokumentation.",
-        "Schnittstellen, Datenflüsse und Systemprozesse analysiert und in Pflichtenheften, Prozessskizzen, Funktionsmatrizen und Abnahmekriterien nachvollziehbar dokumentiert.",
+        "TrueNAS-Projektspeicher aufgebaut und betrieben: Ablagekonzept, Zugriffsstruktur, Fachbereichsnutzung, Performance und technische Dokumentation.",
+        "Schnittstellen, Datenflüsse, UAT/Tests, Fehlernachverfolgung und Abnahmen analysiert, vorbereitet und nachvollziehbar dokumentiert.",
         "UAT, Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und Ergebnisse strukturiert dokumentiert.",
-        "KI-gestützte Spezifikations- und Dokumentationsarbeit eingesetzt, um Konsistenz, technische Recherche, Checklisten, Skripte und Testvorbereitung schneller und sauberer umzusetzen."
+        "KI-gestützte Spezifikationsarbeit für technische Recherche, Checklisten, Skripte, Dokumentationsqualität und Testvorbereitung eingesetzt."
       ]
     },
     {
@@ -145,7 +144,7 @@
       "focus": "Serverbetrieb, Systemintegration, Webshop, CRM-Anbindung und technische Umsetzung im Handelsumfeld.",
       "bullets": [
         "Windows Server 2012 R2 sowie Linux/CentOS mit NGINX, Apache, MySQL und Mailserver administriert.",
-        "Webshop, CRM-Anbindung und 1C-Integration technisch begleitet und Schnittstellen zwischen Warenwirtschaft, Web und internen Abläufen stabilisiert.",
+        "Webshop, CRM-Anbindung und 1C-Integration technisch begleitet; Schnittstellen zwischen Warenwirtschaft, Web und internen Abläufen stabilisiert.",
         "PHP, JavaScript, HTML und CSS im Integrations- und Anpassungskontext gelesen und genutzt, ohne diese Tätigkeit als Zielrichtung zu positionieren.",
         "Server-, Web- und Prozesssicht verbunden, um technische Handelsabläufe nachvollziehbar und wartbarer zu machen."
       ]
@@ -157,8 +156,8 @@
       "location": "Tscheljabinsk, Russland",
       "focus": "Elektronik-/IT-Service, Werkstattprozesse, Diagnose, Qualitätsstandards, Ersatzteile und Wissenstransfer.",
       "bullets": [
-        "Service- und Werkstattpraxis für Notebooks, Mainboards, Monitore, Tablets, Smartphones, Peripherie und elektronische Baugruppen fachlich verantwortet.",
-        "Komplexe Fehlerbilder analysiert, Reparaturwege bewertet, Qualitätsstandards, SOPs, Arbeitsanweisungen und Reklamationsklärung strukturiert.",
+        "10+ Jahre Elektronik-/IT-Service für Notebooks, Mainboards, Monitore, Tablets, Smartphones, Peripherie und elektronische Baugruppen fachlich verantwortet.",
+        "OEM-Serviceumfeld für Asus, Lenovo, Dell, Fujitsu und Acer betreut; komplexe Diagnose, Qualitätsstandards, SOPs, Ersatzteile und Schulung/Wissenstransfer strukturiert.",
         "OEM-Serviceumfeld mit Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer betreut; jährliche Trainings und Herstellervorgaben in die Werkstattpraxis übertragen.",
         "Ersatzteilmanagement, Lager- und Reparaturbuchführung, Schulung neuer Mitarbeitender und Wissenstransfer im Serviceteam aufgebaut und optimiert."
       ]
@@ -198,15 +197,15 @@
     {
       "id": "ai-docs",
       "title": "KI-gestützte Codebase-Analyse & Dokumentation",
-      "type": "Moderne technische Arbeitsweise",
-      "description": "API-Analyse, Parser, Projektgraphen, README-Erstellung, Testvorbereitung und technische Orientierung in fremden Projekten mit KI-Unterstützung. Ziel: schnelleres Verständnis, bessere Dokumentation und belastbarere technische Entscheidungen."
+      "type": "Technische Analyse & Dokumentation",
+      "description": "Private/arbeitsnahe Tooling-Erfahrung zur technischen Orientierung in größeren Codebasen: Projektkarten, API-Kandidaten, Swagger/OpenAPI-Auswertung, Integrationsübersichten, Usecase-Indizes und dokumentierte UI↔Backend-Zusammenhänge. Ziel: schneller verstehen, sauberer testen, nachvollziehbarer dokumentieren."
     },
     {
       "id": "h618",
       "title": "Embedded-Linux-/Hardware-Bring-up für H618-TV-Box",
       "type": "Privates technisches Projekt",
       "link": "https://github.com/aco-art/vontar-h618-armbian-patche",
-      "description": "Private Embedded-Linux-/Hardware-Bring-up-Projekt für eine H618-TV-Box: Armbian userpatches, U-Boot/SPL-/Kernel-/DTB-Anpassungen, Diagnose über LAN/UART/ADB und reproduzierbare Build-Dokumentation."
+      "description": "Privates technisches Projekt mit Armbian userpatches, U-Boot/SPL-, Kernel- und DTB-Anpassungen, Diagnose über LAN/UART/ADB sowie reproduzierbarer Build-Dokumentation. Der Fokus liegt auf Hardwareverständnis, Bootpfaden, Diagnose und technischer Dokumentation."
     },
     {
       "id": "testing-docs",
@@ -255,6 +254,32 @@
     "Deutsch: B2 / sichere Projekt- und Geschäftskommunikation",
     "Russisch: Muttersprache",
     "Englisch: gutes bis sehr gutes Leseverständnis, Schreiben mit KI-Unterstützung, mündlich eingeschränkt"
+  ],
+  "publicDocuments": [
+    {
+      "id": "public_cv",
+      "label": "Lebenslauf PDF",
+      "title": "Technischer IT-Service & Elektronikdiagnose",
+      "filenameBase": "Artjom_Warkentin_Lebenslauf",
+      "focus": "Öffentlicher Lebenslauf für IT-Systembetreuung, technischen IT-Service, Elektronikdiagnose und Prüftechnik.",
+      "kind": "full"
+    },
+    {
+      "id": "public_short",
+      "label": "Kurzprofil PDF",
+      "title": "Kurzprofil · Technischer IT-Service & Elektronikdiagnose",
+      "filenameBase": "Artjom_Warkentin_Kurzprofil",
+      "focus": "Kompakte Übersicht zu Profil, Zielrollen, Kernkompetenzen und technischen Schwerpunkten.",
+      "kind": "short"
+    },
+    {
+      "id": "public_technical",
+      "label": "Technikprofil PDF",
+      "title": "Technikprofil · IT-Infrastruktur, Elektronikdiagnose, Prüftechnik",
+      "filenameBase": "Artjom_Warkentin_Technikprofil",
+      "focus": "Technisches Kompetenzprofil mit Infrastruktur-, Werkstatt-, Mess-/Prüf- und Dokumentationsschwerpunkt.",
+      "kind": "technical"
+    }
   ],
   "cvVariants": [
     {

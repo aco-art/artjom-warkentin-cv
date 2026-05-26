@@ -81,9 +81,9 @@ IT-Systembetreuer · Technischer IT-Service · Technischer Support / Serviceinne
 
 **Web/API-Tests und technische Dokumentation:** Postman, Browser DevTools, manuelle API-Prüfung, Website-Tests, Fehlernachverfolgung und testbare Dokumentation.
 
-**KI-gestützte technische Workflows:** API-Analyse, Parser, Projektgraphen, README, Testvorbereitung und schnelle technische Orientierung in neuen Systemen.
+**KI-gestützte Codebase- und API-Dokumentation:** Private/arbeitsnahe Tooling-Erfahrung mit API-Analyse, Swagger/OpenAPI-Auswertung, Parsern, Projektgraphen, README-/Dokumentationsgenerierung, Testvorbereitung und dokumentierten UI↔Backend-Zusammenhängen.
 
-**Embedded-Linux-/Hardware-Bring-up für H618-TV-Box:** Private Embedded-Linux-/Hardware-Bring-up-Projekt für eine H618-TV-Box: Armbian userpatches, U-Boot/SPL-/Kernel-/DTB-Anpassungen, Diagnose über LAN/UART/ADB und reproduzierbare Build-Dokumentation.  
+**Embedded-Linux-/Hardware-Bring-up für H618-TV-Box:** Privates technisches Projekt mit Armbian userpatches, U-Boot/SPL-, Kernel- und DTB-Anpassungen, Diagnose über LAN/UART/ADB sowie reproduzierbarer Build-Dokumentation. Der Fokus liegt auf Hardwareverständnis, Bootpfaden, Diagnose und technischer Dokumentation.  
 Link: https://github.com/aco-art/vontar-h618-armbian-patche
 
 ### Ausbildung

@@ -9,12 +9,15 @@ const publicOnly = process.env.PUBLIC_ONLY === "1";
 const profile = JSON.parse(fs.readFileSync(path.join(root, "src", "profile.json"), "utf8"));
 
 const jobs = [];
-for (const variant of profile.cvVariants) {
+for (const document of profile.publicDocuments) {
   jobs.push({
-    html: path.join(root, "dist", "html", `${variant.id}.public.html`),
-    pdf: path.join(root, "public", "downloads", `${variant.filenameBase}_Public.pdf`)
+    html: path.join(root, "dist", "html", `${document.id}.public.html`),
+    pdf: path.join(root, "public", "downloads", `${document.filenameBase}_Public.pdf`)
   });
-  if (!publicOnly) {
+}
+
+if (!publicOnly) {
+  for (const variant of profile.cvVariants) {
     jobs.push({
       html: path.join(root, "dist", "html", `${variant.id}.private.html`),
       pdf: path.join(root, "dist", "for_application", `${variant.filenameBase}.pdf`)
