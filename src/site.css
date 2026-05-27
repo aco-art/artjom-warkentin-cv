@@ -213,6 +213,7 @@ h1 {
 .role-group-grid,
 .skill-grid,
 .project-grid,
+.profile-path-grid,
 .download-grid {
   display: grid;
   gap: 14px;
@@ -228,6 +229,10 @@ h1 {
 }
 
 .project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.profile-path-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -250,6 +255,15 @@ h1 {
 
 .role-group {
   border-top: 3px solid var(--accent);
+}
+
+.profile-path-card {
+  border-top: 3px solid var(--accent);
+}
+
+.path-action,
+.short-download {
+  margin-top: 14px;
 }
 
 .card h3,
@@ -425,6 +439,7 @@ h1 {
   .role-group-grid,
   .skill-grid,
   .project-grid,
+  .profile-path-grid,
   .download-grid {
     grid-template-columns: 1fr;
   }

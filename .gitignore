@@ -6,6 +6,7 @@ facebook/
 vontar-h618-armbian-patches/
 Lebenslauf*.docx
 private/
+src/profile.private.json
 
 # Local experiments from the original workspace
 mcp_check.py
@@ -14,6 +15,7 @@ ollama_toolcheck.py
 # Generated private/export helper files
 dist/html/
 dist/for_application/
+dist/for_application/*.pdf
 
 # Tool caches and reports
 .cache/

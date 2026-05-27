@@ -31,7 +31,7 @@ IT-Systembetreuer · Technischer IT-Service · Technischer Support / Serviceinne
 
 - TrueNAS-basierten Projektspeicher aufgebaut und betrieben: Ablagekonzept, Zugriff, Rechte, Performance, Nutzung durch Fachbereiche und technische Dokumentation.
 - Schnittstellen, Datenflüsse, Systemprozesse und Anforderungen analysiert und für Umsetzung, Test und Abnahme verständlich beschrieben.
-- UAT, Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und dokumentiert.
+- Abnahme- und Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und dokumentiert.
 - KI-gestützte Werkzeuge für Spezifikationen, Checklisten, technische Recherche, Skripte und Dokumentationsqualität eingesetzt.
 
 #### 06/2022 - 01/2023 · Technische Koordination IT
@@ -59,14 +59,14 @@ IT-Systembetreuer · Technischer IT-Service · Technischer Support / Serviceinne
 **Innovation Service Center, Tscheljabinsk**
 
 - Elektronik-/IT-Service für Notebooks, Mainboards, Monitore, Tablets, Smartphones, Peripherie und Baugruppen fachlich betreut.
-- Werkstattabläufe, SOPs, Qualitätsstandards, Ersatzteilmanagement und Reklamationsklärung strukturiert.
+- Werkstattabläufe, Arbeitsanweisungen, Prüfabläufe und Serviceprozesse, Qualitätsstandards, Ersatzteilmanagement und Reklamationsklärung strukturiert.
 - OEM-Serviceumfeld für Asus, Lenovo, Dell, Fujitsu und Acer begleitet und Herstellervorgaben in praktische Serviceprozesse übertragen.
-- Mitarbeitende geschult, Wissen transferiert und komplexe Fehlerbilder für das Serviceteam nachvollziehbar gemacht.
+- Mitarbeitende geschult, Wissen transferiert und Fehlerbilder an Mainboards, Stromversorgung und Peripherie für das Serviceteam nachvollziehbar gemacht.
 
 #### 11/2008 - 05/2013 · Ober-Servicetechniker
 **Innovation Service Center, Tscheljabinsk**
 
-- Komplexe Fehlerbilder an Computertechnik und elektronischen Baugruppen analysiert, instandgesetzt, geprüft und dokumentiert.
+- Fehler an Computertechnik, Stromversorgung, Peripherie und elektronischen Baugruppen analysiert, instandgesetzt, geprüft und dokumentiert.
 - Reparatur- und Prüfmethoden im Werkstattbetrieb weiterentwickelt und an Kolleginnen und Kollegen weitergegeben.
 
 #### 11/2006 - 10/2008 · Servicetechniker

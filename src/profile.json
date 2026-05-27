@@ -1,8 +1,9 @@
 {
+  "schemaVersion": "2.0",
   "person": {
     "name": "Artjom Warkentin",
-    "title": "Technischer IT-Service & Elektronikdiagnose",
-    "tagline": "10+ Jahre Elektronikservice · IT-Infrastruktur · Server/NAS/Linux/Windows · KI-gestützte technische Dokumentation",
+    "publicTitle": "Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis",
+    "technicalTitle": "Technischer IT-Service & Elektronikdiagnose",
     "currentRegion": "Plauen",
     "targetRegion": "Soltau / Heidekreis / Niedersachsen",
     "birthYear": "1983",
@@ -11,315 +12,472 @@
     "car": "eigener PKW vorhanden"
   },
   "contact": {
-    "email": "aco.art@gmail.com",
-    "github": "https://github.com/aco-art/",
-    "h618Project": "https://github.com/aco-art/vontar-h618-armbian-patche",
-    "pagesUrl": "https://aco-art.github.io/artjom-warkentin-cv/"
-  },
-  "assets": {
-    "photo": "assets/profile-photo.png",
-    "h618Front": "assets/project-images/vontar-h618-frontside.jpg",
-    "h618Back": "assets/project-images/vontar-h618-backside.jpg"
-  },
-  "shortStatement": "Technischer Praktiker mit über zehn Jahren Elektronikservice-Erfahrung und aktueller IT-Systempraxis in Deutschland: stark in Diagnose, Infrastruktur, Tests, Dokumentation und pragmatischer KI-gestützter Analysearbeit.",
-  "summary": [
-    "Technischer Spezialist für IT-Service, IT-Infrastruktur und Elektronikdiagnose mit aktueller Systempraxis in Deutschland.",
-    "Mehr als zehn Jahre praktische Erfahrung in Diagnose, Reparatur und Werkstattprozessen für Computertechnik, Peripherie und elektronische Baugruppen.",
-    "Sicher im Umgang mit Windows Server, Linux/CentOS/KDE/Termux, TrueNAS/NAS, SMB-Shares, Benutzer- und Rechtekonzepten, RDP, USB-over-RDP, VPN, Caching DNS und Backups.",
-    "Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework/Reflow/Reballing und Firmware-/BIOS-/EEPROM-Arbeiten.",
-    "Setzt KI-gestützte Werkzeuge konkret für API-Analyse, Swagger/OpenAPI-Auswertung, Parser/Skripte, README- und Dokumentationsgenerierung, Projektgraphen, Testvorbereitung und Codebase-Verständnis ein."
-  ],
-  "bringCards": [
-    {
-      "title": "IT-Infrastruktur",
-      "description": "Windows Server, Linux/CentOS/KDE/Termux, TrueNAS/NAS, SMB-Shares, Benutzer- und Rechtekonzepte, RDP, USB-over-RDP, VPN, Caching DNS, Backups und technische Dokumentation.",
-      "items": ["Windows Server", "Linux/CentOS", "KDE/Termux", "TrueNAS/NAS", "SMB", "Benutzer/Rechte", "RDP", "VPN", "DNS", "Backups"]
-    },
-    {
-      "title": "Elektronikdiagnose",
-      "description": "10+ Jahre Werkstattpraxis mit Notebooks, Mainboards, Monitoren, Smartphones, Tablets, Netzteilen, Grafikkarten, Routern, TV-Boxes und Peripherie.",
-      "items": ["Schaltplanlesen", "Multimeter/Oszilloskop", "SMD/THT", "Heißluft", "Mikroskop", "BGA-Rework", "Firmware/BIOS/EEPROM", "OEM-Service"]
-    },
-    {
-      "title": "KI-gestützte technische Analyse",
-      "description": "API-Analyse, Swagger/OpenAPI parsing, Parser/Skripte, README- und Dokumentationsgenerierung, Projektgraphen, Codebase-Verständnis, UI↔Backend/API-Zusammenhänge und Testvorbereitung.",
-      "items": ["API-Analyse", "OpenAPI", "Parser", "Skripte", "Postman", "Browser DevTools", "Projektgraphen", "Testvorbereitung"]
+    "public": {
+      "email": "aco.art@gmail.com",
+      "github": "https://github.com/aco-art/",
+      "h618Project": "https://github.com/aco-art/vontar-h618-armbian-patche",
+      "pagesUrl": "https://aco-art.github.io/artjom-warkentin-cv/"
     }
-  ],
-  "roleGroups": [
-    {
-      "title": "IT-Systembetreuer / IT-Service",
-      "description": "Interne Infrastruktur, Arbeitsplatz- und Systembetreuung, NAS/Storage, Dokumentation, Betrieb und strukturierte Fehleranalyse."
+  },
+  "positioning": {
+    "oneSentence": "IT-Teamleiter und Business Analyst mit praktischer Erfahrung in internen ERP-/Touristik-Softwareprojekten, Scrum, Requirements Engineering, Abnahme-/Nutzertests und UI-Prüfung, IT-Infrastruktur sowie über zehn Jahren Elektronikservice- und Werkstattpraxis.",
+    "shortProfile": [
+      "Aktuell Abteilungsleiter IT / Business Analyst & Product Owner bei INFORMA GmbH & Co. KG mit Schwerpunkt interne IT-Projekte, Anforderungen, Entwickleraufgaben, Scrum-Abstimmung, Abnahme- und Nutzertests, Schnittstellen und Dokumentation.",
+      "Praxis in der Arbeit an touristiknahen Software- und ERP-Prozessen: Anforderungen aufnehmen, Datenflüsse und Modulzusammenhänge klären, Aufgaben für Entwickler formulieren, Tests vorbereiten und Ergebnisse fachlich prüfen.",
+      "Technischer Hintergrund aus Server-/Infrastrukturthemen wie Windows Server, Linux/CentOS/KDE/Termux, TrueNAS/NAS, SMB-Shares, Benutzer-/Rechtekonzepte, RDP, USB-over-RDP, VPN, Caching DNS, Backups und technischer Dokumentation.",
+      "Über zehn Jahre Elektronik-/IT-Service mit Diagnose, Reparatur, Werkstattorganisation, OEM-Serviceumfeld, Schaltplanlesen, Multimeter/Oszilloskop, SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework/Reflow/Reballing und Firmware-/BIOS-/EEPROM-Arbeiten.",
+      "Codex/LLM als Hilfsmittel für Analyse, Strukturierung, Dokumentation und Testvorbereitung."
+    ],
+    "avoidPublicMarketingTerms": [
+      "AI Engineer",
+      "Softwareentwickler als Zielrolle"
+    ]
+  },
+  "documentVariants": {
+    "short": {
+      "title": "Kurzprofil · Artjom Warkentin",
+      "subtitle": "HR-Snapshot für IT, technische Systembetreuung und Elektronikdiagnose",
+      "label": "Kurzprofil",
+      "filenameBase": "Artjom_Warkentin_Kurzprofil",
+      "maxPages": 1,
+      "topProfile": "IT-Teamleiter / Business Analyst mit operativer Erfahrung in Requirements, Scrum-/Teamkoordination, Abnahme-/Nutzertests und UI-Prüfung, ERP-/Touristikprozessen, IT-Infrastruktur sowie über zehn Jahren Elektronikservice. Technische Basis: Systembetreuung, NAS/Serverdienste, Monitoring, Reparatur, Datensicherung/Backup, Funktionsprüfung, MCP-/Playwright-gestützte UI-Tests, KI-gestützte UI-Prüfung und Dokumentation IT-naher Geräte."
     },
-    {
-      "title": "Technischer Support / Serviceinnendienst",
-      "description": "Fehleraufnahme, technische Klärung, Remote-Support, strukturierte Übergabe und nachvollziehbare Servicekommunikation."
+    "it": {
+      "title": "Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis",
+      "subtitle": "Requirements · Product Owner Rolle · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · ERP-/Touristiksoftware · IT-Infrastruktur",
+      "label": "Lebenslauf IT-Profil",
+      "filenameBase": "Artjom_Warkentin_Lebenslauf_IT",
+      "maxPages": 3,
+      "topProfile": "Aktuell Abteilungsleiter IT / Business Analyst & Product Owner mit operativer Verantwortung für Requirements, Entwickleraufgaben, Scrum-Master-nahe Teamkoordination, Abnahme- und Nutzertests, UI-Prüfung, ERP-/Touristikprozesse, Schnittstellen, Datenflüsse, DSGVO-Anforderungen und technische Dokumentation. Zusätzlich praktische Systembetreuung mit TrueNAS/NAS, Windows/Linux, RDP, VPN, DNS, Backups, internen Diensten, Docker-nahen lokalen Anwendungen und Monitoring.",
+      "highlights": [
+        "Scrum-Master-Rolle in der praktischen Teamarbeit: Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte klären, Umsetzungsstand verfolgen und Release-Abstimmung unterstützen.",
+        "Requirements Engineering, Product Owner Rolle, Entwickleraufgaben, Backlog-/Priorisierungsarbeit, Abnahme- und Nutzertests und Abnahmevorbereitung.",
+        "ERP-/Touristiksoftware, Schnittstellen, Datenflüsse, DSGVO-Anforderungen, UI-/Website-Prüfung und technische Dokumentation."
+      ],
+      "targetTitle": "Business Analyse & IT-Teamkoordination",
+      "targetRoles": [
+        "Requirements Engineering",
+        "Product Owner / fachliche Koordination",
+        "Scrum-Master-Rolle in der praktischen Teamarbeit",
+        "QA / Abnahme- und Nutzertests",
+        "UI-/Website-Tests",
+        "ERP-/Touristiksoftware",
+        "IT-Systembetreuung mit Analyse- und Dokumentationsstärke"
+      ],
+      "competencyFields": [
+        {
+          "title": "Requirements & Produktkoordination",
+          "text": "Lasten-/Pflichtenhefte, User Stories, Use Cases, Akzeptanzkriterien, Entwickleraufgaben, Backlog und Priorisierung."
+        },
+        {
+          "title": "Scrum-/Teamkoordination",
+          "text": "Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte, Umsetzungsstand, Release- und Abnahmevorbereitung."
+        },
+        {
+          "title": "QA, Abnahmetests & UI-Prüfung",
+          "text": "Abnahme- und Nutzertests, manuelle Funktionstests, UI-/Website-Workflows, Designabgleich, Bug Reports, Postman, Browser DevTools, MCP-/Playwright-gestützte UI-Tests und KI-gestützte UI-Prüfung."
+        },
+        {
+          "title": "ERP, Datenflüsse & Schnittstellen",
+          "text": "Modulzusammenhänge, Mapping-Regeln, Funktionsmatrix, Schnittstellenbeschreibung und DSGVO-Anforderungen."
+        },
+        {
+          "title": "IT-Infrastruktur & interne Dienste",
+          "text": "TrueNAS/NAS, SMB/Rechte, Windows/Linux, RDP/USB-over-RDP, VPN, DNS, Backups, Monitoring, Docker-nahe lokale Dienste."
+        }
+      ]
     },
-    {
-      "title": "Servicetechniker Elektronik / Prüftechniker",
-      "description": "Baugruppennahe Diagnose, Mess- und Prüftechnik, Reparaturqualität, Befundung und Funktionsprüfung."
-    },
-    {
-      "title": "IT-nahe Systemdiagnose / Infrastrukturservice",
-      "description": "Rollen, in denen IT-Systeme, Hardware, Dokumentation, Tests und saubere Fehleranalyse zusammenkommen."
+    "serviceTechnician": {
+      "title": "Servicetechniker Elektronik & IT-nahe Systemdiagnose",
+      "subtitle": "Elektronikdiagnose · Prüftechnik · Werkstattpraxis · IT-Infrastruktur · Home-Lab · technischer Support",
+      "label": "Lebenslauf Service-Techniker-Profil",
+      "filenameBase": "Artjom_Warkentin_Lebenslauf_ServiceTechniker",
+      "maxPages": 3,
+      "topProfile": "Service- und Elektronikprofil mit über zehn Jahren Werkstattpraxis in Diagnose, Instandsetzung, Datensicherung/Backup, Funktionsprüfung und Reparaturdokumentation IT-naher Geräte. Schwerpunkt: Mainboards, Netzteile, Peripherie-/Mediengeräte, Stromversorgung, Boot-/Firmware-/BIOS-Themen, Mess-/Rework-Praxis, Werkstattqualität und technische Dokumentation. Aktuelle IT-Erfahrung ergänzt das Profil durch Systemverständnis, Infrastruktur, Monitoring, Abnahme- und Nutzertests, Fehleranalyse und strukturierte Abstimmung.",
+      "highlights": [
+        "Über zehn Jahre Elektronik-/IT-Service mit Diagnose, Reparatur, Werkstattorganisation, OEM-Serviceumfeld und Schulung/Wissenstransfer.",
+        "Schaltplanlesen, Mess-/Prüftechnik, Stromversorgungsdiagnose, SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework/Reflow/Reballing und Firmware-/BIOS-/EEPROM-Arbeiten.",
+        "IT-nahe Systemdiagnose, technischer Support, Infrastrukturgrundlagen, Home-Lab/Selfhosting und nachvollziehbare Dokumentation."
+      ],
+      "targetTitle": "Technischer Service & Elektronikdiagnose",
+      "targetRoles": [
+        "Servicetechniker Elektronik",
+        "Prüftechniker Elektronik",
+        "technischer IT-Service",
+        "IT-Systembetreuung",
+        "Serviceinnendienst / technischer Support",
+        "IT-nahe Systemdiagnose",
+        "elektronische Baugruppen / Werkstattqualität"
+      ],
+      "competencyFields": [
+        {
+          "title": "Geräte- & Board-Level-Service",
+          "text": "Diagnose, Instandsetzung, Datensicherung/Backup, Funktionsprüfung und Reparaturdokumentation für IT-, Medien- und Peripheriegeräte."
+        },
+        {
+          "title": "Stromversorgung & Mainboard-Diagnose",
+          "text": "Analyse von DC/DC-Wandlern, Spannungsrails, Einschaltsequenzen und Power-Sequencing mit Oszilloskop und Logikanalysator; Kurzschluss-/Lastanalyse, Start-/Bootprobleme und Firmware-/BIOS-Themen."
+        },
+        {
+          "title": "Mess-/Rework-Praxis",
+          "text": "Schaltplanlesen, Multimeter/Oszilloskop, SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework/Reflow/Reballing und ESD-sicheres Arbeiten."
+        },
+        {
+          "title": "Werkstattqualität & Serviceprozesse",
+          "text": "Befundung, Ersatzteile, Arbeitsanweisungen, Prüfabläufe, Serviceprozesse, Qualitätsprüfung, Reklamations-/Eskalationsfälle, Schulung und Wissenstransfer."
+        },
+        {
+          "title": "IT-nahe Serviceinfrastruktur",
+          "text": "Windows/Linux, NAS/SMB, Backup, VPN/DNS, Monitoring, Home-Lab/Selfhosting und technische Dokumentation."
+        }
+      ]
     }
-  ],
-  "targetRoles": [
-    "IT-Systembetreuer",
-    "Technischer IT-Service",
-    "Technischer Support / Serviceinnendienst",
-    "Servicetechniker Elektronik",
-    "Prüftechniker Elektronik",
-    "IT-nahe Systemdiagnose"
-  ],
-  "competencies": [
+  },
+  "targetProfiles": {
+    "itBusinessTechnical": {
+      "title": "Business Analysis, IT-Teamleitung & technische Systembetreuung",
+      "targetRoles": [
+        "Business Analyst IT",
+        "Requirements Engineer",
+        "IT-Teamleiter / Team Lead IT",
+        "Product Owner / fachlicher IT-Koordinator",
+        "QA / Abnahme- und Nutzertests",
+        "IT-Systembetreuer mit Analyse- und Dokumentationsstärke"
+      ]
+    },
+    "handsOnSoltau": {
+      "title": "Technischer IT-Service & Elektronikdiagnose",
+      "targetRoles": [
+        "IT-Systembetreuer",
+        "Technischer IT-Service",
+        "Technischer Support / Serviceinnendienst",
+        "Servicetechniker Elektronik",
+        "Prüftechniker Elektronik",
+        "IT-nahe Systemdiagnose"
+      ]
+    },
+    "electronics": {
+      "title": "Elektronikdiagnose, Prüftechnik & Werkstattqualität",
+      "targetRoles": [
+        "Servicetechniker Elektronik",
+        "Prüftechniker Elektronik",
+        "Reparaturfachkraft elektronische Baugruppen",
+        "Technischer Service Elektronik",
+        "Systemnahe Fehleranalyse"
+      ]
+    }
+  },
+  "companyContextPublic": {
+    "employer": "INFORMA GmbH & Co. KG",
+    "industryContext": "Medienagentur und Software-/Digitalisierungspartner für touristische Produkte und Prozesse.",
+    "publicProductContext": [
+      "TRAVUS Cloud als digitale Schnittstelle für touristische Prozessbereiche wie Operations, Sales, Destination Management, Media und On the Road.",
+      "Anwendungstools u. a. für Backoffice/Reiseverwaltung, Buchungs- und Accounting-Management, Marketing, Logistik, Katalogredaktion/Mediendatenbank, Websites/CMS, Web Booking und Systemintegration.",
+      "INFORMA beschreibt Konzept, Strategie, Design und Umsetzung aus einer Hand sowie Leistungen in Grafik, Druck und IT."
+    ],
+    "doNotOverclaim": [
+      "Nicht schreiben, dass Artjom die gesamte TRAVUS Cloud allein entwickelt hat.",
+      "Nicht schreiben, dass Artjom öffentlich als Ansprechpartner auf der Website genannt ist, sofern nicht nachweisbar.",
+      "Formulierung: Arbeit im Umfeld interner ERP-/Touristik-Softwareprojekte und digitaler Prozesslösungen."
+    ]
+  },
+  "competencyGroups": [
     {
-      "title": "IT-Infrastruktur & Betrieb",
-      "items": ["Windows Server", "Linux", "TrueNAS/NAS", "SMB-Shares", "Benutzer/Rechte", "Active Directory-Grundlagen", "RDP", "USB-over-RDP/Port-Weiterleitung"]
+      "id": "requirements_product_scrum",
+      "title": "Business Analyse, Requirements & Scrum",
+      "items": [
+        "Anforderungen aus Kundendialogen und internen Fachbereichen aufnehmen und strukturieren",
+        "Lasten-/Pflichtenhefte, User Stories, Use Cases und Akzeptanzkriterien formulieren",
+        "Entwickleraufgaben erstellen, Backlog pflegen, Priorisierung vorbereiten",
+        "Scrum-Arbeitsweise mit Daily/Weekly, Sprint-/Aufgabensteuerung und Release-Abstimmung begleiten",
+        "Stakeholder-Abstimmung, Rückfragenklärung und nachvollziehbare Entscheidungsgrundlagen"
+      ]
     },
     {
-      "title": "Netzwerk, Zugriff & Datensicherheit",
-      "items": ["Netzwerk-Basics", "VPN", "Caching DNS", "Backups", "Ablagekonzepte", "Berechtigungen", "DSGVO-Bewusstsein", "technische Dokumentation"]
+      "id": "qa_uat_ui_design",
+      "title": "QA, Abnahmetests, UI-Prüfung & Designanalyse",
+      "items": [
+        "Abnahme- und Nutzertests planen, vorbereiten, begleiten und auswerten",
+        "UI-Funktionen und Website-Workflows manuell testen",
+        "Fehlerrückmeldungen einordnen, reproduzierbare Bug Reports und Abnahmekriterien erstellen",
+        "Entwickelte Website-Designs fachlich prüfen und mit Anforderungen abgleichen",
+        "Postman, Browser DevTools, MCP-/Playwright-gestützte UI-Tests, KI-gestützte UI-Prüfung und Fehlernachverfolgung einsetzen"
+      ]
     },
     {
-      "title": "Elektronikdiagnose",
-      "items": ["Schaltplanlesen", "technische Dokumentation lesen", "Stromversorgungsdiagnose", "Kurzschlussanalyse", "Mainboards", "Netzteile", "Monitore", "Router"]
+      "id": "erp_process_integrations",
+      "title": "ERP, Prozesse, Schnittstellen & Datenflüsse",
+      "items": [
+        "Mitarbeit an Aufbau und Weiterentwicklung interner ERP-/Touristiksoftware-Prozesse",
+        "Datenflüsse, Modulzusammenhänge, Zuordnungsregeln und Schnittstellen fachlich analysieren",
+        "Funktionsmatrix, Prozessskizzen und Mapping-Regeln dokumentieren",
+        "DSGVO-Anforderungen in Prozesse, Backlog und Nachvollziehbarkeit überführen",
+        "Kundenspezifische Anforderungen in umsetzbare technische Aufgaben übersetzen"
+      ]
     },
     {
-      "title": "Mess- und Reparaturtechnik",
-      "items": ["Multimeter", "Oszilloskop", "SMD/THT-Löten", "Heißluft", "Mikroskop", "BGA-Rework", "Reflow/Reballing", "ESD-sicheres Arbeiten"]
+      "id": "it_infrastructure",
+      "title": "IT-Infrastruktur & Systembetreuung",
+      "items": [
+        "Windows Server 2012 R2, Linux/CentOS, Linux Desktop/KDE, Termux",
+        "TrueNAS/NAS, zentrale Projektspeicher, SMB-Shares, Rechte-/Benutzerkonzepte",
+        "RDP, USB-over-RDP/USB-Port-Weiterleitung, VPN, Caching DNS",
+        "Backups, Ablagekonzepte, Performance-Tuning, technische Dokumentation",
+        "NGINX, Apache, MySQL/MariaDB und Mailserver im früheren Handels-/Webshopumfeld"
+      ]
     },
     {
-      "title": "Web/API-Tests & Tools",
-      "items": ["Postman", "manuelle API-Prüfung", "Browser DevTools", "Website-Tests", "Fehlernachverfolgung", "HTML/CSS/JS/PHP lesen", "Python-Skripte"]
+      "id": "home_lab_selfhosting",
+      "title": "Home-Lab, Selfhosting & Automatisierung",
+      "items": [
+        "n8n-Automatisierungsserver im privaten Home-Lab",
+        "Telegram-Bot als privates Automatisierungs-/Benachrichtigungsprojekt",
+        "Caching-DNS und Werbeblocker im Heimnetz",
+        "VPN-Client und lokale Netzwerkdienste",
+        "Home Assistant für private Heimnetz-/Automatisierungsumgebung",
+        "Betrieb kleiner Serverdienste auf Mikrocomputer/kleinem Server"
+      ]
     },
     {
-      "title": "KI-gestützte technische Arbeit",
-      "items": ["technische Recherche", "Dokumentation", "Skripte", "Codebase-Analyse", "Parser", "Testvorbereitung", "Projektgraphen", "README/technische Unterlagen"]
+      "id": "electronics_diagnostics",
+      "title": "Elektronikdiagnose & Werkstattpraxis",
+      "items": [
+        "10+ Jahre Reparatur- und Werkstattpraxis für Notebooks, PCs, Mainboards, Monitore, Tablets, Smartphones, Netzteile, Grafikkarten, Router, TV-Boxes und Peripherie",
+        "Schaltplanlesen, Lesen technischer Dokumentation, systematische Fehlersuche",
+        "Stromversorgungsdiagnose, Kurzschlussanalyse, Start-/Boot-/Firmwareprobleme eingrenzen",
+        "Multimeter, Oszilloskop, Laborpraxis, ESD-sicheres Arbeiten",
+        "SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework mit Reflow/Reballing, Firmware-/BIOS-/EEPROM-Flashing",
+        "OEM-Serviceumfeld mit Asus, Lenovo, Dell, Fujitsu, Acer; Qualitätsstandards, Arbeitsanweisungen, Prüfabläufe, Serviceprozesse, Ersatzteile, Schulung/Wissenstransfer"
+      ]
+    },
+    {
+      "id": "codex_llm_tooling",
+      "title": "Codex/LLM als Analyse-Hilfsmittel",
+      "items": [
+        "Codebase-Verständnis in bestehenden Projekten beschleunigen",
+        "Swagger/OpenAPI auswerten und bereinigen",
+        "Parser/Skripte für Dokumentation und Projektanalyse erstellen",
+        "Projektkarten, Roadmaps, Usecase-Indizes und UI↔Backend/API-Zusammenhänge dokumentieren",
+        "README, technische Unterlagen, Testvorbereitung und Fehleranalyse unterstützen",
+        "Codex/LLM als Hilfsmittel für Analyse, Strukturierung, Dokumentation und Testvorbereitung"
+      ]
     }
   ],
   "experience": [
     {
       "period": "01/2023 - heute",
-      "role": "Technische Systembetreuung, IT- und Prozessanalyse",
+      "officialRole": "Abteilungsleiter IT / Business Analyst & Product Owner (Integrationen & Prozesse)",
+      "publicRole": "Abteilungsleiter IT, Business Analyst & Product Owner",
       "employer": "INFORMA GmbH & Co. KG",
       "location": "Oelsnitz/Vogtland, Deutschland",
-      "focus": "Technische Anforderungen, interne IT-nahe Infrastruktur, Systemintegration, Tests, Dokumentation und Qualität.",
+      "focus": "Interne IT-Projekte, ERP-/Touristiksoftware, Anforderungen, Scrum, Abnahme- und Nutzertests, UI-/Website-Prüfung, Schnittstellen, Dokumentation und Teamkoordination.",
       "bullets": [
-        "TrueNAS-Projektspeicher aufgebaut und betrieben: Ablagekonzept, Zugriffsstruktur, Fachbereichsnutzung, Performance und technische Dokumentation.",
-        "Schnittstellen, Datenflüsse, UAT/Tests, Fehlernachverfolgung und Abnahmen analysiert, vorbereitet und nachvollziehbar dokumentiert.",
-        "UAT, Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und Ergebnisse strukturiert dokumentiert.",
-        "KI-gestützte Spezifikationsarbeit für technische Recherche, Checklisten, Skripte, Dokumentationsqualität und Testvorbereitung eingesetzt."
+        "IT-Team fachlich geführt und interne Entwicklungs-/Projektarbeit über Aufgaben, Abstimmungen, Priorisierung, Daily/Weekly und Sprint-/Releaseplanung strukturiert.",
+        "Anforderungen aus Kundendialogen und Fachbereichen aufgenommen, in Lasten-/Pflichtenhefte, User Stories, Use Cases, Akzeptanzkriterien und Entwickleraufgaben übersetzt.",
+        "Als Product-Owner-/Business-Analyst-Rolle Backlog, Umsetzungsfragen, Priorisierung, Abnahmen und Rückfragen zwischen Fachbereich, Kunden und Entwicklern koordiniert.",
+        "UI-/Website-Designs und entwickelte Funktionen fachlich geprüft; Abnahme- und Nutzertests, Bug Reports, Fehlernachverfolgung und Abnahmen vorbereitet und dokumentiert.",
+        "Datenflüsse, Schnittstellen, Modulzusammenhänge, Zuordnungsregeln und Funktionsmatrizen für interne ERP-/Touristiksoftwareprozesse analysiert und dokumentiert.",
+        "DSGVO-bezogene Anforderungen zu Einwilligung, Eingabekanälen, Nachvollziehbarkeit und Prozessqualität in Konzepte, Backlog und Testfälle überführt.",
+        "TrueNAS-Projektspeicher als zentralen Projekt-Hub aufgebaut und betrieben: Ablagekonzept, Zugriffsstruktur, Rechte, Fachbereichsnutzung, Performance und Dokumentation.",
+        "Scrum-Master-nahe Teamarbeit fortgeführt: Daily/Weekly, Aufgabenklärung, Priorisierung, Umsetzungsabstimmung und Release-/Abnahmevorbereitung.",
+        "Codex-/LLM-Werkzeuge zur Strukturierung von Spezifikationen, Konsistenzprüfung, technischen Skizzen, Skripten, Dokumentation und Testvorbereitung eingesetzt."
+      ],
+      "metrics": [
+        "2023: 36 Kunden · 8 Kundenprojekte · 646 Issues · 998 Story Points · ca. 11 % Bugs",
+        "2024: 25 Kunden · 6 Kundenprojekte · 5 interne Projekte · 495 Issues · 648 Story Points · 46 % Stories / 10 % Bugs / 44 % Tasks"
       ]
     },
     {
       "period": "06/2022 - 01/2023",
-      "role": "Technische Koordination IT",
+      "officialRole": "Kommissarische IT-Leitung (Interimsfunktion)",
+      "publicRole": "Kommissarische IT-Leitung / Scrum- und Umsetzungskoordination",
       "employer": "INFORMA GmbH & Co. KG",
       "location": "Oelsnitz/Vogtland, Deutschland",
-      "focus": "Stabilisierung technischer Abläufe, Aufgabenklärung, Tests und Release-Abstimmung in einer Übergangsphase.",
+      "focus": "Einführung von Scrum-Arbeitsweise, Entwickler-Sprints, Aufgabensteuerung, Abnahme- und Nutzertests und Release-Abstimmung.",
       "bullets": [
-        "Technische Abstimmungen strukturiert, offene Punkte geklärt und Aufgaben für Umsetzung, Tests und Abnahmen nachvollziehbar gemacht.",
-        "Nutzertests begleitet, Fehlerrückmeldungen eingeordnet und technische Ergebnisse für Fachbereiche verständlich dokumentiert.",
-        "Service- und Qualitätsdenken aus dem Werkstattumfeld in interne IT-Abläufe übertragen: klare Zustände, reproduzierbare Fehlerbilder, saubere Übergaben."
+        "Scrum als Arbeitsmethode eingeführt und Scrum-Master-Rolle für Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte und Release-Abstimmung übernommen.",
+        "Entwickleraufgaben vorbereitet, offene Punkte geklärt, Abnahme- und Nutzertests begleitet und Umsetzungs-/Releaseplanung unterstützt.",
+        "Kundenanforderungen analysiert, priorisiert und in nachvollziehbare Umsetzungsschritte überführt."
       ]
     },
     {
-      "period": "08/2021 - 06/2022",
-      "role": "Technische Assistenz im IT-/Projektumfeld",
+      "period": "01/2022 - 06/2022",
+      "officialRole": "Technische Assistenz der Projektleitung / Business Analyst",
+      "publicRole": "Business Analyst / technische Assistenz im IT-Projektumfeld",
       "employer": "INFORMA GmbH & Co. KG",
       "location": "Oelsnitz/Vogtland, Deutschland",
-      "focus": "Anforderungsanalyse, technische Konzepte, Systemverständnis und strukturierte Übergaben.",
+      "focus": "Pflichtenhefte, Stakeholder-Abstimmung, Systemanalyse und Konzeptarbeit.",
       "bullets": [
-        "Interne Systemanforderungen aufgenommen, technisch analysiert und in klare Konzepte, Pflichtenhefte und Übergaben übersetzt.",
-        "Fachliche Rückfragen mit technischer Umsetzbarkeit abgeglichen und dokumentierte Entscheidungsgrundlagen vorbereitet.",
-        "Prozess- und Systemzusammenhänge visualisiert, damit Umsetzung, Test und Abnahme sauber anschließen konnten."
+        "Analyse und Design für ein Lieferdienst-Projekt für Mittagsgerichte begleitet.",
+        "Pflichtenheft, Anforderungen, Stakeholder-Abstimmung und technische Übergaben vorbereitet.",
+        "Fachliche Rückfragen mit technischer Umsetzbarkeit abgeglichen und dokumentiert."
+      ]
+    },
+    {
+      "period": "08/2021 - 12/2021",
+      "officialRole": "Assistenz der IT-Leitung (Probebeschäftigung)",
+      "publicRole": "Assistenz der IT-Leitung / Anforderungsanalyse",
+      "employer": "INFORMA GmbH & Co. KG",
+      "location": "Oelsnitz/Vogtland, Deutschland",
+      "focus": "Anforderungsanalyse für Reisemanagementsystem und Pflichtenheft.",
+      "bullets": [
+        "Anforderungen für ein Reisemanagementsystem aufgenommen und strukturiert.",
+        "Pflichtenheft und erste fachlich-technische Beschreibungen erstellt.",
+        "Parallel zur B2-Phase nach Integrationskursen in den deutschen IT-/Projektarbeitsalltag eingestiegen."
       ]
     },
     {
       "period": "10/2018 - 06/2019",
-      "role": "Handelsautomatisierung, Systemadministration und Webshop-Integration",
+      "officialRole": "Projektleiter / Programmierer",
+      "publicRole": "Handelsautomatisierung, Systemadministration und Webshop-Integration",
       "employer": "MEGA GmbH",
       "location": "Tscheljabinsk, Russland",
-      "focus": "Serverbetrieb, Systemintegration, Webshop, CRM-Anbindung und technische Umsetzung im Handelsumfeld.",
+      "focus": "Handelsautomatisierung, Webshop, Server-Administration, CRM-/1C-Integration.",
       "bullets": [
         "Windows Server 2012 R2 sowie Linux/CentOS mit NGINX, Apache, MySQL und Mailserver administriert.",
-        "Webshop, CRM-Anbindung und 1C-Integration technisch begleitet; Schnittstellen zwischen Warenwirtschaft, Web und internen Abläufen stabilisiert.",
-        "PHP, JavaScript, HTML und CSS im Integrations- und Anpassungskontext gelesen und genutzt, ohne diese Tätigkeit als Zielrichtung zu positionieren.",
-        "Server-, Web- und Prozesssicht verbunden, um technische Handelsabläufe nachvollziehbar und wartbarer zu machen."
+        "Webshop-Einführung, Handelsautomatisierung, CRM-Bitrix-Anbindung und 1C-Integration technisch begleitet.",
+        "PHP, JavaScript, HTML5 und CSS im Integrations- und Anpassungskontext gelesen, angepasst und genutzt.",
+        "Server-, Webshop-, Warenwirtschafts- und Prozesssicht verbunden, um Handelsabläufe digital abzubilden."
       ]
     },
     {
       "period": "06/2013 - 08/2018",
-      "role": "Technischer Direktor & Oberingenieur",
+      "officialRole": "Technischer Direktor & Oberingenieur",
+      "publicRole": "Technischer Direktor & Oberingenieur Elektronik-/IT-Service",
       "employer": "Innovation Service Center",
       "location": "Tscheljabinsk, Russland",
-      "focus": "Elektronik-/IT-Service, Werkstattprozesse, Diagnose, Qualitätsstandards, Ersatzteile und Wissenstransfer.",
+      "focus": "Werkstattprozesse, komplexe Diagnose, Reparaturqualität, OEM-Service, Ersatzteile, Schulung und Eskalationsmanagement.",
       "bullets": [
-        "10+ Jahre Elektronik-/IT-Service für Notebooks, Mainboards, Monitore, Tablets, Smartphones, Peripherie und elektronische Baugruppen fachlich verantwortet.",
-        "OEM-Serviceumfeld für Asus, Lenovo, Dell, Fujitsu und Acer betreut; komplexe Diagnose, Qualitätsstandards, SOPs, Ersatzteile und Schulung/Wissenstransfer strukturiert.",
-        "OEM-Serviceumfeld mit Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer betreut; jährliche Trainings und Herstellervorgaben in die Werkstattpraxis übertragen.",
-        "Ersatzteilmanagement, Lager- und Reparaturbuchführung, Schulung neuer Mitarbeitender und Wissenstransfer im Serviceteam aufgebaut und optimiert."
+        "Werkstattprozesse für Computertechnik, Peripherie und elektronische Baugruppen geleitet und weiterentwickelt.",
+        "Methoden, Arbeitsanweisungen, Qualitätsstandards, Reparaturbuchführung, Ersatzteilmanagement und Lagerprozesse aufgebaut.",
+        "Fehler an Mainboards, Stromversorgung, Peripherie und elektronischen Baugruppen sowie Kunden-/Team-Eskalationen und technische Qualitätsfragen fachlich verantwortet.",
+        "OEM-Serviceumfeld mit offiziellen Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer betreut; jährliche Trainings und Herstellervorgaben in Werkstattpraxis überführt.",
+        "Neue Mitarbeitende geschult und Wissen zu Diagnose, ESD, Löt-/Rework-Verfahren, Dokumentation und Qualität weitergegeben."
       ]
     },
     {
       "period": "11/2008 - 05/2013",
-      "role": "Ober-Servicetechniker",
+      "officialRole": "Ober-Servicetechniker",
+      "publicRole": "Ober-Servicetechniker Elektronik-/IT-Service",
       "employer": "Innovation Service Center",
       "location": "Tscheljabinsk, Russland",
       "focus": "Komplexe Instandsetzung von Computer-/IT-Technik und elektronischen Baugruppen.",
       "bullets": [
-        "Schwierige Fehlerbilder an Computertechnik, Peripherie und Baugruppen systematisch eingegrenzt, instandgesetzt, geprüft und dokumentiert.",
+        "Schwierige Fehlerbilder systematisch eingegrenzt, instandgesetzt, geprüft und dokumentiert.",
         "Reparaturmethoden, Prüfabläufe und praktische Diagnosewege im Werkstattbetrieb weiterentwickelt.",
-        "Neue Mitarbeitende eingearbeitet und technisches Wissen zu Diagnose, Löt-/Rework-Verfahren, Qualität und Dokumentation weitergegeben."
+        "Neue Mitarbeitende eingearbeitet und technisches Wissen im Team weitergegeben."
       ]
     },
     {
       "period": "11/2006 - 10/2008",
-      "role": "Servicetechniker",
+      "officialRole": "Servicetechniker",
+      "publicRole": "Servicetechniker Reparatur & Elektronik",
       "employer": "Einzelunternehmer Badin - Reparatur & Elektronik",
       "location": "Tscheljabinsk, Russland",
       "focus": "Garantie- und kostenpflichtige Reparaturen von Computertechnik.",
       "bullets": [
         "Computertechnik diagnostiziert, Baugruppen und Komponenten instandgesetzt oder ausgetauscht und Funktionstests durchgeführt.",
-        "Reparaturergebnisse dokumentiert, Ersatzteile abgestimmt und Kundenrückfragen technisch sauber beantwortet.",
-        "Grundlage für die spätere Spezialisierung auf strukturierte Elektronikdiagnose und Werkstattqualität aufgebaut."
+        "Reparaturergebnisse dokumentiert, Ersatzteile abgestimmt und Kundenrückfragen technisch beantwortet.",
+        "Grundlage für spätere Spezialisierung auf Elektronikdiagnose, Werkstattqualität und Serviceprozesse aufgebaut."
       ]
     }
   ],
   "projects": [
     {
-      "id": "truenas",
-      "title": "TrueNAS / zentraler Projektspeicher",
-      "type": "Infrastrukturprojekt",
-      "description": "Aufbau eines zentralen Projektspeichers mit Ablagekonzept, Rechte- und Zugriffstruktur, Betrieb, Performance-Tuning und technischer Dokumentation. Nutzen: weniger lokale Dateiinseln, klarere Zuständigkeiten und nachvollziehbare Projektablage."
+      "id": "informa_erp_tourism",
+      "title": "ERP-/Touristiksoftware, Requirements & Abnahmetests",
+      "type": "Berufliche IT-/Produktarbeit",
+      "description": "Arbeit im Umfeld interner ERP- und touristiknaher Softwareprozesse: Anforderungen aus Fachbereichen und Kundendialogen strukturieren, Entwickleraufgaben formulieren, User Stories, Use Cases und Akzeptanzkriterien vorbereiten, UI-/Website-Funktionen testen, Abnahme- und Nutzertests begleiten und Ergebnisse dokumentieren. Praktische Testunterstützung durch MCP-/Playwright-gestützte Testvorbereitung und Browser-Automation für UI-Prüfungen sowie KI-gestützte UI-Audits."
     },
     {
-      "id": "ai-docs",
-      "title": "KI-gestützte Codebase-Analyse & Dokumentation",
-      "type": "Technische Analyse & Dokumentation",
-      "description": "Private/arbeitsnahe Tooling-Erfahrung zur technischen Orientierung in größeren Codebasen: Projektkarten, API-Kandidaten, Swagger/OpenAPI-Auswertung, Integrationsübersichten, Usecase-Indizes und dokumentierte UI↔Backend-Zusammenhänge. Ziel: schneller verstehen, sauberer testen, nachvollziehbarer dokumentieren."
+      "id": "truenas_project_hub",
+      "title": "TrueNAS-Projektspeicher, interner Server & Projekt-Hub",
+      "type": "Berufliches Infrastrukturprojekt",
+      "description": "Aufbau und Betrieb eines zentralen Projekt-Hubs auf TrueNAS-Basis: Ablagekonzept, SMB-Shares, Rechte-/Benutzerstruktur, Fachbereichsnutzung, Performance-Tuning und technische Dokumentation. Zusätzlich Nutzung als interner Server für lokale Dienste und Docker-basierte Anwendungen im internen Systemumfeld."
     },
     {
-      "id": "h618",
+      "id": "monitoring_internal_services",
+      "title": "Monitoring-Anwendung für Websites und Projekte",
+      "type": "Berufliches Infrastruktur-/Betriebsthema",
+      "description": "Konzeption und Betrieb einer internen Monitoring-Anwendung zur Beobachtung von Websites, Projekten und technischen Zuständen. Fokus: bessere Transparenz, schnellere Fehlererkennung, nachvollziehbare Projekt-/Systemübersicht und Unterstützung des IT-Betriebs."
+    },
+    {
+      "id": "codebase_api_documentation",
+      "title": "Codebase-, API- und Dokumentationswerkzeuge",
+      "type": "Arbeitsnahe Analyse- und Dokumentationswerkzeuge",
+      "description": "Werkzeuge und Skripte zur Orientierung in größeren Codebasen: Swagger/OpenAPI-Auswertung, Parser, Projektkarten, Roadmaps, Usecase-Indizes, UI↔Backend/API-Zusammenhänge, README und technische Dokumentation. Codex/LLM werden dabei als Hilfsmittel für Analyse, Strukturierung, Dokumentation, MCP-/Playwright-gestützte Testvorbereitung, Browser-Automation für UI-Prüfungen und KI-gestützte UI-Audits eingesetzt."
+    },
+    {
+      "id": "home_lab_automation",
+      "title": "Home-Lab: n8n, Telegram-Bot, DNS, Adblock, VPN & Home Assistant",
+      "type": "Privates Infrastruktur- und Automatisierungsprojekt",
+      "description": "Private Home-Lab-Umgebung auf Mikrocomputer/kleinem Server: n8n-Automatisierungsserver, Telegram-Bot, Caching-DNS, Werbeblocker, VPN-Client, Home Assistant und Dienste für eine lokale Heimnetz-/Automatisierungsumgebung. Fokus: praktischer Betrieb kleiner Serverdienste, Netzwerkdienste, Automatisierung und Selbsthosting."
+    },
+    {
+      "id": "h618_embedded",
       "title": "Embedded-Linux-/Hardware-Bring-up für H618-TV-Box",
-      "type": "Privates technisches Projekt",
+      "type": "Privates Hardware-/Embedded-Hobbyprojekt",
       "link": "https://github.com/aco-art/vontar-h618-armbian-patche",
-      "description": "Privates technisches Projekt mit Armbian userpatches, U-Boot/SPL-, Kernel- und DTB-Anpassungen, Diagnose über LAN/UART/ADB sowie reproduzierbarer Build-Dokumentation. Der Fokus liegt auf Hardwareverständnis, Bootpfaden, Diagnose und technischer Dokumentation."
-    },
-    {
-      "id": "testing-docs",
-      "title": "Web/API-Tests und technische Dokumentation",
-      "type": "Tests & Dokumentation",
-      "description": "Postman, Browser DevTools, manuelle API-Prüfung, Website-Tests, Fehlernachverfolgung und testbare Dokumentation. Fokus: Fehler reproduzierbar machen, Schnittstellen verstehen und Ergebnisse so beschreiben, dass Umsetzung und Abnahme anschließen können."
-    }
-  ],
-  "internalProjects": [
-    {
-      "title": "Android-/Armbian-Referenzanalyse",
-      "description": "Private Analyse von Android-/Armbian-Runtime-Verhalten für Hardwarediagnose, Bootpfade, LAN/UART/ADB-Vergleich und reproduzierbare technische Dokumentation. Keine privaten Logs oder Dumps werden veröffentlicht."
+      "description": "Privates Hobbyprojekt mit Armbian userpatches, U-Boot/SPL-, Kernel- und DTB-Anpassungen, Diagnose über LAN/UART/ADB sowie reproduzierbarer Build-Dokumentation. Fokus: Hardwareverständnis, Bootpfade, Diagnose, technische Dokumentation und experimentelles Arbeiten mit ARM-/Linux-Systemen."
     }
   ],
   "electronics": {
-    "intro": "Langjährige praktische Werkstatt- und Diagnoseerfahrung mit elektronischen Baugruppen und IT-naher Gerätetechnik.",
-    "devices": ["Notebooks", "Mainboards", "Monitore", "Smartphones", "Tablets", "Netzteile", "Grafikkarten", "Router", "TV-Boxes", "Peripherie"],
-    "items": [
+    "intro": "Langjährige praktische Werkstatt- und Diagnoseerfahrung mit elektronischen Baugruppen und IT-naher Gerätetechnik; parallel zur IT-Tätigkeit fortlaufende private Reparaturpraxis.",
+    "devices": ["Notebooks", "PCs", "Mainboards", "Monitore", "Tablets", "Smartphones", "Netzteile", "Grafikkarten", "Router", "TV-Boxes", "Peripherie"],
+    "methods": [
       "Schaltplanlesen und Lesen technischer Dokumentation",
-      "Stromversorgungsdiagnose, Kurzschlussanalyse und Eingrenzung von Start-/Boot-/Firmwareproblemen",
-      "Multimeter, Oszilloskop, Laborpraxis und ESD-sicheres Arbeiten",
-      "SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework, Reflow und Reballing",
-      "Firmware-/BIOS-/EEPROM-Flashing, Funktionsprüfung, Befundung und nachvollziehbare Reparaturdokumentation"
-    ]
+      "systematische Fehlersuche und Ursachenanalyse",
+      "Stromversorgungsdiagnose, Kurzschlussanalyse, Start-/Boot-/Firmwareprobleme",
+      "Multimeter, Oszilloskop, Laborpraxis",
+      "SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop",
+      "BGA-Rework mit IR, Reflow/Reballing",
+      "Firmware-/BIOS-/EEPROM-Flashing",
+      "ESD-sicheres Arbeiten, Funktionsprüfung, Befundung, Reparaturdokumentation"
+    ],
+    "privateEquipment": ["Oszilloskop", "Mikroskop", "IR-Vorwärmer (Eigenbau)", "Heißluftstation", "Lötstationen", "Multimeter"],
+    "oemContext": ["Asus", "Lenovo", "Dell", "Fujitsu", "Acer"]
   },
   "education": [
-    {
-      "period": "2010 - 2016",
-      "degree": "Diplom-Ingenieur",
-      "institution": "Staatliche Universität Südural / Süduraler Staatliche Universität",
-      "details": "Steuerung und Informatik in Techniksystemen"
-    },
-    {
-      "period": "2000 - 2003",
-      "degree": "Radioelektroniker",
-      "institution": "Tomsker Staatliche Universität für Steuerungssysteme und Radioelektronik (TUSUR)",
-      "details": "Tomsk, Russland"
-    }
+    {"period": "2010 - 2016", "degree": "Diplom-Ingenieur", "institution": "Staatliche Universität Südural / Süduraler Staatliche Universität", "details": "Steuerung und Informatik in Techniksystemen"},
+    {"period": "2000 - 2003", "degree": "Radioelektroniker", "institution": "Tomsker Staatliche Universität für Steuerungssysteme und Radioelektronik (TUSUR)", "details": "Tomsk, Russland"},
+    {"period": "1990 - 2000", "degree": "Schulbildung", "institution": "Gymnasium", "details": "Kokschetau/Kokschetaw, Kasachstan"}
   ],
   "training": [
     "2019 - 2021: Integrations- und Deutschkurse A1-B2, Abschluss B2.",
     "2023 - 2024: interne DSGVO-Schulungen.",
-    "Frühere Rolle: laufende OEM-Trainings und Hersteller-Schulungen im autorisierten Serviceumfeld."
+    "Laufende OEM-Trainings und jährliche Hersteller-Zertifizierungen im früheren autorisierten Serviceumfeld."
   ],
   "languages": [
-    "Deutsch: B2 / sichere Projekt- und Geschäftskommunikation",
-    "Russisch: Muttersprache",
-    "Englisch: gutes bis sehr gutes Leseverständnis, Schreiben mit KI-Unterstützung, mündlich eingeschränkt"
+    {"language": "Deutsch", "level": "B2 / sichere Projekt- und Geschäftskommunikation"},
+    {"language": "Russisch", "level": "Muttersprache"},
+    {"language": "Englisch", "level": "gutes Leseverständnis, schriftliche Kommunikation mit Hilfsmitteln"}
   ],
-  "publicDocuments": [
-    {
-      "id": "public_cv",
-      "label": "Lebenslauf PDF",
-      "title": "Technischer IT-Service & Elektronikdiagnose",
-      "filenameBase": "Artjom_Warkentin_Lebenslauf",
-      "focus": "Öffentlicher Lebenslauf für IT-Systembetreuung, technischen IT-Service, Elektronikdiagnose und Prüftechnik.",
-      "kind": "full"
-    },
-    {
-      "id": "public_short",
-      "label": "Kurzprofil PDF",
-      "title": "Kurzprofil · Technischer IT-Service & Elektronikdiagnose",
-      "filenameBase": "Artjom_Warkentin_Kurzprofil",
-      "focus": "Kompakte Übersicht zu Profil, Zielrollen, Kernkompetenzen und technischen Schwerpunkten.",
-      "kind": "short"
-    },
-    {
-      "id": "public_technical",
-      "label": "Technikprofil PDF",
-      "title": "Technikprofil · IT-Infrastruktur, Elektronikdiagnose, Prüftechnik",
-      "filenameBase": "Artjom_Warkentin_Technikprofil",
-      "focus": "Technisches Kompetenzprofil mit Infrastruktur-, Werkstatt-, Mess-/Prüf- und Dokumentationsschwerpunkt.",
-      "kind": "technical"
-    }
-  ],
-  "cvVariants": [
-    {
-      "id": "master",
-      "label": "Master CV",
-      "title": "Technischer IT-Service & Elektronikdiagnose",
-      "filenameBase": "Artjom_Warkentin_Lebenslauf_Technischer_IT_Service_Elektronik",
-      "focus": "Hands-on IT-Infrastruktur, Elektronikdiagnose, technische Dokumentation, Tests und KI-gestützte Arbeitsweise.",
-      "summary": [
-        "Technischer Spezialist mit Schwerpunkt IT-Service, IT-Infrastruktur und Elektronikdiagnose.",
-        "Mehr als zehn Jahre Werkstatt- und Servicepraxis in Diagnose, Reparatur, Qualität und Dokumentation elektronischer Baugruppen.",
-        "Aktuelle Erfahrung in technischer Systembetreuung, TrueNAS/NAS, Schnittstellen, UAT, Fehleranalyse und KI-gestützter Dokumentation."
-      ],
-      "targetRoles": ["IT-Systembetreuer", "Technischer IT-Service", "Technischer Support / Serviceinnendienst", "Servicetechniker Elektronik", "Prüftechniker Elektronik", "IT-nahe Systemdiagnose"]
-    },
-    {
-      "id": "soltau",
-      "label": "Soltau IT-Service CV",
-      "title": "IT-Systembetreuung & Technischer IT-Service",
-      "filenameBase": "Artjom_Warkentin_Lebenslauf_Soltau_IT_Service",
-      "focus": "IT-Systembetreuung, Infrastrukturservice, Dokumentation und elektroniknahe Diagnose für Soltau / Heidekreis / Niedersachsen.",
-      "summary": [
-        "Technischer IT-Praktiker für lokale Betriebe, Serviceunternehmen, Betriebs-IT, Sicherheitstechnik, Gebäudeautomation, Systemhäuser oder technische Dienstleister.",
-        "Stark in Windows-/Linux-Grundlagen, TrueNAS/NAS, SMB-Shares, Benutzer-/Rechtekonzepten, RDP, VPN, DNS, Backups und sauberer Dokumentation.",
-        "Zusätzlicher Vorteil: langjährige Elektronikdiagnose und Werkstattpraxis für strukturierte Fehlereingrenzung an IT-naher Gerätetechnik."
-      ],
-      "targetRoles": ["IT-Systembetreuer", "Technischer IT-Service", "Technischer Support / Serviceinnendienst", "Infrastrukturservice", "IT-nahe Systemdiagnose"]
-    },
-    {
-      "id": "rheinmetall",
-      "label": "Rheinmetall Elektronik CV",
-      "title": "Elektronikdiagnose, Prüftechnik & Technischer Service",
-      "filenameBase": "Artjom_Warkentin_Lebenslauf_Rheinmetall_Elektronik",
-      "focus": "Elektronikdiagnose, Baugruppenreparatur, Mess-/Prüftechnik, Inbetriebnahme-Nähe, technische Dokumentation und Qualität.",
-      "summary": [
-        "Technischer Spezialist mit langjähriger Praxis in Elektronikdiagnose, Reparatur elektronischer Baugruppen, Werkstattqualität und dokumentierter Befundung.",
-        "Sicher im Lesen technischer Unterlagen, in Mess-/Prüftechnik, Stromversorgungsdiagnose, Löt-/Rework-Verfahren und systematischer Fehleranalyse.",
-        "IT-Erfahrung ergänzt das Profil durch Systemverständnis, Dokumentation, Tests/UAT, Tools und strukturierte technische Analyse."
-      ],
-      "targetRoles": ["Servicetechniker Elektronik", "Prüftechniker Elektronik", "Elektronikdiagnose", "Technischer Service", "Systemnahe Fehleranalyse"]
-    }
-  ]
+  "educationDisplayRules": {
+    "showInPublicCv": true,
+    "showInKurzprofil": true,
+    "showInPublicProfiles": true,
+    "shortFormat": [
+      "Diplom-Ingenieur · Steuerung und Informatik in Techniksystemen",
+      "Radioelektroniker · TUSUR Tomsk"
+    ],
+    "technicalFormat": [
+      "Diplom-Ingenieur · Steuerung und Informatik in Techniksystemen · Staatliche Universität Südural",
+      "Radioelektroniker · Tomsker Staatliche Universität für Steuerungssysteme und Radioelektronik (TUSUR)",
+      "Frühere OEM-Trainings und Hersteller-Schulungen im autorisierten Serviceumfeld"
+    ]
+  },
+  "documentRules": {
+    "publicDownloads": ["Artjom_Warkentin_Kurzprofil_Public.pdf", "Artjom_Warkentin_Lebenslauf_IT_Public.pdf", "Artjom_Warkentin_Lebenslauf_ServiceTechniker_Public.pdf"],
+    "doNotPublish": ["private Kontaktdaten", "vollständige Adresse", "alte DOCX", ".android", "firmenspezifische Bewerbungsvarianten", "private Logs/Dumps"],
+    "applicationOnly": ["vollständiger privater Kontakt", "firmenspezifische Varianten"],
+    "renderingFixes": ["Keine Soft-Hyphen/control characters im PDF.", "Kurzprofil maximal 1 Seite.", "IT- und Service-Techniker-Profil mit gemeinsamem Body.", "Keine doppelten Bulletpoints.", "Einheitliches PDF-Template."]
+  },
+  "sourceNotes": {
+    "userSuppliedAdditionalFacts": [
+      "Aktuell Business Analyst, interner Projektleiter, Aufgabensteller für Programmierer, Scrum-Master, Scrum-Arbeitsweise.",
+      "UI-Tester, Analyst entwickelter Website-Designs, Mitarbeit am Aufbau einer eigenen ERP-Systemlandschaft.",
+      "Leitung des IT-Teams."
+    ],
+    "sourceFiles": ["profile.json", "Lebenslauf Elektronikreparateur Artjom Warketnin.docx", "Lebenslauf IT Artjom Warketnin.docx"]
+  }
 }

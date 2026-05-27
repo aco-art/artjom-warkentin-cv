@@ -10,7 +10,7 @@ GitHub: https://github.com/aco-art/
 
 Technischer Spezialist mit Schwerpunkt IT-Service, IT-Infrastruktur und Elektronikdiagnose. Mehr als zehn Jahre praktische Erfahrung in Diagnose, Reparatur und Werkstattprozessen für Computertechnik, Peripherie und elektronische Baugruppen. Aktuelle Praxis in Deutschland mit technischer Systembetreuung, Schnittstellen, Datenflüssen, Tests, Dokumentation und interner Prozessqualität.
 
-Sicher im Umgang mit Windows Server, Linux, TrueNAS/NAS, SMB-Ablagen, Benutzer- und Rechtekonzepten, RDP, VPN, DNS- und Backup-Grundlagen. Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework und Firmware-/BIOS-/EEPROM-Arbeiten.
+Sicher im Umgang mit Windows Server, Linux, TrueNAS/NAS, SMB-Ablagen, Benutzer- und Rechtekonzepten, RDP, VPN, DNS- und Backup-Grundlagen. Hands-on in Elektronikdiagnose mit Schaltplanlesen, Multimeter, Oszilloskop, SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework und Firmware-/BIOS-/EEPROM-Arbeiten.
 
 ### Zielrollen
 
@@ -20,9 +20,9 @@ IT-Systembetreuer · Technischer IT-Service · Technischer Support / Serviceinne
 
 **IT-Infrastruktur & Betrieb:** Windows Server, Linux, TrueNAS/NAS, SMB-Shares, Benutzer/Rechte, Active Directory-Grundlagen, RDP, USB-over-RDP/Port-Weiterleitung, VPN, DNS, Backups.
 
-**Elektronikdiagnose & Reparatur:** Schaltplanlesen, technische Dokumentation lesen, Stromversorgungsdiagnose, Kurzschlussanalyse, Multimeter, Oszilloskop, SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework, Reflow/Reballing, ESD-sicheres Arbeiten.
+**Elektronikdiagnose & Reparatur:** Schaltplanlesen, technische Dokumentation lesen, Stromversorgungsdiagnose, Kurzschlussanalyse, Multimeter, Oszilloskop, SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework, Reflow/Reballing, ESD-sicheres Arbeiten.
 
-**Tests, Dokumentation & KI-gestützte Arbeit:** UAT, Fehlernachverfolgung, Postman, Browser DevTools, Website-Tests, manuelle API-Prüfung, technische Dokumentation, Skripte, Parser, Projektgraphen, README/technische Unterlagen.
+**Tests, Dokumentation & KI-gestützte Arbeit:** Abnahme- und Nutzertests, Fehlernachverfolgung, Postman, Browser DevTools, Website-Tests, manuelle API-Prüfung, technische Dokumentation, Skripte, Parser, Projektgraphen, README/technische Unterlagen.
 
 ### Berufserfahrung
 
@@ -31,7 +31,7 @@ IT-Systembetreuer · Technischer IT-Service · Technischer Support / Serviceinne
 
 - TrueNAS-basierten Projektspeicher aufgebaut und betrieben: Ablagekonzept, Zugriffsstruktur, Nutzung durch Fachbereiche, Performance-Tuning und technische Dokumentation.
 - Schnittstellen, Datenflüsse und Systemprozesse analysiert und in Pflichtenheften, Prozessskizzen, Funktionsmatrizen und Abnahmekriterien nachvollziehbar dokumentiert.
-- UAT, Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und Ergebnisse strukturiert dokumentiert.
+- Abnahme- und Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und Ergebnisse strukturiert dokumentiert.
 - KI-gestützte Spezifikations- und Dokumentationsarbeit eingesetzt, um Konsistenz, technische Recherche, Checklisten, Skripte und Testvorbereitung schneller und sauberer umzusetzen.
 
 #### 06/2022 - 01/2023 · Technische Koordination IT
@@ -60,7 +60,7 @@ IT-Systembetreuer · Technischer IT-Service · Technischer Support / Serviceinne
 **Innovation Service Center, Tscheljabinsk**
 
 - Service- und Werkstattpraxis für Notebooks, Mainboards, Monitore, Tablets, Smartphones, Peripherie und elektronische Baugruppen fachlich verantwortet.
-- Komplexe Fehlerbilder analysiert, Reparaturwege bewertet, Qualitätsstandards, SOPs, Arbeitsanweisungen und Reklamationsklärung strukturiert.
+- Fehler an Mainboards, Stromversorgung, Peripherie und elektronischen Baugruppen analysiert, Reparaturwege bewertet, Qualitätsstandards, Arbeitsanweisungen, Prüfabläufe, Serviceprozesse und Reklamationsklärung strukturiert.
 - OEM-Serviceumfeld mit Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer betreut; jährliche Trainings und Herstellervorgaben in die Werkstattpraxis übertragen.
 - Ersatzteilmanagement, Lager- und Reparaturbuchführung, Schulung neuer Mitarbeitender und Wissenstransfer im Serviceteam aufgebaut und optimiert.
 

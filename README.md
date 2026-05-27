@@ -1,40 +1,26 @@
 # Artjom Warkentin - CV / Portfolio
 
-Public CV and portfolio site for **Artjom Warkentin**.
+Public GitHub Pages CV and portfolio site for **Artjom Warkentin**.
 
-**Positioning:** Technischer IT-Service & Elektronikdiagnose  
+**Positioning:** Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis  
 **Target region:** Soltau / Heidekreis / Niedersachsen  
 **Live site:** https://aco-art.github.io/artjom-warkentin-cv/
 
-## Profile
-
-10+ Jahre Elektronikservice · IT-Infrastruktur · Server/NAS/Linux/Windows · KI-gestützte technische Dokumentation.
-
-This project presents a public, recruiter-readable portfolio for technical roles where system understanding, clean fault isolation, documentation quality and practical service experience matter.
-
-Relevant target areas:
-
-- IT-Systembetreuung / IT-Service
-- Technischer Support / Serviceinnendienst
-- Servicetechniker Elektronik / Prüftechnik
-- IT-nahe Systemdiagnose / Infrastrukturservice
-
 ## Public Downloads
 
-The site provides public-safe PDFs without phone number, full address or private application documents:
+The public site provides exactly three PDF documents without private contact data, full address or private application variants:
 
-- `Artjom_Warkentin_Lebenslauf_Public.pdf`
-- `Artjom_Warkentin_Kurzprofil_Public.pdf`
-- `Artjom_Warkentin_Technikprofil_Public.pdf`
-
-Full application documents and educational certificates are shared directly with employers when needed.
+- `Artjom_Warkentin_Kurzprofil_Public.pdf` - 1-page HR snapshot.
+- `Artjom_Warkentin_Lebenslauf_IT_Public.pdf` - Business Analyst / IT-Teamleitung / Scrum / Abnahme- und Nutzertests / ERP / IT-Infrastruktur.
+- `Artjom_Warkentin_Lebenslauf_ServiceTechniker_Public.pdf` - Elektronikdiagnose / Prüftechnik / technischer IT-Service.
 
 ## Project Structure
 
-- `src/` contains structured profile and CV source content.
-- `scripts/` builds the static site and exports PDF/DOCX files.
+- `src/profile.json` contains public, tracked profile data.
+- `src/profile.private.json` can be created locally for private application exports and is ignored by Git.
+- `scripts/` builds the static site and exports PDFs.
 - `public/` is the GitHub Pages output directory.
-- `.github/workflows/pages.yml` deploys the site through GitHub Actions.
+- `.github/workflows/pages.yml` deploys only `public/`.
 
 ## Local Build
 
@@ -54,4 +40,6 @@ npm run validate:public
 
 ## Privacy
 
-Only the sanitized `public/` output is deployed. Private application exports, certificates, local source documents, logs and machine-specific files are intentionally excluded from the repository and from GitHub Pages.
+Only sanitized public output is deployed. Private contact data, full addresses, private logs, old DOCX source files and firm-specific application variants must not be placed in `public/`.
+
+Wenn dieses Repository öffentlich ist, dürfen private Kontaktdaten nicht in getrackten Quelldateien liegen. Bereits veröffentlichte Git-Historie muss bei Bedarf separat geprüft werden.

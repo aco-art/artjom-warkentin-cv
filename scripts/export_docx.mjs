@@ -14,12 +14,21 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const publicOnly = process.env.PUBLIC_ONLY === "1";
 const profile = JSON.parse(fs.readFileSync(path.join(root, "src", "profile.json"), "utf8"));
-const privateProfilePath = path.join(root, "private", "profile.private.json");
+const privateProfilePath = path.join(root, "src", "profile.private.json");
 const privateProfile = fs.existsSync(privateProfilePath)
   ? JSON.parse(fs.readFileSync(privateProfilePath, "utf8"))
   : {};
+const publicContact = profile.contact.public;
+const privateContact = {
+  phone: privateProfile.phone,
+  city: privateProfile.city ?? privateProfile.applicationLocation
+};
+const master = {
+  title: profile.targetProfiles.itBusinessTechnical.title,
+  filenameBase: "Artjom_Warkentin_Lebenslauf_Business_Analyst_IT_Teamleiter",
+  targetRoles: profile.targetProfiles.itBusinessTechnical.targetRoles
+};
 
-const master = profile.cvVariants.find((variant) => variant.id === "master");
 if (publicOnly) {
   console.log("Skipped public DOCX export; public downloads are PDF-only.");
 } else {
@@ -41,14 +50,14 @@ function buildDocument(scope) {
   const children = [];
   const contact = scope === "private"
     ? [
-        privateProfile.applicationLocation || profile.person.currentRegion,
-        privateProfile.phone ? `Telefon: ${privateProfile.phone}` : null,
-        `E-Mail: ${profile.contact.email}`,
-        `GitHub: ${profile.contact.github}`
+        privateContact.city || profile.person.currentRegion,
+        privateContact.phone ? `Telefon: ${privateContact.phone}` : null,
+        `E-Mail: ${publicContact.email}`,
+        `GitHub: ${publicContact.github}`
       ].filter(Boolean)
     : [
-        `E-Mail: ${profile.contact.email}`,
-        `GitHub: ${profile.contact.github}`,
+        `E-Mail: ${publicContact.email}`,
+        `GitHub: ${publicContact.github}`,
         `Zielregion: ${profile.person.targetRegion}`
       ];
 
@@ -69,26 +78,26 @@ function buildDocument(scope) {
   );
 
   addHeading(children, "Kurzprofil");
-  (master.summary ?? profile.summary).forEach((line) => children.push(paragraph(line)));
+  profile.positioning.shortProfile.forEach((line) => children.push(paragraph(line)));
 
   addHeading(children, "Zielpositionen");
-  children.push(paragraph((master.targetRoles ?? profile.targetRoles).join(" · ")));
+  children.push(paragraph(master.targetRoles.join(" · ")));
 
   addHeading(children, "Kernkompetenzen");
-  for (const group of profile.competencies) {
+  for (const group of profile.competencyGroups) {
     children.push(paragraph(`${group.title}: ${group.items.join(" · ")}`));
   }
 
   addHeading(children, "Berufserfahrung");
   for (const item of profile.experience) {
-    children.push(paragraph(`${item.period} · ${item.role}`, true));
+    children.push(paragraph(`${item.period} · ${item.publicRole}`, true));
     children.push(paragraph(`${item.employer} · ${item.location}`));
     children.push(paragraph(item.focus));
     item.bullets.forEach((bullet) => children.push(bulletParagraph(bullet)));
   }
 
-  addHeading(children, "Ausgewählte technische Projekte");
-  for (const project of profile.projects.slice(0, 4)) {
+  addHeading(children, "Ausgewählte Projekte");
+  for (const project of profile.projects) {
     children.push(paragraph(project.title, true));
     children.push(paragraph(`${project.description}${project.link ? ` ${project.link}` : ""}`));
   }
@@ -96,19 +105,19 @@ function buildDocument(scope) {
   addHeading(children, "Elektronik & Werkstatt");
   children.push(paragraph(profile.electronics.intro));
   children.push(paragraph(`Geräte: ${profile.electronics.devices.join(" · ")}`));
-  profile.electronics.items.forEach((item) => children.push(bulletParagraph(item)));
+  profile.electronics.methods.forEach((item) => children.push(bulletParagraph(item)));
 
   addHeading(children, "Ausbildung");
   for (const item of profile.education) {
     children.push(paragraph(`${item.period} · ${item.degree}`, true));
-    children.push(paragraph(`${item.details} · ${item.institution}`));
+    children.push(paragraph(`${item.details} · ${item.institution}${item.note ? ` · ${item.note}` : ""}`));
   }
 
   addHeading(children, "Fortbildung / Zertifizierungen / Schulungen");
   profile.training.forEach((item) => children.push(bulletParagraph(item)));
 
   addHeading(children, "Sprachen");
-  profile.languages.forEach((item) => children.push(bulletParagraph(item)));
+  profile.languages.forEach((item) => children.push(bulletParagraph(`${item.language}: ${item.level}`)));
 
   addHeading(children, "Weitere Angaben");
   const further = scope === "private"
@@ -119,7 +128,7 @@ function buildDocument(scope) {
   return new Document({
     creator: "Artjom Warkentin",
     title: `${profile.person.name} - ${master.title}`,
-    description: "Lebenslauf für technische IT-Service- und Elektronikdiagnose-Rollen.",
+    description: "Lebenslauf für Business Analyse, IT-Teamleitung, technische Systembetreuung und Elektronikdiagnose.",
     sections: [
       {
         properties: {

@@ -10,7 +10,7 @@ GitHub: https://github.com/aco-art/
 
 Technischer Spezialist mit langjähriger Praxis in Elektronikdiagnose, Reparatur elektronischer Baugruppen, Werkstattqualität und dokumentierter Befundung. Sicher im Lesen technischer Unterlagen, in Mess-/Prüftechnik, Stromversorgungsdiagnose, Löt-/Rework-Verfahren und systematischer Fehleranalyse.
 
-IT-Erfahrung ergänzt das Profil durch Systemverständnis, Dokumentation, Tests/UAT, Tools und strukturierte technische Analyse. Ziel sind operative technische Rollen in Elektronikdiagnose, Prüftechnik, technischem Service, Inbetriebnahme-Nähe und Qualität.
+IT-Erfahrung ergänzt das Profil durch Systemverständnis, Dokumentation, Abnahme- und Nutzertests, Tools und strukturierte technische Analyse. Ziel sind operative technische Rollen in Elektronikdiagnose, Prüftechnik, technischem Service, Inbetriebnahme-Nähe und Qualität.
 
 ### Zielrollen
 
@@ -22,9 +22,9 @@ Servicetechniker Elektronik · Prüftechniker Elektronik · Elektronikdiagnose �
 
 **Mess- und Prüftechnik:** Multimeter, Oszilloskop, Laborpraxis, Funktionsprüfung, Befundung, dokumentierte Fehlerbilder, reproduzierbare Tests.
 
-**Reparaturverfahren:** SMD/THT-Löten, Heißluft, Mikroskop, BGA-Rework, Reflow/Reballing, ESD-sicheres Arbeiten, Firmware-/BIOS-/EEPROM-Flashing.
+**Reparaturverfahren:** SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework, Reflow/Reballing, ESD-sicheres Arbeiten, Firmware-/BIOS-/EEPROM-Flashing.
 
-**Qualität & Serviceprozesse:** OEM-Serviceumfeld, SOPs, Arbeitsanweisungen, Ersatzteile, Reklamationsklärung, Schulung, Wissenstransfer, technische Dokumentation.
+**Qualität & Serviceprozesse:** OEM-Serviceumfeld, Arbeitsanweisungen, Prüfabläufe, Serviceprozesse, Ersatzteile, Reklamationsklärung, Schulung, Wissenstransfer, technische Dokumentation.
 
 ### Berufserfahrung
 
@@ -32,7 +32,7 @@ Servicetechniker Elektronik · Prüftechniker Elektronik · Elektronikdiagnose �
 **INFORMA GmbH & Co. KG, Oelsnitz/Vogtland**
 
 - Technische Anforderungen, Schnittstellen, Datenflüsse und Systemprozesse analysiert und dokumentiert.
-- UAT, Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und Ergebnisse nachvollziehbar beschrieben.
+- Abnahme- und Nutzertests, Fehlernachverfolgung und Abnahmen vorbereitet, begleitet und Ergebnisse nachvollziehbar beschrieben.
 - TrueNAS-basierten Projektspeicher aufgebaut und betrieben; Ablage, Rechte, Nutzung, Performance und Dokumentation strukturiert.
 - KI-gestützte Werkzeuge für technische Recherche, Spezifikationen, Skripte, Checklisten und Dokumentationsqualität genutzt.
 
@@ -60,9 +60,9 @@ Servicetechniker Elektronik · Prüftechniker Elektronik · Elektronikdiagnose �
 **Innovation Service Center, Tscheljabinsk**
 
 - Elektronik-/IT-Service für Notebooks, Mainboards, Monitore, Tablets, Smartphones, Peripherie und elektronische Baugruppen fachlich verantwortet.
-- Komplexe Fehlerbilder analysiert, Reparaturwege bewertet, Funktionstests begleitet und technische Befundung strukturiert.
+- Fehler an Mainboards, Stromversorgung, Peripherie und elektronischen Baugruppen analysiert, Reparaturwege bewertet, Funktionstests begleitet und technische Befundung strukturiert.
 - OEM-Serviceumfeld mit Herstellerfreigaben für Asus, Lenovo, Dell, Fujitsu und Acer betreut; Herstellervorgaben, Trainings und Qualitätsstandards praktisch umgesetzt.
-- SOPs, Arbeitsanweisungen, Ersatzteilmanagement, Reklamationsklärung, Schulung und Wissenstransfer im Werkstattbetrieb aufgebaut und optimiert.
+- Arbeitsanweisungen, Prüfabläufe, Serviceprozesse, Ersatzteilmanagement, Reklamationsklärung, Schulung und Wissenstransfer im Werkstattbetrieb aufgebaut und optimiert.
 
 #### 11/2008 - 05/2013 · Ober-Servicetechniker
 **Innovation Service Center, Tscheljabinsk**

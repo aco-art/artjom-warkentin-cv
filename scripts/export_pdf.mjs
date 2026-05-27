@@ -8,16 +8,24 @@ const root = path.resolve(__dirname, "..");
 const publicOnly = process.env.PUBLIC_ONLY === "1";
 const profile = JSON.parse(fs.readFileSync(path.join(root, "src", "profile.json"), "utf8"));
 
-const jobs = [];
-for (const document of profile.publicDocuments) {
-  jobs.push({
-    html: path.join(root, "dist", "html", `${document.id}.public.html`),
-    pdf: path.join(root, "public", "downloads", `${document.filenameBase}_Public.pdf`)
-  });
-}
+const publicDocuments = [
+  { id: "public_short", filenameBase: "Artjom_Warkentin_Kurzprofil" },
+  { id: "public_it", filenameBase: "Artjom_Warkentin_Lebenslauf_IT" },
+  { id: "public_service", filenameBase: "Artjom_Warkentin_Lebenslauf_ServiceTechniker" }
+];
+const applicationVariants = [
+  { id: "business_teamlead", filenameBase: "Artjom_Warkentin_Lebenslauf_Business_Analyst_IT_Teamleiter" },
+  { id: "hands_on_soltau", filenameBase: "Artjom_Warkentin_Lebenslauf_Soltau_Technical_Service" },
+  { id: "electronics_prueftechnik", filenameBase: "Artjom_Warkentin_Lebenslauf_Elektronik_Prueftechnik" }
+];
+
+const jobs = publicDocuments.map((document) => ({
+  html: path.join(root, "dist", "html", `${document.id}.public.html`),
+  pdf: path.join(root, "public", "downloads", `${document.filenameBase}_Public.pdf`)
+}));
 
 if (!publicOnly) {
-  for (const variant of profile.cvVariants) {
+  for (const variant of applicationVariants) {
     jobs.push({
       html: path.join(root, "dist", "html", `${variant.id}.private.html`),
       pdf: path.join(root, "dist", "for_application", `${variant.filenameBase}.pdf`)
@@ -39,7 +47,7 @@ try {
       format: "A4",
       printBackground: true,
       preferCSSPageSize: true,
-      margin: { top: "12mm", right: "10mm", bottom: "12mm", left: "10mm" }
+      margin: { top: "0", right: "0", bottom: "0", left: "0" }
     });
     await page.close();
     const stat = fs.statSync(job.pdf);
@@ -50,4 +58,8 @@ try {
   }
 } finally {
   await browser.close();
+}
+
+if (!profile.documentRules?.publicDownloads?.length) {
+  throw new Error("Missing documentRules.publicDownloads in src/profile.json");
 }

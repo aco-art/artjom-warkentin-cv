@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -9,149 +9,206 @@ const root = path.resolve(__dirname, "..");
 const publicOnly = process.env.PUBLIC_ONLY === "1";
 const profile = readJson("src/profile.json");
 const failures = [];
-const badTransliteration = "Kla" + "erung";
-
-const forbiddenTerms = [
-  "Softwareentwickler",
-  "klassischer Programmierer",
-  "Product Owner",
-  "Projektleiter",
-  "Scrum Master",
-  "Mechaniker",
-  "KFZ",
-  "Karosserie"
+const publicDownloads = [
+  "public/downloads/Artjom_Warkentin_Kurzprofil_Public.pdf",
+  "public/downloads/Artjom_Warkentin_Lebenslauf_IT_Public.pdf",
+  "public/downloads/Artjom_Warkentin_Lebenslauf_ServiceTechniker_Public.pdf"
+];
+const currentPublicDownloadNames = publicDownloads.map((item) => path.basename(item));
+const applicationVariants = [
+  "dist/for_application/Artjom_Warkentin_Lebenslauf_Business_Analyst_IT_Teamleiter.pdf",
+  "dist/for_application/Artjom_Warkentin_Lebenslauf_Soltau_Technical_Service.pdf",
+  "dist/for_application/Artjom_Warkentin_Lebenslauf_Elektronik_Prueftechnik.pdf"
+];
+const genericPhrases = [
+  "seltene Kombination",
+  "belastbare Kombination",
+  "KI-gestützte technische Arbeit",
+  "moderne technische Workflows"
+];
+const brokenPdfPatterns = [
+  /\u00ad/,
+  /\u0002/,
+  /\uFFFE/,
+  /\uFFFD/,
+  /\uFFFF/,
+  /IT\uFFFE/,
+  /BGA\uFFFE/,
+  /Build\uFFFE/,
+  /Performance\uFFFE/
+];
+const unclearTechnicalTerms = [
+  /\bSOPs\b/i,
+  /\bTHT\b/,
+  /\bDC-In\b/i,
+  /komplexe Fehlerbilder/i,
+  /\bUAT\b/
+];
+const forbiddenPublicDownloadPatterns = [
+  /Artjom_Warkentin_Lebenslauf_Public\.pdf/i,
+  /Artjom_Warkentin_Technikprofil_Public\.pdf/i,
+  /Rheinmetall/i,
+  /Suedsee/i,
+  /Südsee/i,
+  /\.docx$/i
+];
+const privatePhonePatterns = [
+  /\+49\s*176\s*65165602/,
+  /176\s*65165602/
 ];
 
-const publicIndex = readText("public/index.html");
-const scopedParts = [
-  extractTitle(publicIndex),
-  extractMetaDescription(publicIndex),
-  extractMarker(publicIndex, "hero"),
-  extractMarker(publicIndex, "cta"),
-  extractMarker(publicIndex, "bring"),
-  extractMarker(publicIndex, "short"),
-  extractMarker(publicIndex, "roles")
-].join("\n");
+assertV2Profile();
+assertSourcePrivacy();
+assertExists("public/index.html");
+assertExists("public/assets/site.css");
+assertExists("public/assets/profile-photo.png");
+assertExists("public/assets/project-images/vontar-h618-frontside.jpg");
+assertExists("public/assets/project-images/vontar-h618-backside.jpg");
+for (const file of publicDownloads) assertExists(file);
 
-for (const term of forbiddenTerms) {
-  if (new RegExp(escapeRegExp(term), "i").test(stripHtml(scopedParts))) {
-    failures.push(`Forbidden target-positioning term in public positioning context: ${term}`);
-  }
+const publicIndex = fs.existsSync(path.join(root, "public/index.html")) ? readText("public/index.html") : "";
+const publicHtmlText = decodeHtml(stripHtml(publicIndex));
+const expectedHero = "Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis";
+const expectedSupport = "Requirements · Scrum · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
+
+if (!publicHtmlText.includes(expectedHero)) {
+  failures.push("Public hero does not use the V2 public title.");
+}
+if (!publicHtmlText.includes(expectedSupport)) {
+  failures.push("Public hero does not use the V2 support line.");
+}
+if (!publicHtmlText.includes(profile.positioning.oneSentence)) {
+  failures.push("Public one-sentence profile does not match positioning.oneSentence.");
+}
+if (!publicHtmlText.includes("IT-Profil") || !publicHtmlText.includes("Service-Techniker-Profil") || !publicHtmlText.includes("Kurzprofil herunterladen")) {
+  failures.push("Public site is missing one of the required profile entry paths.");
+}
+if (!publicIndex.includes(profile.contact.public.github) || !publicIndex.includes(profile.contact.public.h618Project)) {
+  failures.push("Public site is missing required GitHub/H618 links.");
+}
+if (!/[äöüÄÖÜß]/.test(publicIndex)) {
+  failures.push("German Umlauts are missing from public index.");
+}
+if (/DOCX/i.test(publicHtmlText)) {
+  failures.push("Public HTML contains DOCX wording.");
 }
 
-for (const file of listFiles(path.join(root, "public")).filter((item) => /\.(html|css|js|json|txt|md)$/i.test(item))) {
+for (const file of listFiles(path.join(root, "public")).filter((item) => /\.(html|css|js|json|txt|md|svg)$/i.test(item))) {
   const text = fs.readFileSync(file, "utf8");
   const relative = path.relative(root, file);
   if (/href=(["'])(\s*|#)\1/i.test(text)) {
     failures.push(`Empty link in ${relative}`);
   }
-}
-
-const requiredPublicFiles = [
-  "public/index.html",
-  "public/assets/site.css",
-  "public/assets/profile-photo.png",
-  "public/assets/project-images/vontar-h618-frontside.jpg",
-  "public/assets/project-images/vontar-h618-backside.jpg",
-  "public/downloads/Artjom_Warkentin_Lebenslauf_Public.pdf",
-  "public/downloads/Artjom_Warkentin_Kurzprofil_Public.pdf",
-  "public/downloads/Artjom_Warkentin_Technikprofil_Public.pdf"
-];
-
-for (const file of requiredPublicFiles) {
-  assertExists(file);
-}
-
-const publicDownloadFiles = listFiles(path.join(root, "public", "downloads")).map((file) => path.relative(root, file));
-const allowedDownloads = new Set(requiredPublicFiles.filter((file) => file.startsWith("public/downloads/")));
-for (const file of publicDownloadFiles) {
-  if (!allowedDownloads.has(file)) {
-    failures.push(`Unexpected public download: ${file}`);
-  }
-  if (/\.(docx|txt|log)$/i.test(file)) {
-    failures.push(`Non-PDF file in public downloads: ${file}`);
-  }
-  if (/Rheinmetall|Suedsee|Soltau_IT_Service|Soltau.*IT.?Service|Technischer_IT_Service_Elektronik/i.test(file)) {
-    failures.push(`Company-targeted or old CV filename in public downloads: ${file}`);
-  }
-}
-
-if (!publicOnly) {
-  for (const variant of profile.cvVariants) {
-    assertExists(`dist/for_application/${variant.filenameBase}.pdf`);
-  }
-  assertExists(`dist/for_application/${profile.cvVariants[0].filenameBase}.docx`);
-}
-
-if (!publicIndex.includes("https://github.com/aco-art/")) {
-  failures.push("Missing GitHub profile link in public index.");
-}
-if (!publicIndex.includes("https://github.com/aco-art/vontar-h618-armbian-patche")) {
-  failures.push("Missing H618 project link in public index.");
-}
-if (!/[äöüÄÖÜß]/.test(publicIndex)) {
-  failures.push("German Umlauts are missing from public index.");
-}
-
-const publicHtmlText = stripHtml(publicIndex);
-const forbiddenPublicLabels = [
-  "Rheinmetall",
-  "Rheinmetall Elektronik CV",
-  "Soltau IT-Service CV",
-  "Master CV DOCX",
-  "Master CV",
-  "DOCX"
-];
-for (const label of forbiddenPublicLabels) {
-  if (new RegExp(escapeRegExp(label), "i").test(publicHtmlText)) {
-    failures.push(`Public HTML contains forbidden public download/target label: ${label}`);
-  }
-}
-
-const publicTextFiles = listFiles(path.join(root, "public"))
-  .filter((file) => /\.(html|css|js|json|txt|md|svg)$/i.test(file))
-  .map((file) => [path.relative(root, file), fs.readFileSync(file, "utf8")]);
-
-const privatePatterns = [
-  { pattern: /\+49|0176|65165602|Straße|Strasse|Hausnummer|[0-9]{5}/, label: "phone number or full-address marker" },
-  { pattern: /\.android|Lebenslauf .*\.docx|vontar-h618-armbian-patches\/|\/home\/acoart|\/home\/warkentin/i, label: "private source path marker" }
-];
-
-for (const [relative, text] of publicTextFiles) {
-  for (const { pattern, label } of privatePatterns) {
-    if (pattern.test(text)) {
-      failures.push(`Public file contains ${label}: ${relative}`);
-    }
-  }
+  assertNoPublicPrivateMarkers(relative, text);
+  assertNoGenericPhrases(relative, text);
 }
 
 for (const file of listFiles(path.join(root, "public"))) {
   const relative = path.relative(root, file);
-  if (/Lebenslauf .*\.docx|\.android|vontar-h618-armbian-patches\//i.test(relative)) {
-    failures.push(`Public file path references private/source material: ${relative}`);
+  if (/\.docx$/i.test(relative)) {
+    failures.push(`Public tree contains DOCX file: ${relative}`);
+  }
+  if (/\.android|private|dump|dumps|\.log$/i.test(relative)) {
+    failures.push(`Public tree contains private log/source marker: ${relative}`);
   }
 }
 
-for (const relative of allowedDownloads) {
+const publicDownloadFiles = listFiles(path.join(root, "public", "downloads")).map((file) => path.relative(root, file));
+const allowedDownloads = new Set(publicDownloads);
+if (publicDownloadFiles.length !== publicDownloads.length) {
+  failures.push(`public/downloads must contain exactly ${publicDownloads.length} files; got ${publicDownloadFiles.length}.`);
+}
+for (const file of publicDownloadFiles) {
+  if (!allowedDownloads.has(file)) {
+    failures.push(`Unexpected public download: ${file}`);
+  }
+  for (const pattern of forbiddenPublicDownloadPatterns) {
+    if (pattern.test(file)) {
+      failures.push(`Forbidden public download filename: ${file}`);
+    }
+  }
+  if (!/\.pdf$/i.test(file)) {
+    failures.push(`Non-PDF file in public downloads: ${file}`);
+  }
+}
+
+const publicPdfTexts = new Map();
+for (const relative of publicDownloads) {
   const file = path.join(root, relative);
   if (!fs.existsSync(file)) continue;
-  const artifactText = await extractArtifactText(file);
-  if (/\+49|0176|65165602/.test(artifactText)) {
-    failures.push(`Public download appears to contain phone data: ${relative}`);
+  const { text, pageCount } = await extractPdfText(file);
+  publicPdfTexts.set(relative, { text, pageCount });
+  assertNoPublicPrivateMarkers(relative, text);
+  assertNoGenericPhrases(relative, text);
+  if (/DOCX/i.test(text)) {
+    failures.push(`Public PDF contains DOCX wording: ${relative}`);
   }
-  if (/Rheinmetall|Soltau IT-Service CV|Rheinmetall Elektronik CV|DOCX/i.test(artifactText)) {
-    failures.push(`Public PDF contains company-targeted label or DOCX wording: ${relative}`);
+  if (/[\u00ad\u0000-\u0008\u000B\u000C\u000E-\u001F]/.test(text)) {
+    failures.push(`Public PDF text extraction contains soft-hyphen or control characters: ${relative}`);
   }
-  if (/konnten\.10\/|\)FORTBILDUNG|[\u0000-\u0008\u000B\u000C\u000E-\u001F]/.test(artifactText)) {
-    failures.push(`Public PDF text extraction contains broken layout markers or control characters: ${relative}`);
+  if (/[\uFFFD\uFFFE\uFFFF]/.test(text)) {
+    failures.push(`Public PDF text extraction contains broken glyph markers: ${relative}`);
   }
-  if (!/BGA-Rework/.test(artifactText)) {
+  for (const pattern of brokenPdfPatterns) {
+    if (pattern.test(text)) {
+      failures.push(`Public PDF text extraction contains forbidden broken glyph pattern ${pattern}: ${relative}`);
+    }
+  }
+  for (const pattern of unclearTechnicalTerms) {
+    if (pattern.test(text)) {
+      failures.push(`Public PDF contains unclear or forbidden technical abbreviation ${pattern}: ${relative}`);
+    }
+  }
+  if (/\bLINKS\b/i.test(text)) {
+    failures.push(`Public PDF contains duplicate bottom LINKS section: ${relative}`);
+  }
+  if (/ONLINE-PROFIL/i.test(text)) {
+    failures.push(`Public PDF contains ONLINE-PROFIL header text: ${relative}`);
+  }
+  if (!/GITHUB-PROFIL/i.test(text)) {
+    failures.push(`Public PDF is missing GitHub-Profil QR caption/header text: ${relative}`);
+  }
+  if (/aco-art\.github\.io\/artjom-warkentin-cv/i.test(text)) {
+    failures.push(`Public PDF contains GitHub Pages URL in header/text: ${relative}`);
+  }
+  if (!/BGA-Rework/.test(text)) {
     failures.push(`Public PDF text extraction does not preserve BGA-Rework wording: ${relative}`);
   }
 }
 
-for (const document of profile.publicDocuments) {
-  const htmlPath = path.join(root, "dist", "html", `${document.id}.public.html`);
+const shortPdf = publicPdfTexts.get("public/downloads/Artjom_Warkentin_Kurzprofil_Public.pdf");
+if (shortPdf && shortPdf.pageCount > 1) {
+  failures.push(`Kurzprofil public PDF must be at most 1 page; got ${shortPdf.pageCount}.`);
+}
+if (shortPdf && !/AUSBILDUNG/i.test(shortPdf.text)) {
+  failures.push("Kurzprofil public PDF is missing Ausbildung.");
+}
+
+const itPdf = publicPdfTexts.get("public/downloads/Artjom_Warkentin_Lebenslauf_IT_Public.pdf");
+const servicePdf = publicPdfTexts.get("public/downloads/Artjom_Warkentin_Lebenslauf_ServiceTechniker_Public.pdf");
+for (const [label, pdf] of [["IT-Profil", itPdf], ["Service-Techniker-Profil", servicePdf]]) {
+  if (!pdf) continue;
+  if (pdf.pageCount > 3) {
+    failures.push(`${label} public PDF must be at most 3 pages; got ${pdf.pageCount}.`);
+  }
+  if (!/ZIELPROFIL/i.test(pdf.text) || /ZIELROLLEN/i.test(pdf.text)) {
+    failures.push(`${label} public PDF must use ZIELPROFIL, not ZIELROLLEN.`);
+  }
+  for (const section of ["KOMPETENZFELDER", "BERUFSERFAHRUNG", "AUSBILDUNG", "TECHNISCHE PRAXIS", "ELEKTRONIK", "FORTBILDUNG", "SPRACHEN"]) {
+    if (!new RegExp(section, "i").test(pdf.text)) {
+      failures.push(`${label} public PDF is missing shared section marker: ${section}.`);
+    }
+  }
+}
+
+for (const relative of ["src/profile.json", "public/index.html"]) {
+  if (fs.existsSync(path.join(root, relative))) {
+    assertNoGenericPhrases(relative, readText(relative));
+  }
+}
+
+for (const documentId of ["public_short", "public_it", "public_service"]) {
+  const htmlPath = path.join(root, "dist", "html", `${documentId}.public.html`);
   if (!fs.existsSync(htmlPath)) {
     failures.push(`Missing public PDF HTML source: ${path.relative(root, htmlPath)}`);
     continue;
@@ -160,51 +217,28 @@ for (const document of profile.publicDocuments) {
   if (!/data-cv-template="unified"/.test(html)) {
     failures.push(`Public PDF HTML does not use unified CV template: ${path.relative(root, htmlPath)}`);
   }
+  assertNoPublicPrivateMarkers(path.relative(root, htmlPath), html);
+  assertNoGenericPhrases(path.relative(root, htmlPath), html);
 }
 
-const cvSourceFiles = [
-  "src/cv_master.de.md",
-  "src/cv_it_service.de.md",
-  "src/cv_elektronik.de.md"
-];
-const placeholderPattern = /src\/profile\.json|generiert|Generator|Platzhalter|vollständige, aus/i;
-for (const relativePath of cvSourceFiles) {
-  const text = readText(relativePath);
-  if (placeholderPattern.test(text)) {
-    failures.push(`CV source contains generator/placeholder wording: ${relativePath}`);
-  }
-  if (!/^### Berufserfahrung$/m.test(text)) {
-    failures.push(`CV source lacks Berufserfahrung section: ${relativePath}`);
-  }
-  const stationCount = (text.match(/^####\s+\d{2}/gm) ?? []).length;
-  if (stationCount < 4) {
-    failures.push(`CV source has too few career stations (${stationCount}): ${relativePath}`);
-  }
-}
-
-const filesForTextQuality = [
-  ...publicTextFiles.map(([relative]) => relative),
-  ...cvSourceFiles,
-  "src/profile.json",
-  "README.md"
-];
-for (const relativePath of filesForTextQuality) {
-  if (!fs.existsSync(path.join(root, relativePath))) continue;
-  const text = fs.readFileSync(path.join(root, relativePath), "utf8");
-  if (text.includes(badTransliteration)) {
-    failures.push(`Forbidden transliteration found in ${relativePath}`);
-  }
-  if (/upstream kernel developer|Linux maintainer|U-Boot maintainer|professional embedded developer/i.test(text)) {
-    failures.push(`Forbidden H618 overclaim found in ${relativePath}`);
-  }
+if (!publicOnly) {
+  for (const file of applicationVariants) assertExists(file);
+  assertExists("dist/for_application/Artjom_Warkentin_Lebenslauf_Business_Analyst_IT_Teamleiter.docx");
 }
 
 const readme = fs.existsSync(path.join(root, "README.md")) ? readText("README.md") : "";
-if (!fs.existsSync(path.join(root, "assets", "profile-photo.png")) && !/TODO: Add profile photo/i.test(readme)) {
-  failures.push("Profile photo missing and README has no TODO.");
-}
 if (/\.android|Lebenslauf .*\.docx|\/home\/acoart|\/home\/warkentin|65165602|0176|\+49/i.test(readme)) {
   failures.push("README contains private source names, local paths, or phone markers.");
+}
+for (const filename of currentPublicDownloadNames) {
+  if (!readme.includes(filename)) {
+    failures.push(`README is missing current public download filename: ${filename}`);
+  }
+}
+for (const oldName of ["Artjom_Warkentin_Lebenslauf_Public.pdf", "Artjom_Warkentin_Technikprofil_Public.pdf"]) {
+  if (readme.includes(oldName)) {
+    failures.push(`README mentions old public download filename: ${oldName}`);
+  }
 }
 
 if (failures.length) {
@@ -217,12 +251,59 @@ if (failures.length) {
 
 console.log(publicOnly ? "Public validation passed." : "Validation passed.");
 
-function readJson(relativePath) {
-  return JSON.parse(readText(relativePath));
+function assertV2Profile() {
+  if (profile.schemaVersion !== "2.0") {
+    failures.push("src/profile.json is not V2 schemaVersion 2.0.");
+  }
+  for (const key of ["publicTitle", "technicalTitle"]) {
+    if (!profile.person?.[key]) failures.push(`Missing person.${key}.`);
+  }
+  for (const key of ["positioning", "targetProfiles", "companyContextPublic", "competencyGroups", "educationDisplayRules", "documentRules"]) {
+    if (!profile[key]) failures.push(`Missing V2 profile key: ${key}.`);
+  }
+  if (!profile.contact?.public?.email || !profile.contact?.public?.github) {
+    failures.push("Missing contact.public email/github.");
+  }
+  if (profile.contact?.privateForApplication) {
+    failures.push("src/profile.json must not contain contact.privateForApplication.");
+  }
+  if (profile.documentRules?.applicationOnly?.includes("Foto")) {
+    failures.push("documentRules.applicationOnly must not include Foto because public PDFs keep the photo.");
+  }
 }
 
-function readText(relativePath) {
-  return fs.readFileSync(path.join(root, relativePath), "utf8");
+function assertSourcePrivacy() {
+  const profileSource = readText("src/profile.json");
+  for (const pattern of privatePhonePatterns) {
+    if (pattern.test(profileSource)) {
+      failures.push("src/profile.json contains a private phone number.");
+    }
+  }
+  if (/"phone"\s*:/.test(profileSource) || /privateForApplication/.test(profileSource)) {
+    failures.push("src/profile.json contains private phone/contact structure.");
+  }
+
+  let trackedFiles = [];
+  try {
+    trackedFiles = execFileSync("git", ["ls-files"], { cwd: root, encoding: "utf8" })
+      .split("\n")
+      .filter(Boolean);
+  } catch {
+    failures.push("Could not inspect tracked files with git ls-files.");
+    return;
+  }
+
+  for (const relative of trackedFiles) {
+    const fullPath = path.join(root, relative);
+    if (!fs.existsSync(fullPath) || fs.statSync(fullPath).isDirectory()) continue;
+    const content = fs.readFileSync(fullPath);
+    const text = content.toString("utf8");
+    for (const pattern of privatePhonePatterns) {
+      if (pattern.test(text)) {
+        failures.push(`Tracked file contains private phone number: ${relative}`);
+      }
+    }
+  }
 }
 
 function assertExists(relativePath) {
@@ -236,21 +317,41 @@ function assertExists(relativePath) {
   }
 }
 
-function extractTitle(html) {
-  return html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] ?? "";
+function assertNoPublicPrivateMarkers(relative, text) {
+  if (/\+49|0176|65165602/.test(text)) {
+    failures.push(`Public artifact contains phone data: ${relative}`);
+  }
+  if (/Straße|Strasse|Hausnummer|\.android|\/home\/acoart|\/home\/warkentin/i.test(text)) {
+    failures.push(`Public artifact contains private/source marker: ${relative}`);
+  }
 }
 
-function extractMetaDescription(html) {
-  return html.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']\s*>/i)?.[1] ?? "";
+function assertNoGenericPhrases(relative, text) {
+  for (const phrase of genericPhrases) {
+    if (new RegExp(escapeRegExp(phrase), "i").test(text)) {
+      failures.push(`Forbidden generic phrase found in ${relative}: ${phrase}`);
+    }
+  }
 }
 
-function extractMarker(html, sectionName) {
-  const pattern = new RegExp(`<!-- validate:${escapeRegExp(sectionName)}:start -->([\\s\\S]*?)<!-- validate:${escapeRegExp(sectionName)}:end -->`, "i");
-  return html.match(pattern)?.[1] ?? "";
+function readJson(relativePath) {
+  return JSON.parse(readText(relativePath));
+}
+
+function readText(relativePath) {
+  return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
 
 function stripHtml(html) {
   return html.replace(/<[^>]+>/g, " ");
+}
+
+function decodeHtml(text) {
+  return text
+    .replaceAll("&amp;", "&")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&quot;", '"');
 }
 
 function listFiles(dir) {
@@ -266,21 +367,6 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-async function extractArtifactText(file) {
-  const ext = path.extname(file).toLowerCase();
-  if (ext === ".pdf") {
-    return extractPdfText(file);
-  }
-  if (ext === ".docx") {
-    try {
-      return execFileSync("unzip", ["-p", file], { encoding: "utf8", maxBuffer: 20 * 1024 * 1024 });
-    } catch {
-      return fs.readFileSync(file).toString("latin1");
-    }
-  }
-  return fs.readFileSync(file, "utf8");
-}
-
 async function extractPdfText(file) {
   const data = new Uint8Array(fs.readFileSync(file));
   const pdf = await getDocument({ data, disableWorker: true }).promise;
@@ -290,5 +376,5 @@ async function extractPdfText(file) {
     const content = await page.getTextContent();
     pages.push(content.items.map((item) => item.str).join(" "));
   }
-  return pages.join("\n");
+  return { text: pages.join("\n"), pageCount: pdf.numPages };
 }
