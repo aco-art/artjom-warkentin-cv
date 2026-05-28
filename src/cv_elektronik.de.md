@@ -90,7 +90,7 @@ Link: https://github.com/aco-art/vontar-h618-armbian-patche
 
 ### Ausbildung
 
-- 2010 - 2016 · Diplom-Ingenieur, Steuerung und Informatik in Techniksystemen, Staatliche Universität Südural / Süduraler Staatliche Universität.
+- 2010 - 2016 · Diplom-Ingenieur, Steuerung und Informatik in Techniksystemen, Staatliche Universität Südural.
 - 2000 - 2003 · Radioelektroniker, Tomsker Staatliche Universität für Steuerungssysteme und Radioelektronik (TUSUR), Tomsk.
 
 ### Fortbildung / Zertifizierungen / Schulungen

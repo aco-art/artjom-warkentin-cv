@@ -186,16 +186,16 @@ function renderIndex(data, documents) {
   const itProfile = documents.find((document) => document.id === "public_it");
   const serviceProfile = documents.find((document) => document.id === "public_service");
   const metaDescription = "HR-Profil von Artjom Warkentin: Business Analyst und IT-Teamleiter mit Requirements, Scrum, Abnahme-/Nutzertests, UI-Prüfung, ERP-/Touristiksoftware, IT-Infrastruktur und Elektronikdiagnose.";
-  const heroSupport = "Requirements · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
+  const heroSupport = "Requirements · Scrum-nahe Teamkoordination · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
   const currentProfileParagraphs = [
     "Aktuell arbeite ich an der Schnittstelle zwischen Geschäftsprozessen, interner IT, Entwicklungsteam und Fachbereichen. Mein Schwerpunkt liegt auf Requirements, Entwickleraufgaben, Scrum-naher Teamkoordination, UI-/Website-Prüfung, Abnahme- und Nutzertests sowie technischer Dokumentation.",
-    "Parallel dazu bleibt praktische Technik ein fester Teil meines Profils: Ich beschäftige mich auch privat mit Elektronik, Reparatur, Diagnose, Home-Lab, kleinen Serverdiensten und Hardware-/Embedded-Themen. Besonders interessieren mich Aufgaben, bei denen Systeme nicht nur organisiert, sondern praktisch verstanden, geprüft, repariert, dokumentiert und stabil betrieben werden.",
+    "Praktische Technik bleibt für mich ein wichtiger Schwerpunkt: Ich beschäftige mich auch privat mit Elektronik, Reparatur, Diagnose, Home-Lab, kleinen Serverdiensten und Hardware-/Embedded-Themen. Besonders interessieren mich Aufgaben, bei denen Systeme nicht nur organisiert, sondern praktisch verstanden, geprüft, repariert, dokumentiert und stabil betrieben werden.",
     "Für die nächste berufliche Station möchte ich meinen Schwerpunkt stärker in Richtung hands-on Technik, Elektronikdiagnose, technischer Service, IT-nahe Systemdiagnose oder Infrastrukturservice verlagern. Meine IT-Erfahrung aus Analyse, Tests, Teamkoordination und Dokumentation sehe ich dabei als Zusatznutzen: Sie hilft mir, technische Probleme strukturiert zu erfassen, sauber zu dokumentieren und zwischen Anwendern, Technik und Umsetzung verständlich zu vermitteln."
   ];
   const coreFields = [
     {
       title: "IT, Requirements & Teamkoordination",
-      text: "Requirements, Entwickleraufgaben, Product Owner Rolle, Scrum-Master-Rolle, Backlog, Priorisierung, Release- und Abnahmevorbereitung."
+      text: "Requirements, Entwickleraufgaben, Product Owner, Scrum-nahe Teamkoordination, Backlog, Priorisierung, Release- und Abnahmevorbereitung."
     },
     {
       title: "Tests, UI-Prüfung & Dokumentation",
@@ -382,7 +382,7 @@ function renderTimelineItem(item) {
               <p class="meta">${escapeHtml(item.employer)} · ${escapeHtml(item.location)}</p>
               <p>${escapeHtml(item.focus)}</p>
               <ul>${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
-              ${item.metrics ? `<div class="timeline-metrics"><h4>Arbeitsumfang / IT-Team-Kennzahlen</h4><ul>${item.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul></div>` : ""}
+              ${item.metrics ? `<div class="timeline-metrics"><h4>IT-Team-Kennzahlen</h4><ul>${item.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul></div>` : ""}
             </div>
           </article>`;
 }
@@ -462,20 +462,19 @@ function renderCvBody(data, document, scope) {
       renderSection("Ausbildung", renderEducationShort(data)),
       renderSection("Ausgewählte Praxisbeispiele", renderProjects(data.projects.slice(0, 3), true)),
       renderSection("Elektronikbasis", `<p>${escapeHtml([...data.electronics.methods.slice(0, 4), "BGA-Rework mit Reflow/Reballing"].join(" · "))}</p>`),
-      renderLanguagesAndFurther(data, scope)
+      renderLanguagesAndFurther(data, scope, document.variantKey)
     ].join("\n      ");
   }
 
   return [
     renderSection("Kurzprofil", renderVariantProfile(variant)),
     renderSection("Zielprofil", renderVariantTargetProfile(variant)),
-    renderSection("Kompetenzfelder", renderCompetencyFields(variant)),
     renderSection("Berufserfahrung", data.experience.map((item) => renderCvEntry(item, document.variantKey)).join("\n        ")),
     renderSection("Ausbildung", data.education.map(renderEducationEntry).join("\n        ")),
     renderSection("Technische Praxis & Projekte", renderProjects(data.projects)),
     renderSection("Elektronik & Werkstatt", renderElectronics(data)),
     renderSection("Fortbildung / Zertifizierungen / Schulungen", `<ul>${data.training.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`),
-    renderLanguagesAndFurther(data, scope)
+    renderLanguagesAndFurther(data, scope, document.variantKey)
   ].join("\n      ");
 }
 
@@ -556,7 +555,7 @@ function renderEducationTechnical(data) {
 }
 
 function renderCvEntry(item, variantKey) {
-  const metricsTitle = variantKey === "serviceTechnician" ? "Arbeitsumfang / IT-Team-Kennzahlen (Zusatzkontext)" : "Arbeitsumfang / IT-Team-Kennzahlen";
+  const metricsTitle = "IT-Team-Kennzahlen";
   return `<div class="entry experience-item">
           <h3>${escapeHtml(item.period)} · ${escapeHtml(item.publicRole)}</h3>
           <p class="small">${escapeHtml(item.employer)} · ${escapeHtml(item.location)}</p>
@@ -566,9 +565,14 @@ function renderCvEntry(item, variantKey) {
         </div>`;
 }
 
-function renderLanguagesAndFurther(data, scope) {
+function renderLanguagesAndFurther(data, scope, variantKey) {
   const further = scope === "private"
     ? [`Geburtsjahr: ${data.person.birthYear}`, "deutsche Staatsangehörigkeit", `Führerschein: ${data.person.driverLicense}`, data.person.car, `Zielregion: ${data.person.targetRegion}`]
     : ["deutsche Staatsangehörigkeit", `Führerschein: ${data.person.driverLicense}`, data.person.car, `Zielregion: ${data.person.targetRegion}`];
+  if (variantKey === "serviceTechnician") {
+    const targetRegionItem = `Zielregion: ${data.person.targetRegion}`;
+    const index = further.indexOf(targetRegionItem);
+    if (index !== -1) further.splice(index, 1);
+  }
   return renderSection("Sprachen und weitere Angaben", `<div class="grid-two"><div><h3>Sprachen</h3><ul>${data.languages.map((item) => `<li>${escapeHtml(`${item.language}: ${item.level}`)}</li>`).join("")}</ul></div><div><h3>Weitere Angaben</h3><ul>${further.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div></div>`);
 }

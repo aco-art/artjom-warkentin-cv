@@ -44,21 +44,21 @@
     },
     "it": {
       "title": "Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis",
-      "subtitle": "Requirements · Product Owner Rolle · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · ERP-/Touristiksoftware · IT-Infrastruktur",
+      "subtitle": "Requirements · Product Owner · Scrum-nahe Teamkoordination · Abnahme-/Nutzertests · UI-Prüfung · ERP-/Touristiksoftware · IT-Infrastruktur",
       "label": "Lebenslauf IT-Profil",
       "filenameBase": "Artjom_Warkentin_Lebenslauf_IT",
       "maxPages": 3,
-      "topProfile": "Aktuell Abteilungsleiter IT / Business Analyst & Product Owner mit operativer Verantwortung für Requirements, Entwickleraufgaben, Scrum-Master-nahe Teamkoordination, Abnahme- und Nutzertests, UI-Prüfung, ERP-/Touristikprozesse, Schnittstellen, Datenflüsse, DSGVO-Anforderungen und technische Dokumentation. Zusätzlich praktische Systembetreuung mit TrueNAS/NAS, Windows/Linux, RDP, VPN, DNS, Backups, internen Diensten, Docker-nahen lokalen Anwendungen und Monitoring.",
+      "topProfile": "Aktuell Abteilungsleiter IT / Business Analyst & Product Owner mit operativer Verantwortung für Requirements, Entwickleraufgaben, Scrum-nahe Teamkoordination, Abnahme- und Nutzertests, UI-Prüfung, ERP-/Touristikprozesse, Routen-/Lieferprozesse für frisch zubereitete Mahlzeiten, externe Buchungs- und Zahlungssysteme wie PayPal, VR Payment und secupay, Content-Management-/Website-Verwaltung, Schnittstellen, Datenflüsse, DSGVO-Anforderungen und technische Dokumentation. Zusätzlich praktische Systembetreuung mit TrueNAS/NAS, Windows/Linux, RDP, VPN, DNS, Backups, internen Diensten, Docker-nahen lokalen Anwendungen und Monitoring.",
       "highlights": [
-        "Scrum-Master-Rolle in der praktischen Teamarbeit: Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte klären, Umsetzungsstand verfolgen und Release-Abstimmung unterstützen.",
-        "Requirements Engineering, Product Owner Rolle, Entwickleraufgaben, Backlog-/Priorisierungsarbeit, Abnahme- und Nutzertests und Abnahmevorbereitung.",
+        "Scrum-nahe Teamkoordination in der praktischen Teamarbeit: Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte klären, Umsetzungsstand verfolgen und Release-Abstimmung unterstützen.",
+        "Requirements Engineering, Product Owner, Entwickleraufgaben, Backlog-/Priorisierungsarbeit, Abnahme- und Nutzertests und Abnahmevorbereitung.",
         "ERP-/Touristiksoftware, Schnittstellen, Datenflüsse, DSGVO-Anforderungen, UI-/Website-Prüfung und technische Dokumentation."
       ],
       "targetTitle": "Business Analyse & IT-Teamkoordination",
       "targetRoles": [
         "Requirements Engineering",
         "Product Owner / fachliche Koordination",
-        "Scrum-Master-Rolle in der praktischen Teamarbeit",
+        "Scrum-nahe Teamkoordination in der praktischen Teamarbeit",
         "QA / Abnahme- und Nutzertests",
         "UI-/Website-Tests",
         "ERP-/Touristiksoftware",
@@ -79,7 +79,7 @@
         },
         {
           "title": "ERP, Datenflüsse & Schnittstellen",
-          "text": "Modulzusammenhänge, Mapping-Regeln, Funktionsmatrix, Schnittstellenbeschreibung und DSGVO-Anforderungen."
+          "text": "ERP-/Touristikprozesse, Routen-/Lieferprozesse für frisch zubereitete Mahlzeiten, externe Buchungs- und Zahlungssysteme wie PayPal, VR Payment und secupay, Content-Management-/Website-Verwaltung, Modulzusammenhänge, Datenflüsse, Schnittstellen und DSGVO-Anforderungen."
         },
         {
           "title": "IT-Infrastruktur & interne Dienste",
@@ -270,21 +270,21 @@
       "publicRole": "Abteilungsleiter IT, Business Analyst & Product Owner",
       "employer": "INFORMA GmbH & Co. KG",
       "location": "Oelsnitz/Vogtland, Deutschland",
-      "focus": "Interne IT-Projekte, ERP-/Touristiksoftware, Anforderungen, Scrum, Abnahme- und Nutzertests, UI-/Website-Prüfung, Schnittstellen, Dokumentation und Teamkoordination.",
+      "focus": "Interne IT-Projekte, ERP-/Touristiksoftware, Routen-/Lieferprozesse, externe Buchungs- und Zahlungssysteme, Content-Management-/Website-Verwaltung, Anforderungen, Scrum-nahe Teamkoordination, Abnahme- und Nutzertests, UI-/Website-Prüfung, Schnittstellen, Dokumentation und Teamkoordination.",
       "bullets": [
         "IT-Team fachlich geführt und interne Entwicklungs-/Projektarbeit über Aufgaben, Abstimmungen, Priorisierung, Daily/Weekly und Sprint-/Releaseplanung strukturiert.",
         "Anforderungen aus Kundendialogen und Fachbereichen aufgenommen, in Lasten-/Pflichtenhefte, User Stories, Use Cases, Akzeptanzkriterien und Entwickleraufgaben übersetzt.",
-        "Als Product-Owner-/Business-Analyst-Rolle Backlog, Umsetzungsfragen, Priorisierung, Abnahmen und Rückfragen zwischen Fachbereich, Kunden und Entwicklern koordiniert.",
+        "Als Product Owner / Business Analyst Backlog, Umsetzungsfragen, Priorisierung, Abnahmen und Rückfragen zwischen Fachbereich, Kunden und Entwicklern koordiniert.",
         "UI-/Website-Designs und entwickelte Funktionen fachlich geprüft; Abnahme- und Nutzertests, Bug Reports, Fehlernachverfolgung und Abnahmen vorbereitet und dokumentiert.",
         "Datenflüsse, Schnittstellen, Modulzusammenhänge, Zuordnungsregeln und Funktionsmatrizen für interne ERP-/Touristiksoftwareprozesse analysiert und dokumentiert.",
         "DSGVO-bezogene Anforderungen zu Einwilligung, Eingabekanälen, Nachvollziehbarkeit und Prozessqualität in Konzepte, Backlog und Testfälle überführt.",
         "TrueNAS-Projektspeicher als zentralen Projekt-Hub aufgebaut und betrieben: Ablagekonzept, Zugriffsstruktur, Rechte, Fachbereichsnutzung, Performance und Dokumentation.",
-        "Scrum-Master-nahe Teamarbeit fortgeführt: Daily/Weekly, Aufgabenklärung, Priorisierung, Umsetzungsabstimmung und Release-/Abnahmevorbereitung.",
+        "Scrum-nahe Teamarbeit fortgeführt: Daily/Weekly, Aufgabenklärung, Priorisierung, Umsetzungsabstimmung und Release-/Abnahmevorbereitung.",
         "Codex-/LLM-Werkzeuge zur Strukturierung von Spezifikationen, Konsistenzprüfung, technischen Skizzen, Skripten, Dokumentation und Testvorbereitung eingesetzt."
       ],
       "metrics": [
-        "2023: 36 Kunden · 8 Kundenprojekte · 646 Issues · 998 Story Points · ca. 11 % Bugs",
-        "2024: 25 Kunden · 6 Kundenprojekte · 5 interne Projekte · 495 Issues · 648 Story Points · 46 % Stories / 10 % Bugs / 44 % Tasks"
+        "2023: 36 betreute Kunden · 8 Kundenprojekte · 646 Issues · 998 Story Points · Bug-Anteil ca. 11 %",
+        "2024: 25 betreute Kunden · 6 Kundenprojekte · 495 Issues · 648 Story Points · Bug-Anteil ca. 10 % Bugs · 5 interne Projekte"
       ]
     },
     {
@@ -295,7 +295,7 @@
       "location": "Oelsnitz/Vogtland, Deutschland",
       "focus": "Einführung von Scrum-Arbeitsweise, Entwickler-Sprints, Aufgabensteuerung, Abnahme- und Nutzertests und Release-Abstimmung.",
       "bullets": [
-        "Scrum als Arbeitsmethode eingeführt und Scrum-Master-Rolle für Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte und Release-Abstimmung übernommen.",
+        "Scrum als Arbeitsmethode eingeführt und Scrum-nahe Teamkoordination für Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte und Release-Abstimmung übernommen.",
         "Entwickleraufgaben vorbereitet, offene Punkte geklärt, Abnahme- und Nutzertests begleitet und Umsetzungs-/Releaseplanung unterstützt.",
         "Kundenanforderungen analysiert, priorisiert und in nachvollziehbare Umsetzungsschritte überführt."
       ]
@@ -438,7 +438,7 @@
     "oemContext": ["Asus", "Lenovo", "Dell", "Fujitsu", "Acer"]
   },
   "education": [
-    {"period": "2010 - 2016", "degree": "Diplom-Ingenieur", "institution": "Staatliche Universität Südural / Süduraler Staatliche Universität", "details": "Steuerung und Informatik in Techniksystemen"},
+    {"period": "2010 - 2016", "degree": "Diplom-Ingenieur", "institution": "Staatliche Universität Südural", "details": "Steuerung und Informatik in Techniksystemen"},
     {"period": "2000 - 2003", "degree": "Radioelektroniker", "institution": "Tomsker Staatliche Universität für Steuerungssysteme und Radioelektronik (TUSUR)", "details": "Tomsk, Russland"},
     {"period": "1990 - 2000", "degree": "Schulbildung", "institution": "Gymnasium", "details": "Kokschetau/Kokschetaw, Kasachstan"}
   ],
@@ -474,7 +474,7 @@
   },
   "sourceNotes": {
     "userSuppliedAdditionalFacts": [
-      "Aktuell Business Analyst, interner Projektleiter, Aufgabensteller für Programmierer, Scrum-Master, Scrum-Arbeitsweise.",
+      "Aktuell Business Analyst, interner Projektleiter, Aufgabensteller für Programmierer, Scrum-nahe Teamkoordination, Scrum-Arbeitsweise.",
       "UI-Tester, Analyst entwickelter Website-Designs, Mitarbeit am Aufbau einer eigenen ERP-Systemlandschaft.",
       "Leitung des IT-Teams."
     ],

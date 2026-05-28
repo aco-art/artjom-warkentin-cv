@@ -69,7 +69,7 @@ for (const file of publicDownloads) assertExists(file);
 const publicIndex = fs.existsSync(path.join(root, "public/index.html")) ? readText("public/index.html") : "";
 const publicHtmlText = decodeHtml(stripHtml(publicIndex));
 const expectedHero = "Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis";
-const expectedSupport = "Requirements · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
+const expectedSupport = "Requirements · Scrum-nahe Teamkoordination · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
 
 if (!publicHtmlText.includes(expectedHero)) {
   failures.push("Public hero does not use the V2 public title.");
@@ -92,10 +92,23 @@ const forbiddenPublicPhrases = [
   "Öffentliche Unterlagen ohne private Kontaktdaten",
   "Private Kontaktdaten, vollständige Adresse"
 ];
-for (const phrase of forbiddenPublicPhrases) {
-  if (publicHtmlText.includes(phrase)) {
-    failures.push(`Public site still contains forbidden phrase: ${phrase}`);
+const forbiddenGeneratedTextPhrases = [
+  "Scrum-Master-Rolle",
+  "Product Owner Rolle",
+  "Product-Owner-/Business-Analyst-Rolle",
+  "Arbeitsumfang / IT-Team-Kennzahlen",
+  "IT-Team-Kennzahlen (Zusatzkontext)",
+  "Secupay"
+];
+  for (const phrase of forbiddenGeneratedTextPhrases) {
+    if (publicHtmlText.includes(phrase)) {
+      failures.push(`Public site still contains forbidden generated phrase: ${phrase}`);
+    }
   }
+  for (const phrase of forbiddenPublicPhrases) {
+    if (publicHtmlText.includes(phrase)) {
+      failures.push(`Public site still contains forbidden phrase: ${phrase}`);
+    }
 }
 if (!publicHtmlText.includes("Technische Praxis & Projekte")) {
   failures.push("Public site is missing renamed projects section.");
@@ -105,14 +118,14 @@ if (!publicHtmlText.includes("Aktuelles Profil")) {
 }
 for (const phrase of [
   "Aktuell arbeite ich an der Schnittstelle zwischen Geschäftsprozessen, interner IT, Entwicklungsteam und Fachbereichen",
-  "Parallel dazu bleibt praktische Technik ein fester Teil meines Profils",
+  "Praktische Technik bleibt für mich ein wichtiger Schwerpunkt",
   "Für die nächste berufliche Station möchte ich meinen Schwerpunkt stärker in Richtung hands-on Technik"
 ]) {
   if (!publicHtmlText.includes(phrase)) {
     failures.push(`Public site is missing current profile text: ${phrase}`);
   }
 }
-for (const phrase of ["2023: 36 Kunden", "2024: 25 Kunden", "646 Issues", "998 Story Points", "495 Issues", "648 Story Points"]) {
+for (const phrase of ["2023: 36 betreute Kunden", "2024: 25 betreute Kunden", "646 Issues", "998 Story Points", "495 Issues", "648 Story Points"]) {
   if (!publicHtmlText.includes(phrase)) {
     failures.push(`Public site is missing current role/KPI text: ${phrase}`);
   }
@@ -221,6 +234,11 @@ for (const relative of publicDownloads) {
   if (/DOCX/i.test(text)) {
     failures.push(`Public PDF contains DOCX wording: ${relative}`);
   }
+  for (const phrase of forbiddenGeneratedTextPhrases) {
+    if (text.includes(phrase)) {
+      failures.push(`Public PDF contains forbidden phrase ${phrase}: ${relative}`);
+    }
+  }
   if (/[\u00ad\u0000-\u0008\u000B\u000C\u000E-\u001F]/.test(text)) {
     failures.push(`Public PDF text extraction contains soft-hyphen or control characters: ${relative}`);
   }
@@ -272,11 +290,20 @@ for (const [label, pdf] of [["IT-Profil", itPdf], ["Service-Techniker-Profil", s
   if (!/ZIELPROFIL/i.test(pdf.text) || /ZIELROLLEN/i.test(pdf.text)) {
     failures.push(`${label} public PDF must use ZIELPROFIL, not ZIELROLLEN.`);
   }
-  for (const section of ["KOMPETENZFELDER", "BERUFSERFAHRUNG", "AUSBILDUNG", "TECHNISCHE PRAXIS", "ELEKTRONIK", "FORTBILDUNG", "SPRACHEN"]) {
+  if (/KOMPETENZFELDER/i.test(pdf.text)) {
+    failures.push(`${label} public PDF must not include Kompetenzfelder; the content is already covered in Zielprofil and Berufserfahrung.`);
+  }
+  if (/Staatliche Universität Südural \/ Süduraler Staatliche Universität/i.test(pdf.text)) {
+    failures.push(`${label} public PDF contains duplicated university wording.`);
+  }
+  for (const section of ["BERUFSERFAHRUNG", "AUSBILDUNG", "TECHNISCHE PRAXIS", "ELEKTRONIK", "FORTBILDUNG", "SPRACHEN"]) {
     if (!new RegExp(section, "i").test(pdf.text)) {
       failures.push(`${label} public PDF is missing shared section marker: ${section}.`);
     }
   }
+}
+if (servicePdf && /Weitere Angaben[\s\S]*Zielregion: Soltau \/ Heidekreis \/ Niedersachsen/i.test(servicePdf.text)) {
+  failures.push("Service-Techniker public PDF contains Zielregion in Weitere Angaben.");
 }
 
 for (const relative of ["src/profile.json", "public/index.html"]) {
