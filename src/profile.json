@@ -40,7 +40,11 @@
       "label": "Kurzprofil",
       "filenameBase": "Artjom_Warkentin_Kurzprofil",
       "maxPages": 1,
-      "topProfile": "IT-Teamleiter / Business Analyst mit operativer Erfahrung in Requirements, Scrum-/Teamkoordination, Abnahme-/Nutzertests und UI-Prüfung, ERP-/Touristikprozessen, IT-Infrastruktur sowie über zehn Jahren Elektronikservice. Technische Basis: Systembetreuung, NAS/Serverdienste, Monitoring, Reparatur, Datensicherung/Backup, Funktionsprüfung, MCP-/Playwright-gestützte UI-Tests, KI-gestützte UI-Prüfung und Dokumentation IT-naher Geräte."
+      "topProfile": "IT-Teamleiter / Business Analyst mit operativer Erfahrung in Requirements, Scrum-/Teamkoordination, Abnahme-/Nutzertests und UI-Prüfung, ERP-/Touristikprozessen, IT-Infrastruktur sowie über zehn Jahren Elektronikservice. Technische Basis: Systembetreuung, NAS/Serverdienste, Monitoring, Reparatur, Datensicherung/Backup, Funktionsprüfung, MCP-/Playwright-gestützte UI-Tests, KI-gestützte UI-Prüfung und Dokumentation IT-naher Geräte.",
+      "electronicsBasis": [
+        "Über zehn Jahre Elektronik-/IT-Service: Diagnose, Reparatur, Werkstattorganisation, OEM-Serviceumfeld sowie Schulung und Wissenstransfer.",
+        "Schaltplanlesen, Mess-/Prüftechnik, Stromversorgungsdiagnose, Analyse von DC/DC-Wandlern, Spannungsrails und Power-Sequencing mit Oszilloskop/Logikanalysator, SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework/Reflow/Reballing sowie Firmware-/BIOS-/EEPROM-Arbeiten."
+      ]
     },
     "it": {
       "title": "Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis",

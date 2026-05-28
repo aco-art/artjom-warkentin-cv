@@ -288,6 +288,11 @@ if (shortPdf) {
       failures.push(`Kurzprofil public PDF is missing education entry from profile.json: ${item.period} · ${item.degree}`);
     }
   }
+  for (const phrase of profile.documentVariants.short.electronicsBasis) {
+    if (!shortPdf.text.includes(phrase)) {
+      failures.push(`Kurzprofil public PDF is missing Elektronikbasis text from profile.json: ${phrase.slice(0, 90)}`);
+    }
+  }
 }
 
 const itPdf = publicPdfTexts.get("public/downloads/Artjom_Warkentin_Lebenslauf_IT_Public.pdf");
@@ -346,6 +351,11 @@ if (fs.existsSync(shortHtmlPath)) {
       if (!shortText.includes(phrase)) {
         failures.push(`Kurzprofil HTML is missing education data from profile.json: ${phrase}`);
       }
+    }
+  }
+  for (const phrase of profile.documentVariants.short.electronicsBasis) {
+    if (!shortText.includes(phrase)) {
+      failures.push(`Kurzprofil HTML is missing Elektronikbasis text from profile.json: ${phrase.slice(0, 90)}`);
     }
   }
 }

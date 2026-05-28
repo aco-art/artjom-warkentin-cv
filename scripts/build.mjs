@@ -461,7 +461,7 @@ function renderCvBody(data, document, scope) {
       renderSection("Aktuelle Rolle", renderExperienceCompact(data.experience.slice(0, 1), 2)),
       renderSection("Ausbildung", renderEducationShort(data)),
       renderSection("Ausgewählte Praxisbeispiele", renderProjects(data.projects.slice(0, 3), true)),
-      renderSection("Elektronikbasis", `<p>${escapeHtml([...data.electronics.methods.slice(0, 4), "BGA-Rework mit Reflow/Reballing"].join(" · "))}</p>`),
+      renderSection("Elektronikbasis", variant.electronicsBasis.map((item) => `<p>${escapeHtml(item)}</p>`).join("\n        ")),
       renderLanguagesAndFurther(data, scope, document.variantKey)
     ].join("\n      ");
   }
