@@ -69,7 +69,7 @@ for (const file of publicDownloads) assertExists(file);
 const publicIndex = fs.existsSync(path.join(root, "public/index.html")) ? readText("public/index.html") : "";
 const publicHtmlText = decodeHtml(stripHtml(publicIndex));
 const expectedHero = "Business Analyst & IT-Teamleiter mit technischer Service- und Elektronikpraxis";
-const expectedSupport = "Requirements · Scrum · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
+const expectedSupport = "Requirements · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
 
 if (!publicHtmlText.includes(expectedHero)) {
   failures.push("Public hero does not use the V2 public title.");
@@ -80,8 +80,24 @@ if (!publicHtmlText.includes(expectedSupport)) {
 if (!publicHtmlText.includes(profile.positioning.oneSentence)) {
   failures.push("Public one-sentence profile does not match positioning.oneSentence.");
 }
-if (!publicHtmlText.includes("IT-Profil") || !publicHtmlText.includes("Service-Techniker-Profil") || !publicHtmlText.includes("Kurzprofil herunterladen")) {
+if (!publicHtmlText.includes("IT-Profil") || !publicHtmlText.includes("Service-Techniker-Profil") || !publicHtmlText.includes("Kurzprofil")) {
   failures.push("Public site is missing one of the required profile entry paths.");
+}
+if (/Zwei Einstiegspfade/i.test(publicHtmlText)) {
+  failures.push("Public site still contains removed Zwei Einstiegspfade section.");
+}
+if (/Proof of Work/i.test(publicHtmlText)) {
+  failures.push("Public site still contains Proof of Work wording.");
+}
+if (!publicHtmlText.includes("Was ich konkret abdecke")) {
+  failures.push("Public site is missing Was ich konkret abdecke section.");
+}
+if (!publicHtmlText.includes("Technische Praxis & Projekte")) {
+  failures.push("Public site is missing renamed projects section.");
+}
+const downloadCardCount = (publicIndex.match(/class="download"/g) ?? []).length;
+if (downloadCardCount !== 3) {
+  failures.push(`Public site must contain exactly 3 download cards; got ${downloadCardCount}.`);
 }
 if (!publicIndex.includes(profile.contact.public.github) || !publicIndex.includes(profile.contact.public.h618Project)) {
   failures.push("Public site is missing required GitHub/H618 links.");
