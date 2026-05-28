@@ -267,6 +267,9 @@ for (const relative of publicDownloads) {
   if (/aco-art\.github\.io\/artjom-warkentin-cv/i.test(text)) {
     failures.push(`Public PDF contains GitHub Pages URL in header/text: ${relative}`);
   }
+  if (/Weitere Angaben[\s\S]*Zielregion: Soltau \/ Heidekreis \/ Niedersachsen/i.test(text)) {
+    failures.push(`Public PDF contains Zielregion in Weitere Angaben: ${relative}`);
+  }
   if (!/BGA-Rework/.test(text)) {
     failures.push(`Public PDF text extraction does not preserve BGA-Rework wording: ${relative}`);
   }
@@ -278,6 +281,13 @@ if (shortPdf && shortPdf.pageCount > 1) {
 }
 if (shortPdf && !/AUSBILDUNG/i.test(shortPdf.text)) {
   failures.push("Kurzprofil public PDF is missing Ausbildung.");
+}
+if (shortPdf) {
+  for (const item of profile.education) {
+    if (!shortPdf.text.includes(item.period) || !shortPdf.text.includes(item.degree)) {
+      failures.push(`Kurzprofil public PDF is missing education entry from profile.json: ${item.period} · ${item.degree}`);
+    }
+  }
 }
 
 const itPdf = publicPdfTexts.get("public/downloads/Artjom_Warkentin_Lebenslauf_IT_Public.pdf");
@@ -302,10 +312,6 @@ for (const [label, pdf] of [["IT-Profil", itPdf], ["Service-Techniker-Profil", s
     }
   }
 }
-if (servicePdf && /Weitere Angaben[\s\S]*Zielregion: Soltau \/ Heidekreis \/ Niedersachsen/i.test(servicePdf.text)) {
-  failures.push("Service-Techniker public PDF contains Zielregion in Weitere Angaben.");
-}
-
 for (const relative of ["src/profile.json", "public/index.html"]) {
   if (fs.existsSync(path.join(root, relative))) {
     assertNoGenericPhrases(relative, readText(relative));
@@ -326,9 +332,42 @@ for (const documentId of ["public_short", "public_it", "public_service"]) {
   assertNoGenericPhrases(path.relative(root, htmlPath), html);
 }
 
+const shortHtmlPath = path.join(root, "dist", "html", "public_short.public.html");
+if (fs.existsSync(shortHtmlPath)) {
+  const shortHtml = fs.readFileSync(shortHtmlPath, "utf8");
+  const shortText = decodeHtml(stripHtml(shortHtml));
+  const currentRoleLabel = `${profile.experience[0].period} · ${profile.experience[0].publicRole}`;
+  const currentRoleMatches = shortText.match(new RegExp(escapeRegExp(currentRoleLabel), "g")) ?? [];
+  if (currentRoleMatches.length !== 1) {
+    failures.push(`Kurzprofil current role must render one compact heading; found ${currentRoleMatches.length} occurrences of ${currentRoleLabel}.`);
+  }
+  for (const item of profile.education) {
+    for (const phrase of [item.period, item.degree, item.details, item.institution]) {
+      if (!shortText.includes(phrase)) {
+        failures.push(`Kurzprofil HTML is missing education data from profile.json: ${phrase}`);
+      }
+    }
+  }
+}
+
+for (const file of listFiles(path.join(root, "dist", "html")).filter((item) => /\.html$/i.test(item))) {
+  const text = decodeHtml(stripHtml(fs.readFileSync(file, "utf8")));
+  if (/Weitere Angaben[\s\S]*Zielregion: Soltau \/ Heidekreis \/ Niedersachsen/i.test(text)) {
+    failures.push(`PDF HTML source contains Zielregion in Weitere Angaben: ${path.relative(root, file)}`);
+  }
+}
+
 if (!publicOnly) {
   for (const file of applicationVariants) assertExists(file);
   assertExists("dist/for_application/Artjom_Warkentin_Lebenslauf_Business_Analyst_IT_Teamleiter.docx");
+  for (const relative of applicationVariants) {
+    const file = path.join(root, relative);
+    if (!fs.existsSync(file)) continue;
+    const { text } = await extractPdfText(file);
+    if (/Weitere Angaben[\s\S]*Zielregion: Soltau \/ Heidekreis \/ Niedersachsen/i.test(text)) {
+      failures.push(`Application PDF contains Zielregion in Weitere Angaben: ${relative}`);
+    }
+  }
 }
 
 const readme = fs.existsSync(path.join(root, "README.md")) ? readText("README.md") : "";

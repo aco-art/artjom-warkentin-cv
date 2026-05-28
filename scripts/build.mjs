@@ -518,7 +518,13 @@ function renderCompetencyFields(variant) {
 }
 
 function renderExperienceCompact(experience, bulletLimit = 1) {
-  return `<ul>${experience.flatMap((item) => item.bullets.slice(0, bulletLimit).map((bullet) => `<li><strong>${escapeHtml(item.period)} · ${escapeHtml(item.publicRole)}</strong>: ${escapeHtml(bullet)}</li>`)).join("")}</ul>`;
+  const item = experience[0];
+  if (!item) return "";
+  return `<div class="entry experience-item compact-experience">
+          <h3>${escapeHtml(item.period)} · ${escapeHtml(item.publicRole)}</h3>
+          <p class="small">${escapeHtml(item.employer)} · ${escapeHtml(item.location)}</p>
+          <ul>${item.bullets.slice(0, bulletLimit).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+        </div>`;
 }
 
 function renderProjects(projects, compact = false) {
@@ -547,7 +553,7 @@ function renderEducationEntry(item) {
 }
 
 function renderEducationShort(data) {
-  return `<ul>${data.educationDisplayRules.shortFormat.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+  return data.education.map(renderEducationEntry).join("\n        ");
 }
 
 function renderEducationTechnical(data) {
@@ -567,12 +573,7 @@ function renderCvEntry(item, variantKey) {
 
 function renderLanguagesAndFurther(data, scope, variantKey) {
   const further = scope === "private"
-    ? [`Geburtsjahr: ${data.person.birthYear}`, "deutsche Staatsangehörigkeit", `Führerschein: ${data.person.driverLicense}`, data.person.car, `Zielregion: ${data.person.targetRegion}`]
-    : ["deutsche Staatsangehörigkeit", `Führerschein: ${data.person.driverLicense}`, data.person.car, `Zielregion: ${data.person.targetRegion}`];
-  if (variantKey === "serviceTechnician") {
-    const targetRegionItem = `Zielregion: ${data.person.targetRegion}`;
-    const index = further.indexOf(targetRegionItem);
-    if (index !== -1) further.splice(index, 1);
-  }
+    ? [`Geburtsjahr: ${data.person.birthYear}`, "deutsche Staatsangehörigkeit", `Führerschein: ${data.person.driverLicense}`, data.person.car]
+    : ["deutsche Staatsangehörigkeit", `Führerschein: ${data.person.driverLicense}`, data.person.car];
   return renderSection("Sprachen und weitere Angaben", `<div class="grid-two"><div><h3>Sprachen</h3><ul>${data.languages.map((item) => `<li>${escapeHtml(`${item.language}: ${item.level}`)}</li>`).join("")}</ul></div><div><h3>Weitere Angaben</h3><ul>${further.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div></div>`);
 }
