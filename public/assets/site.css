@@ -362,6 +362,19 @@ h1 {
   color: var(--muted);
 }
 
+.timeline-metrics {
+  margin-top: 12px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface-strong);
+  padding: 10px 12px;
+}
+
+.timeline-metrics h4 {
+  margin: 0 0 6px;
+  color: var(--accent-strong);
+  font-size: 14px;
+}
+
 .timeline ul,
 .workshop ul {
   margin: 8px 0 0 18px;

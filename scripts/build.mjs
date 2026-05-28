@@ -220,7 +220,8 @@ function renderIndex(data, documents) {
       bullets: [
         "Requirements, Entwickleraufgaben, Backlog/Priorisierung, Abnahme-/Nutzertests, UI-Prüfung und Release-Abstimmung zwischen Fachbereichen, Kunden und Entwicklung koordiniert.",
         "TrueNAS-Projektspeicher, interne Dienste, technische Dokumentation und Codex-/LLM-gestützte Strukturierung von Spezifikationen und Tests aufgebaut bzw. begleitet."
-      ]
+      ],
+      metrics: currentExperience.metrics
     },
     {
       period: "06/2022 - 01/2023",
@@ -432,6 +433,7 @@ function renderCompactTimelineItem(item) {
               <h3>${escapeHtml(item.role)}</h3>
               <p class="meta">${escapeHtml(item.employer)}</p>
               <ul>${item.bullets.slice(0, 2).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+              ${item.metrics ? `<div class="timeline-metrics"><h4>Arbeitsumfang / IT-Team-Kennzahlen</h4><ul>${item.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul></div>` : ""}
             </div>
           </article>`;
 }
