@@ -261,7 +261,7 @@ h1 {
   border-top: 3px solid var(--accent);
 }
 
-.current-role-body {
+.current-profile-body {
   max-width: 900px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -270,30 +270,14 @@ h1 {
   padding: 20px;
 }
 
-.current-role-body p {
+.current-profile-body p {
   margin: 0 0 12px;
   color: var(--ink);
   font-size: 17px;
 }
 
-.current-role-body .meta {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.current-role-body h3 {
-  margin: 18px 0 8px;
-  font-size: 16px;
-}
-
-.current-role-body ul {
-  margin: 0 0 0 18px;
-  padding: 0;
-}
-
-.current-role-body li {
-  margin-bottom: 6px;
-  color: var(--muted);
+.current-profile-body p:last-child {
+  margin-bottom: 0;
 }
 
 .card h3,

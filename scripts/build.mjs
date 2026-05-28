@@ -187,7 +187,11 @@ function renderIndex(data, documents) {
   const serviceProfile = documents.find((document) => document.id === "public_service");
   const metaDescription = "HR-Profil von Artjom Warkentin: Business Analyst und IT-Teamleiter mit Requirements, Scrum, Abnahme-/Nutzertests, UI-Prüfung, ERP-/Touristiksoftware, IT-Infrastruktur und Elektronikdiagnose.";
   const heroSupport = "Requirements · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
-  const currentExperience = data.experience[0];
+  const currentProfileParagraphs = [
+    "Aktuell arbeite ich an der Schnittstelle zwischen Geschäftsprozessen, interner IT, Entwicklungsteam und Fachbereichen. Mein Schwerpunkt liegt auf Requirements, Entwickleraufgaben, Scrum-naher Teamkoordination, UI-/Website-Prüfung, Abnahme- und Nutzertests sowie technischer Dokumentation.",
+    "Parallel dazu bleibt praktische Technik ein fester Teil meines Profils: Ich beschäftige mich auch privat mit Elektronik, Reparatur, Diagnose, Home-Lab, kleinen Serverdiensten und Hardware-/Embedded-Themen. Besonders interessieren mich Aufgaben, bei denen Systeme nicht nur organisiert, sondern praktisch verstanden, geprüft, repariert, dokumentiert und stabil betrieben werden.",
+    "Für die nächste berufliche Station möchte ich meinen Schwerpunkt stärker in Richtung hands-on Technik, Elektronikdiagnose, technischer Service, IT-nahe Systemdiagnose oder Infrastrukturservice verlagern. Meine IT-Erfahrung aus Analyse, Tests, Teamkoordination und Dokumentation sehe ich dabei als Zusatznutzen: Sie hilft mir, technische Probleme strukturiert zu erfassen, sauber zu dokumentieren und zwischen Anwendern, Technik und Umsetzung verständlich zu vermitteln."
+  ];
   const coreFields = [
     {
       title: "IT, Requirements & Teamkoordination",
@@ -245,7 +249,7 @@ function renderIndex(data, documents) {
         </a>
         <div class="nav-links">
           <a href="#downloads">Unterlagen</a>
-          <a href="#aktuell">Aktuell</a>
+          <a href="#profil">Profil</a>
           <a href="#kompetenzen">Kernfelder</a>
           <a href="#erfahrung">Erfahrung</a>
           <a href="#projekte">Projekte</a>
@@ -288,16 +292,12 @@ function renderIndex(data, documents) {
         </div>
       </section>
 
-      <section id="aktuell" class="section current-role">
+      <section id="profil" class="section current-profile">
         <div class="section-head">
-          <h2>Aktuelle Tätigkeit & Arbeitsumfang</h2>
+          <h2>Aktuelles Profil</h2>
         </div>
-        <div class="current-role-body">
-          <p>${escapeHtml(currentExperience.period)} · ${escapeHtml(currentExperience.publicRole)}</p>
-          <p class="meta">${escapeHtml(currentExperience.employer)} · ${escapeHtml(currentExperience.location)}</p>
-          <p>${escapeHtml(currentExperience.focus)}</p>
-          <h3>Arbeitsumfang / IT-Team-Kennzahlen</h3>
-          <ul>${currentExperience.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul>
+        <div class="current-profile-body">
+          ${currentProfileParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n          ")}
         </div>
       </section>
 

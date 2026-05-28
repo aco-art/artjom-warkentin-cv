@@ -100,8 +100,17 @@ for (const phrase of forbiddenPublicPhrases) {
 if (!publicHtmlText.includes("Technische Praxis & Projekte")) {
   failures.push("Public site is missing renamed projects section.");
 }
-if (!publicHtmlText.includes("Aktuelle Tätigkeit & Arbeitsumfang")) {
-  failures.push("Public site is missing current role/KPI section.");
+if (!publicHtmlText.includes("Aktuelles Profil")) {
+  failures.push("Public site is missing Aktuelles Profil section.");
+}
+for (const phrase of [
+  "Aktuell arbeite ich an der Schnittstelle zwischen Geschäftsprozessen, interner IT, Entwicklungsteam und Fachbereichen",
+  "Parallel dazu bleibt praktische Technik ein fester Teil meines Profils",
+  "Für die nächste berufliche Station möchte ich meinen Schwerpunkt stärker in Richtung hands-on Technik"
+]) {
+  if (!publicHtmlText.includes(phrase)) {
+    failures.push(`Public site is missing current profile text: ${phrase}`);
+  }
 }
 for (const phrase of ["2023: 36 Kunden", "2024: 25 Kunden", "646 Issues", "998 Story Points", "495 Issues", "648 Story Points"]) {
   if (!publicHtmlText.includes(phrase)) {
