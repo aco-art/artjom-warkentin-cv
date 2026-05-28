@@ -187,40 +187,29 @@ function renderIndex(data, documents) {
   const serviceProfile = documents.find((document) => document.id === "public_service");
   const metaDescription = "HR-Profil von Artjom Warkentin: Business Analyst und IT-Teamleiter mit Requirements, Scrum, Abnahme-/Nutzertests, UI-Prüfung, ERP-/Touristiksoftware, IT-Infrastruktur und Elektronikdiagnose.";
   const heroSupport = "Requirements · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
-  const coverageCards = [
+  const currentExperience = data.experience[0];
+  const currentRoleBullets = [
+    "IT-Team fachlich koordiniert: Aufgaben, Priorisierung, Daily/Weekly, Sprint-/Releaseplanung und Abnahmevorbereitung.",
+    "Anforderungen in Pflichtenhefte, User Stories, Use Cases, Akzeptanzkriterien und Entwickleraufgaben übersetzt.",
+    "Abnahme-/Nutzertests, UI-/Website-Prüfung, Bug Reports, Fehlernachverfolgung und Abnahmen vorbereitet.",
+    "TrueNAS-Projektspeicher, interne Dienste, technische Dokumentation und Testvorbereitung aufgebaut bzw. begleitet."
+  ];
+  const coreFields = [
     {
       title: "IT, Requirements & Teamkoordination",
-      text: "Requirements, Entwickleraufgaben, Scrum-Master-Rolle, Backlog/Priorisierung, Abnahme-/Nutzertests, UI-Prüfung und Release-Abstimmung."
+      text: "Requirements, Entwickleraufgaben, Product Owner Rolle, Scrum-Master-Rolle, Backlog, Priorisierung, Release- und Abnahmevorbereitung."
     },
     {
-      title: "IT-Infrastruktur & interne Dienste",
-      text: "TrueNAS/NAS, SMB/Rechte, Windows/Linux, RDP/USB-over-RDP, VPN/DNS, Backups, Monitoring und Docker-nahe lokale Dienste."
-    },
-    {
-      title: "Elektronikservice & Diagnose",
-      text: "Board-Level-Service, Datensicherung/Backup, Stromversorgung, Mainboard-Diagnose, Oszilloskop/Logikanalysator, Rework, Funktionsprüfung und Reparaturdokumentation."
-    }
-  ];
-  const coreCompetencies = [
-    {
-      title: "Business Analyse",
-      text: "Lasten-/Pflichtenhefte, User Stories, Use Cases, Akzeptanzkriterien, Entwickleraufgaben."
-    },
-    {
-      title: "Scrum-/Teamkoordination",
-      text: "Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte, Release- und Abnahmevorbereitung."
-    },
-    {
-      title: "Testing",
+      title: "Tests, UI-Prüfung & Dokumentation",
       text: "Abnahme-/Nutzertests, UI-/Website-Workflows, Designabgleich, Bug Reports, Postman, Browser DevTools, MCP-/Playwright-gestützte UI-Prüfung."
     },
     {
-      title: "Infrastruktur",
-      text: "TrueNAS/NAS, SMB/Rechte, Windows/Linux, RDP/USB-over-RDP, VPN/DNS, Backups, Monitoring."
+      title: "IT-Infrastruktur & interne Dienste",
+      text: "TrueNAS/NAS, SMB/Rechte, Windows/Linux, RDP/USB-over-RDP, VPN/DNS, Backups, Monitoring, Docker-nahe lokale Dienste."
     },
     {
-      title: "Elektronik",
-      text: "Board-Level-Service, Stromversorgung, Mainboard-Diagnose, Mess-/Rework-Praxis, Firmware/BIOS, Reparaturdokumentation."
+      title: "Elektronikservice & Diagnose",
+      text: "Board-Level-Service, Datensicherung/Backup, Stromversorgung, Mainboard-Diagnose, Oszilloskop/Logikanalysator, Rework, Funktionsprüfung."
     }
   ];
   const compactExperience = [
@@ -279,6 +268,14 @@ function renderIndex(data, documents) {
     "home_lab_automation",
     "h618_embedded"
   ].includes(project.id));
+  const projectSummaries = {
+    informa_erp_tourism: "Requirements, Entwickleraufgaben, User Stories, Use Cases, Akzeptanzkriterien, UI-/Website-Tests, Abnahme-/Nutzertests und Dokumentation im Umfeld interner ERP- und touristiknaher Softwareprozesse.",
+    truenas_project_hub: "Zentraler Projekt-Hub auf TrueNAS-Basis mit SMB-Shares, Rechte-/Benutzerstruktur, Fachbereichsnutzung, Performance-Tuning und technischer Dokumentation.",
+    monitoring_internal_services: "Interne Monitoring-Anwendung zur Beobachtung von Websites, Projekten und technischen Zuständen mit Fokus auf Transparenz, Fehlererkennung und Systemübersicht.",
+    codebase_api_documentation: "Werkzeuge und Skripte für Codebase-Orientierung, Swagger/OpenAPI-Auswertung, Projektkarten, Roadmaps, Usecase-Indizes und technische Dokumentation.",
+    home_lab_automation: "Private Home-Lab-Umgebung mit n8n, Telegram-Bot, Caching-DNS, Werbeblocker, VPN-Client, Home Assistant und lokalen Serverdiensten.",
+    h618_embedded: "Privates Embedded-/Hardware-Projekt mit Armbian userpatches, U-Boot/SPL-, Kernel- und DTB-Anpassungen, LAN/UART/ADB-Diagnose und reproduzierbarer Build-Dokumentation."
+  };
   const workshopDevices = "Notebooks, PCs, Mainboards, Monitore, Tablets, Smartphones, Netzteile, Grafikkarten, Router, TV-Boxen, Peripherie.";
   const workshopDiagnostics = "Datensicherung/Backup, Stromversorgung, Mainboard-Diagnose, Schaltplanlesen, Oszilloskop/Multimeter, Logikanalysator, SMD-Löten, Löten bedrahteter Bauteile, Heißluft, Mikroskop, BGA-Rework, Firmware/BIOS/EEPROM, Funktionsprüfung.";
 
@@ -299,8 +296,9 @@ function renderIndex(data, documents) {
           <span>${escapeHtml(data.person.publicTitle)}</span>
         </a>
         <div class="nav-links">
-          <a href="#kompetenzen">Kompetenzen</a>
           <a href="#downloads">Unterlagen</a>
+          <a href="#aktuell">Aktuell</a>
+          <a href="#kompetenzen">Kernfelder</a>
           <a href="#erfahrung">Erfahrung</a>
           <a href="#projekte">Projekte</a>
           <a href="#kontakt">Kontakt</a>
@@ -333,28 +331,6 @@ function renderIndex(data, documents) {
       </section>
       <!-- validate:hero:end -->
 
-      <section class="section coverage" data-validate-section="coverage">
-        <div class="section-head">
-          <h2>Was ich konkret abdecke</h2>
-          <p class="section-lead">Technische Schnittstelle zwischen IT-Team, Fachbereichen, Tests, Infrastruktur und praktischer Elektronikdiagnose.</p>
-        </div>
-        <div class="coverage-grid">
-          ${coverageCards.map(renderSimpleCard).join("\n          ")}
-        </div>
-      </section>
-
-      <!-- validate:bring:start -->
-      <section id="kompetenzen" class="section compact" data-validate-section="bring">
-        <div class="section-head">
-          <h2>Kernkompetenzen</h2>
-          <p class="section-lead">Kompakter Überblick über die fachlichen und technischen Arbeitsfelder.</p>
-        </div>
-        <div class="competency-grid">
-          ${coreCompetencies.map(renderSimpleCard).join("\n          ")}
-        </div>
-      </section>
-      <!-- validate:bring:end -->
-
       <section id="downloads" class="section downloads-section">
         <div class="section-head">
           <h2>Bewerbungsunterlagen</h2>
@@ -364,19 +340,32 @@ function renderIndex(data, documents) {
         </div>
       </section>
 
-      <!-- validate:short:start -->
-      <section class="statement-band" data-validate-section="short">
-        <div class="section statement">
-          <h2>Profil in einem Satz</h2>
-          <p>${escapeHtml(data.positioning.oneSentence)}</p>
+      <section id="aktuell" class="section current-role">
+        <div class="section-head">
+          <h2>Aktuelle Tätigkeit & Arbeitsumfang</h2>
+        </div>
+        <div class="current-role-body">
+          <p>Artjom Warkentin arbeitet aktuell als Abteilungsleiter IT, Business Analyst & Product Owner bei ${escapeHtml(currentExperience.employer)}.</p>
+          <ul>${currentRoleBullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+          <h3>Arbeitsumfang / IT-Team-Kennzahlen</h3>
+          <ul>${currentExperience.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul>
         </div>
       </section>
-      <!-- validate:short:end -->
+
+      <!-- validate:bring:start -->
+      <section id="kompetenzen" class="section compact" data-validate-section="bring">
+        <div class="section-head">
+          <h2>Kernfelder</h2>
+        </div>
+        <div class="core-field-grid">
+          ${coreFields.map(renderSimpleCard).join("\n          ")}
+        </div>
+      </section>
+      <!-- validate:bring:end -->
 
       <section id="erfahrung" class="section">
         <div class="section-head">
           <h2>Berufliche Erfahrung</h2>
-          <p class="section-lead">Kompakte Übersicht. Vollständige Details stehen in den PDF-Unterlagen.</p>
         </div>
         <div class="timeline">
           ${compactExperience.map(renderCompactTimelineItem).join("\n          ")}
@@ -386,11 +375,10 @@ function renderIndex(data, documents) {
       <section id="projekte" class="section">
         <div class="section-head">
           <h2>Technische Praxis & Projekte</h2>
-          <p class="section-lead">Berufliche Praxisbeispiele und private technische Projekte aus IT-Infrastruktur, Tests, Dokumentation, Home-Lab und Hardware-/Embedded-Umfeld.</p>
         </div>
         <div class="project-groups">
-          ${renderProjectGroup("Berufliche Praxisbeispiele", professionalProjects)}
-          ${renderProjectGroup("Private technische Projekte", privateProjects)}
+          ${renderProjectGroup("Berufliche Praxis", professionalProjects, projectSummaries)}
+          ${renderProjectGroup("Private technische Projekte", privateProjects, projectSummaries)}
         </div>
       </section>
 
@@ -398,7 +386,6 @@ function renderIndex(data, documents) {
         <div class="section">
           <div class="section-head">
             <h2>Elektronik & Werkstatt</h2>
-            <p class="section-lead">${escapeHtml(data.electronics.intro)}</p>
           </div>
           <div class="workshop-grid">
             <article class="card">
@@ -417,7 +404,6 @@ function renderIndex(data, documents) {
         <div class="section">
           <div class="section-head">
             <h2>Kontakt</h2>
-            <p class="section-lead">Öffentliche Kontaktangaben für fachliche Rückfragen und Bewerbungsdialoge.</p>
           </div>
           <div class="contact-list">
             <span class="contact-item">Zielregion: ${escapeHtml(data.person.targetRegion)}</span>
@@ -425,7 +411,6 @@ function renderIndex(data, documents) {
             <a class="contact-item" href="${escapeHtml(publicContact.github)}">GitHub Profil</a>
             <a class="contact-item" href="${escapeHtml(publicContact.h618Project)}">H618 Projekt</a>
           </div>
-          <p class="note">Private Kontaktdaten, vollständige Adresse und Bewerbungsvarianten werden nicht öffentlich bereitgestellt.</p>
         </div>
       </section>
     </main>
@@ -451,21 +436,20 @@ function renderCompactTimelineItem(item) {
           </article>`;
 }
 
-function renderProjectGroup(title, projects) {
+function renderProjectGroup(title, projects, summaries) {
   return `<section class="project-group">
             <h3>${escapeHtml(title)}</h3>
             <div class="project-grid">
-              ${projects.map(renderProjectCard).join("\n              ")}
+              ${projects.map((project) => renderProjectCard(project, summaries[project.id])).join("\n              ")}
             </div>
           </section>`;
 }
 
-function renderProjectCard(project) {
+function renderProjectCard(project, summary) {
   const link = project.link ? `<p class="project-link"><a href="${escapeHtml(project.link)}">Projekt ansehen</a></p>` : "";
   return `<article class="card project-card">
-            <span class="tag">${escapeHtml(project.type)}</span>
             <h3>${escapeHtml(project.title)}</h3>
-            <p>${escapeHtml(project.description)}</p>
+            <p>${escapeHtml(summary ?? project.description)}</p>
             ${link}
           </article>`;
 }

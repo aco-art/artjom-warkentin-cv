@@ -77,27 +77,62 @@ if (!publicHtmlText.includes(expectedHero)) {
 if (!publicHtmlText.includes(expectedSupport)) {
   failures.push("Public hero does not use the V2 support line.");
 }
-if (!publicHtmlText.includes(profile.positioning.oneSentence)) {
-  failures.push("Public one-sentence profile does not match positioning.oneSentence.");
-}
 if (!publicHtmlText.includes("IT-Profil") || !publicHtmlText.includes("Service-Techniker-Profil") || !publicHtmlText.includes("Kurzprofil")) {
   failures.push("Public site is missing one of the required profile entry paths.");
 }
-if (/Zwei Einstiegspfade/i.test(publicHtmlText)) {
-  failures.push("Public site still contains removed Zwei Einstiegspfade section.");
-}
-if (/Proof of Work/i.test(publicHtmlText)) {
-  failures.push("Public site still contains Proof of Work wording.");
-}
-if (!publicHtmlText.includes("Was ich konkret abdecke")) {
-  failures.push("Public site is missing Was ich konkret abdecke section.");
+const forbiddenPublicPhrases = [
+  "Zwei Einstiegspfade",
+  "Ein gemeinsamer beruflicher Kern",
+  "Profil in einem Satz",
+  "Drei Kompetenzbereiche",
+  "Proof of Work",
+  "Berufliche IT-/Produktarbeit",
+  "Berufliches Infrastrukturprojekt",
+  "Arbeitsnahe Analyse- und Dokumentationswerkzeuge",
+  "Öffentliche Unterlagen ohne private Kontaktdaten",
+  "Private Kontaktdaten, vollständige Adresse"
+];
+for (const phrase of forbiddenPublicPhrases) {
+  if (publicHtmlText.includes(phrase)) {
+    failures.push(`Public site still contains forbidden phrase: ${phrase}`);
+  }
 }
 if (!publicHtmlText.includes("Technische Praxis & Projekte")) {
   failures.push("Public site is missing renamed projects section.");
 }
-const downloadCardCount = (publicIndex.match(/class="download"/g) ?? []).length;
-if (downloadCardCount !== 3) {
-  failures.push(`Public site must contain exactly 3 download cards; got ${downloadCardCount}.`);
+if (!publicHtmlText.includes("Aktuelle Tätigkeit & Arbeitsumfang")) {
+  failures.push("Public site is missing current role/KPI section.");
+}
+for (const phrase of ["2023: 36 Kunden", "2024: 25 Kunden", "646 Issues", "998 Story Points", "495 Issues", "648 Story Points"]) {
+  if (!publicHtmlText.includes(phrase)) {
+    failures.push(`Public site is missing current role/KPI text: ${phrase}`);
+  }
+}
+const expectedDownloadCards = [
+  {
+    href: "downloads/Artjom_Warkentin_Kurzprofil_Public.pdf",
+    label: "Kurzprofil"
+  },
+  {
+    href: "downloads/Artjom_Warkentin_Lebenslauf_IT_Public.pdf",
+    label: "Lebenslauf IT-Profil"
+  },
+  {
+    href: "downloads/Artjom_Warkentin_Lebenslauf_ServiceTechniker_Public.pdf",
+    label: "Lebenslauf Service-Techniker-Profil"
+  }
+];
+const downloadCards = [...publicIndex.matchAll(/<a class="download" href="([^"]+)" download>\s*<h3>([^<]+)<\/h3>\s*(?:<p>PDF herunterladen<\/p>\s*)?<\/a>/g)]
+  .map((match) => ({ href: decodeHtml(match[1]), label: decodeHtml(match[2]) }));
+if (downloadCards.length !== expectedDownloadCards.length) {
+  failures.push(`Public site must contain exactly ${expectedDownloadCards.length} download cards; got ${downloadCards.length}.`);
+}
+for (let index = 0; index < expectedDownloadCards.length; index += 1) {
+  const expected = expectedDownloadCards[index];
+  const actual = downloadCards[index];
+  if (!actual || actual.href !== expected.href || actual.label !== expected.label) {
+    failures.push(`Public download card ${index + 1} mismatch; expected ${expected.label} -> ${expected.href}.`);
+  }
 }
 if (!publicIndex.includes(profile.contact.public.github) || !publicIndex.includes(profile.contact.public.h618Project)) {
   failures.push("Public site is missing required GitHub/H618 links.");
@@ -107,6 +142,11 @@ if (!/[äöüÄÖÜß]/.test(publicIndex)) {
 }
 if (/DOCX/i.test(publicHtmlText)) {
   failures.push("Public HTML contains DOCX wording.");
+}
+for (const pattern of [/Artjom_Warkentin_Lebenslauf_Public\.pdf/i, /Artjom_Warkentin_Technikprofil_Public\.pdf/i]) {
+  if (pattern.test(publicIndex)) {
+    failures.push(`Public HTML contains old public download filename: ${pattern}`);
+  }
 }
 
 for (const file of listFiles(path.join(root, "public")).filter((item) => /\.(html|css|js|json|txt|md|svg)$/i.test(item))) {

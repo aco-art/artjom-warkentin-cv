@@ -209,8 +209,7 @@ h1 {
   margin: 0;
 }
 
-.coverage-grid,
-.competency-grid,
+.core-field-grid,
 .role-group-grid,
 .skill-grid,
 .project-grid,
@@ -220,11 +219,7 @@ h1 {
   gap: 14px;
 }
 
-.coverage-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.competency-grid {
+.core-field-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -254,7 +249,7 @@ h1 {
   min-height: 150px;
 }
 
-.competency-grid .simple-card {
+.core-field-grid .simple-card {
   min-height: auto;
 }
 
@@ -262,9 +257,38 @@ h1 {
   border-top: 3px solid var(--accent);
 }
 
-.coverage .simple-card,
 .downloads-section .download {
   border-top: 3px solid var(--accent);
+}
+
+.current-role-body {
+  max-width: 900px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.current-role-body p {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.current-role-body h3 {
+  margin: 18px 0 8px;
+  font-size: 16px;
+}
+
+.current-role-body ul {
+  margin: 0 0 0 18px;
+  padding: 0;
+}
+
+.current-role-body li {
+  margin-bottom: 6px;
+  color: var(--muted);
 }
 
 .card h3,
@@ -429,8 +453,7 @@ h1 {
     gap: 12px;
   }
 
-  .coverage-grid,
-  .competency-grid,
+  .core-field-grid,
   .role-group-grid,
   .skill-grid,
   .project-grid,
