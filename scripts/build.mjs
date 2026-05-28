@@ -358,7 +358,6 @@ function renderIndex(data, documents) {
       <section id="downloads" class="section downloads-section">
         <div class="section-head">
           <h2>Bewerbungsunterlagen</h2>
-          <p class="section-lead">Öffentliche PDF-Unterlagen ohne private Kontaktdaten oder firmenspezifische Varianten.</p>
         </div>
         <div class="download-grid">
           ${documents.map(renderDownload).join("\n          ")}
@@ -474,7 +473,6 @@ function renderProjectCard(project) {
 function renderDownload(document) {
   return `<a class="download" href="downloads/${escapeHtml(document.filenameBase)}_Public.pdf" download>
             <h3>${escapeHtml(document.label)}</h3>
-            <p>${escapeHtml(document.subtitle)}</p>
           </a>`;
 }
 
