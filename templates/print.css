@@ -16,7 +16,8 @@
   }
 
   .cv-header {
-    gap: 10px;
+    grid-template-columns: auto minmax(0, 1fr) 31mm;
+    gap: 9px;
     padding-bottom: 8px;
     margin-bottom: 9px;
   }
@@ -31,8 +32,8 @@
   }
 
   .cv-qr-block img {
-    width: 13mm;
-    height: 13mm;
+    width: 12.5mm;
+    height: 12.5mm;
   }
 
   .cv h1 {
@@ -41,6 +42,15 @@
 
   .cv .title {
     font-size: 14px;
+  }
+
+  .cv .subtitle,
+  .cv .target-region {
+    font-size: 9.3px;
+  }
+
+  .cv-contact-col {
+    font-size: 8.3px;
   }
 
   .cv h2 {

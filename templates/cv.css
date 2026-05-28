@@ -38,15 +38,17 @@ body {
 
 .cv-header {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 14px;
+  grid-template-columns: auto minmax(0, 1fr) 32mm;
+  gap: 12px;
   align-items: center;
   border-bottom: 2px solid var(--ink);
   padding-bottom: 10px;
   margin-bottom: 12px;
 }
 
-.cv-header-info {
+.cv-photo-col,
+.cv-main-col,
+.cv-contact-col {
   min-width: 0;
 }
 
@@ -67,6 +69,8 @@ body {
   font-size: 8.2px;
   font-weight: 700;
   text-transform: uppercase;
+  line-height: 1.1;
+  text-decoration: none;
 }
 
 .cv-qr-block img {
@@ -75,8 +79,24 @@ body {
   display: block;
 }
 
-.cv-kind-short .cv-header {
-  grid-template-columns: auto minmax(0, 1fr) auto;
+.cv-contact-col {
+  display: grid;
+  justify-items: end;
+  align-content: center;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.18;
+  text-align: right;
+}
+
+.cv-contact-col p {
+  margin: 0 0 2px;
+  white-space: nowrap;
+}
+
+.cv-contact-col .cv-qr-block {
+  justify-self: end;
+  margin-top: 3px;
 }
 
 .target-profile-list {
@@ -100,10 +120,22 @@ body {
 }
 
 .cv .title {
-  margin: 0 0 6px;
+  margin: 0 0 3px;
   font-size: 15px;
   color: var(--accent);
   font-weight: 700;
+}
+
+.cv .subtitle {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 9.7px;
+}
+
+.cv .target-region {
+  margin: 0;
+  color: var(--muted);
+  font-size: 9.7px;
 }
 
 .cv .meta,

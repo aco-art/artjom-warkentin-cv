@@ -8,12 +8,7 @@ const root = path.resolve(__dirname, "..");
 const publicOnly = process.env.PUBLIC_ONLY === "1";
 
 const profile = readJson("src/profile.json");
-const privateProfile = readOptionalJson("src/profile.private.json");
 const publicContact = profile.contact.public;
-const privateContact = {
-  phone: privateProfile.phone,
-  city: privateProfile.city ?? privateProfile.applicationLocation
-};
 const githubProfileUrl = String(publicContact.github ?? "");
 const cvAssets = {
   photoDataUrl: readAssetDataUrl("assets/profile-photo.jpeg", "assets/profile-photo.png"),
@@ -65,12 +60,6 @@ console.log(`Generated public site in ${path.relative(root, publicDir)}`);
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(root, relativePath), "utf8"));
-}
-
-function readOptionalJson(relativePath) {
-  const fullPath = path.join(root, relativePath);
-  if (!fs.existsSync(fullPath)) return {};
-  return JSON.parse(fs.readFileSync(fullPath, "utf8"));
 }
 
 function readAssetDataUrl(...relativePaths) {
@@ -438,12 +427,7 @@ function renderCvDocument(data, document, scope, assets) {
   const title = document.title;
   const subtitle = document.subtitle ?? document.focus;
   const headerTitle = title;
-  const headerContact = [
-    `Zielregion: ${data.person.targetRegion}`,
-    scope === "private" && privateContact.phone ? `Telefon: ${privateContact.phone}` : null,
-    publicContact.email,
-    displayUrl(publicContact.github)
-  ].filter(Boolean);
+  const githubDisplayUrl = displayUrl(assets.githubProfileUrl);
 
   return `<!doctype html>
 <html lang="de">
@@ -455,14 +439,20 @@ function renderCvDocument(data, document, scope, assets) {
   <body data-cv-template="unified">
     <article class="cv cv-template-unified cv-kind-${escapeHtml(document.kind)}">
       <header class="cv-header cv-section">
-        ${assets.photoDataUrl ? `<img class="profile-photo" src="${assets.photoDataUrl}" alt="Portrait von ${escapeHtml(data.person.name)}">` : ""}
-        <div class="cv-header-info">
+        <div class="cv-photo-col">
+          ${assets.photoDataUrl ? `<img class="profile-photo" src="${assets.photoDataUrl}" alt="Portrait von ${escapeHtml(data.person.name)}">` : ""}
+        </div>
+        <div class="cv-main-col">
           <h1>${escapeHtml(data.person.name)}</h1>
           <p class="title">${escapeHtml(headerTitle)}</p>
-          <p class="meta">${escapeHtml(headerContact.join(" · "))}</p>
-          <p class="meta">${escapeHtml(subtitle)}</p>
+          <p class="subtitle">${escapeHtml(subtitle)}</p>
+          <p class="target-region">Zielregion: ${escapeHtml(data.person.targetRegion)}</p>
         </div>
-        <a class="cv-qr-block" href="${escapeHtml(assets.githubProfileUrl)}" aria-label="GitHub-Profil"><img src="${assets.githubProfileQrDataUrl}" alt="QR-Code zum GitHub-Profil"><span>GitHub-Profil</span></a>
+        <div class="cv-contact-col">
+          <p>${escapeHtml(publicContact.email)}</p>
+          <p>${escapeHtml(githubDisplayUrl)}</p>
+          <a class="cv-qr-block" href="${escapeHtml(assets.githubProfileUrl)}" aria-label="GitHub-Profil"><img src="${assets.githubProfileQrDataUrl}" alt="QR-Code zum GitHub-Profil"><span>GITHUB-PROFIL</span></a>
+        </div>
       </header>
 
       ${renderCvBody(data, document, scope)}
