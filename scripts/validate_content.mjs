@@ -365,6 +365,7 @@ for (const file of listFiles(path.join(root, "dist", "html")).filter((item) => /
   if (/Weitere Angaben[\s\S]*Zielregion: Soltau \/ Heidekreis \/ Niedersachsen/i.test(text)) {
     failures.push(`PDF HTML source contains Zielregion in Weitere Angaben: ${path.relative(root, file)}`);
   }
+  assertTechnicalTargetProfile(path.relative(root, file), fs.readFileSync(file, "utf8"));
 }
 
 if (!publicOnly) {
@@ -484,6 +485,40 @@ function assertNoGenericPhrases(relative, text) {
   for (const phrase of genericPhrases) {
     if (new RegExp(escapeRegExp(phrase), "i").test(text)) {
       failures.push(`Forbidden generic phrase found in ${relative}: ${phrase}`);
+    }
+  }
+}
+
+function assertTechnicalTargetProfile(relative, html) {
+  const sectionMatch = html.match(/<section class="cv-section">\s*<h2>Zielprofile?<\/h2>([\s\S]*?)<\/section>/i);
+  if (!sectionMatch) return;
+  const text = decodeHtml(stripHtml(sectionMatch[1]));
+  const requiresItTechnicalTarget = /public_short\.public\.html|public_it\.public\.html|business_teamlead\.private\.html/.test(relative);
+  const forbiddenTargetPhrases = [
+    "Business Analyse",
+    "Requirements Engineering",
+    "Product Owner / fachliche Koordination",
+    "Product Owner / fachlicher IT-Koordinator",
+    "Scrum-nahe Teamkoordination",
+    "ERP-/Touristiksoftware",
+    "Technische Dokumentation"
+  ];
+  const requiredTechnicalTargetPhrases = [
+    "Technische Systembetreuung",
+    "IT-Systembetreuung",
+    "Technischer IT-Service",
+    "IT-nahe Systemdiagnose"
+  ];
+  for (const phrase of forbiddenTargetPhrases) {
+    if (text.includes(phrase)) {
+      failures.push(`Forbidden target phrase in ${relative} Zielprofil: ${phrase}`);
+    }
+  }
+  if (requiresItTechnicalTarget) {
+    for (const phrase of requiredTechnicalTargetPhrases) {
+      if (!text.includes(phrase)) {
+        failures.push(`Missing technical target phrase in ${relative} Zielprofil: ${phrase}`);
+      }
     }
   }
 }

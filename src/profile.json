@@ -58,15 +58,13 @@
         "Requirements Engineering, Product Owner, Entwickleraufgaben, Backlog-/Priorisierungsarbeit, Abnahme- und Nutzertests und Abnahmevorbereitung.",
         "ERP-/Touristiksoftware, Schnittstellen, Datenflüsse, DSGVO-Anforderungen, UI-/Website-Prüfung und technische Dokumentation."
       ],
-      "targetTitle": "Business Analyse & IT-Teamkoordination",
+      "targetTitle": "Technische Systembetreuung & IT-nahe Systemdiagnose",
       "targetRoles": [
-        "Requirements Engineering",
-        "Product Owner / fachliche Koordination",
-        "Scrum-nahe Teamkoordination in der praktischen Teamarbeit",
-        "QA / Abnahme- und Nutzertests",
-        "UI-/Website-Tests",
-        "ERP-/Touristiksoftware",
-        "IT-Systembetreuung mit Analyse- und Dokumentationsstärke"
+        "IT-Systembetreuung",
+        "Technischer IT-Service",
+        "IT-Infrastrukturservice",
+        "IT-nahe Systemdiagnose",
+        "Technischer Support / Serviceinnendienst"
       ],
       "competencyFields": [
         {
@@ -139,14 +137,13 @@
   },
   "targetProfiles": {
     "itBusinessTechnical": {
-      "title": "Business Analysis, IT-Teamleitung & technische Systembetreuung",
+      "title": "Technische Systembetreuung & IT-nahe Systemdiagnose",
       "targetRoles": [
-        "Business Analyst IT",
-        "Requirements Engineer",
-        "IT-Teamleiter / Team Lead IT",
-        "Product Owner / fachlicher IT-Koordinator",
-        "QA / Abnahme- und Nutzertests",
-        "IT-Systembetreuer mit Analyse- und Dokumentationsstärke"
+        "IT-Systembetreuung",
+        "Technischer IT-Service",
+        "IT-Infrastrukturservice",
+        "IT-nahe Systemdiagnose",
+        "Technischer Support / Serviceinnendienst"
       ]
     },
     "handsOnSoltau": {
