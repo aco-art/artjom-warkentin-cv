@@ -108,6 +108,19 @@ for (const phrase of ["2023: 36 Kunden", "2024: 25 Kunden", "646 Issues", "998 S
     failures.push(`Public site is missing current role/KPI text: ${phrase}`);
   }
 }
+const currentExperience = profile.experience[0];
+for (const phrase of [
+  currentExperience.publicRole,
+  currentExperience.employer,
+  currentExperience.location,
+  currentExperience.focus,
+  ...currentExperience.bullets,
+  ...currentExperience.metrics
+]) {
+  if (!publicHtmlText.includes(phrase)) {
+    failures.push(`Public site is missing current experience source text from profile.json: ${phrase.slice(0, 90)}`);
+  }
+}
 const expectedDownloadCards = [
   {
     href: "downloads/Artjom_Warkentin_Kurzprofil_Public.pdf",

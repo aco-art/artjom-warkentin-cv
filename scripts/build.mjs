@@ -188,12 +188,6 @@ function renderIndex(data, documents) {
   const metaDescription = "HR-Profil von Artjom Warkentin: Business Analyst und IT-Teamleiter mit Requirements, Scrum, Abnahme-/Nutzertests, UI-Prüfung, ERP-/Touristiksoftware, IT-Infrastruktur und Elektronikdiagnose.";
   const heroSupport = "Requirements · Scrum-Master-Rolle · Abnahme-/Nutzertests · UI-Prüfung · IT-Infrastruktur · Elektronikdiagnose";
   const currentExperience = data.experience[0];
-  const currentRoleBullets = [
-    "IT-Team fachlich koordiniert: Aufgaben, Priorisierung, Daily/Weekly, Sprint-/Releaseplanung und Abnahmevorbereitung.",
-    "Anforderungen in Pflichtenhefte, User Stories, Use Cases, Akzeptanzkriterien und Entwickleraufgaben übersetzt.",
-    "Abnahme-/Nutzertests, UI-/Website-Prüfung, Bug Reports, Fehlernachverfolgung und Abnahmen vorbereitet.",
-    "TrueNAS-Projektspeicher, interne Dienste, technische Dokumentation und Testvorbereitung aufgebaut bzw. begleitet."
-  ];
   const coreFields = [
     {
       title: "IT, Requirements & Teamkoordination",
@@ -210,53 +204,6 @@ function renderIndex(data, documents) {
     {
       title: "Elektronikservice & Diagnose",
       text: "Board-Level-Service, Datensicherung/Backup, Stromversorgung, Mainboard-Diagnose, Oszilloskop/Logikanalysator, Rework, Funktionsprüfung."
-    }
-  ];
-  const compactExperience = [
-    {
-      period: "01/2023 - heute",
-      role: "Abteilungsleiter IT / Business Analyst & Product Owner",
-      employer: "INFORMA GmbH & Co. KG",
-      bullets: [
-        "Requirements, Entwickleraufgaben, Backlog/Priorisierung, Abnahme-/Nutzertests, UI-Prüfung und Release-Abstimmung zwischen Fachbereichen, Kunden und Entwicklung koordiniert.",
-        "TrueNAS-Projektspeicher, interne Dienste, technische Dokumentation und Codex-/LLM-gestützte Strukturierung von Spezifikationen und Tests aufgebaut bzw. begleitet."
-      ],
-      metrics: currentExperience.metrics
-    },
-    {
-      period: "06/2022 - 01/2023",
-      role: "Kommissarische IT-Leitung / Scrum- und Umsetzungskoordination",
-      employer: "INFORMA GmbH & Co. KG",
-      bullets: [
-        "Scrum-Arbeitsweise eingeführt und Daily/Weekly, Sprint-/Aufgabensteuerung, offene Punkte und Release-Abstimmung übernommen.",
-        "Entwickleraufgaben vorbereitet, Kundenanforderungen priorisiert und Abnahme-/Nutzertests begleitet."
-      ]
-    },
-    {
-      period: "10/2018 - 06/2019",
-      role: "Handelsautomatisierung, Systemadministration und Webshop-Integration",
-      employer: "MEGA GmbH",
-      bullets: [
-        "Windows Server, Linux/CentOS, NGINX, Apache, MySQL und Mailserver im Handels-/Webshop-Umfeld administriert.",
-        "Webshop-Einführung, CRM-Bitrix-Anbindung und 1C-Integration technisch begleitet."
-      ]
-    },
-    {
-      period: "2008 - 2018",
-      role: "Elektronik-/IT-Service, Werkstatt, OEM, Reparaturqualität",
-      employer: "Innovation Service Center",
-      bullets: [
-        "Werkstattprozesse, komplexe Diagnose, Reparaturqualität, Ersatzteile, OEM-Serviceumfeld und technische Eskalationen verantwortet.",
-        "Mainboards, Stromversorgung, Peripherie und elektronische Baugruppen diagnostiziert, repariert, geprüft und dokumentiert."
-      ]
-    },
-    {
-      period: "2006 - 2008",
-      role: "Servicetechniker Reparatur & Elektronik",
-      employer: "Einzelunternehmer Badin - Reparatur & Elektronik",
-      bullets: [
-        "Computertechnik diagnostiziert, Baugruppen instandgesetzt, Funktionstests durchgeführt und Reparaturergebnisse dokumentiert."
-      ]
     }
   ];
   const professionalProjects = data.projects.filter((project) => [
@@ -346,8 +293,9 @@ function renderIndex(data, documents) {
           <h2>Aktuelle Tätigkeit & Arbeitsumfang</h2>
         </div>
         <div class="current-role-body">
-          <p>Artjom Warkentin arbeitet aktuell als Abteilungsleiter IT, Business Analyst & Product Owner bei ${escapeHtml(currentExperience.employer)}.</p>
-          <ul>${currentRoleBullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+          <p>${escapeHtml(currentExperience.period)} · ${escapeHtml(currentExperience.publicRole)}</p>
+          <p class="meta">${escapeHtml(currentExperience.employer)} · ${escapeHtml(currentExperience.location)}</p>
+          <p>${escapeHtml(currentExperience.focus)}</p>
           <h3>Arbeitsumfang / IT-Team-Kennzahlen</h3>
           <ul>${currentExperience.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul>
         </div>
@@ -369,7 +317,7 @@ function renderIndex(data, documents) {
           <h2>Berufliche Erfahrung</h2>
         </div>
         <div class="timeline">
-          ${compactExperience.map(renderCompactTimelineItem).join("\n          ")}
+          ${data.experience.map(renderTimelineItem).join("\n          ")}
         </div>
       </section>
 
@@ -426,13 +374,14 @@ function renderSimpleCard(card) {
           </article>`;
 }
 
-function renderCompactTimelineItem(item) {
+function renderTimelineItem(item) {
   return `<article class="timeline-item">
             <div class="period">${escapeHtml(item.period)}</div>
             <div>
-              <h3>${escapeHtml(item.role)}</h3>
-              <p class="meta">${escapeHtml(item.employer)}</p>
-              <ul>${item.bullets.slice(0, 2).map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+              <h3>${escapeHtml(item.publicRole)}</h3>
+              <p class="meta">${escapeHtml(item.employer)} · ${escapeHtml(item.location)}</p>
+              <p>${escapeHtml(item.focus)}</p>
+              <ul>${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
               ${item.metrics ? `<div class="timeline-metrics"><h4>Arbeitsumfang / IT-Team-Kennzahlen</h4><ul>${item.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul></div>` : ""}
             </div>
           </article>`;
