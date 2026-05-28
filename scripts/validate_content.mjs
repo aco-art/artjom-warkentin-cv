@@ -317,6 +317,9 @@ for (const [label, pdf] of [["IT-Profil", itPdf], ["Service-Techniker-Profil", s
     }
   }
 }
+if (servicePdf && /IT-Team-Kennzahlen/.test(servicePdf.text)) {
+  failures.push("Service-Techniker public PDF must not contain IT-Team-Kennzahlen.");
+}
 for (const relative of ["src/profile.json", "public/index.html"]) {
   if (fs.existsSync(path.join(root, relative))) {
     assertNoGenericPhrases(relative, readText(relative));
@@ -364,6 +367,9 @@ for (const file of listFiles(path.join(root, "dist", "html")).filter((item) => /
   const text = decodeHtml(stripHtml(fs.readFileSync(file, "utf8")));
   if (/Weitere Angaben[\s\S]*Zielregion: Soltau \/ Heidekreis \/ Niedersachsen/i.test(text)) {
     failures.push(`PDF HTML source contains Zielregion in Weitere Angaben: ${path.relative(root, file)}`);
+  }
+  if (/public_service\.public\.html|hands_on_soltau\.private\.html|electronics_prueftechnik\.private\.html/.test(path.relative(root, file)) && /IT-Team-Kennzahlen/.test(text)) {
+    failures.push(`Service/electronics PDF HTML source must not contain IT-Team-Kennzahlen: ${path.relative(root, file)}`);
   }
   assertTechnicalTargetProfile(path.relative(root, file), fs.readFileSync(file, "utf8"));
 }

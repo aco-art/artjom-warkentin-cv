@@ -562,12 +562,13 @@ function renderEducationTechnical(data) {
 
 function renderCvEntry(item, variantKey) {
   const metricsTitle = "IT-Team-Kennzahlen";
+  const showMetrics = item.metrics && variantKey !== "serviceTechnician";
   return `<div class="entry experience-item">
           <h3>${escapeHtml(item.period)} · ${escapeHtml(item.publicRole)}</h3>
           <p class="small">${escapeHtml(item.employer)} · ${escapeHtml(item.location)}</p>
           <p>${escapeHtml(item.focus)}</p>
           <ul>${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
-          ${item.metrics ? `<div class="metrics-block ${variantKey === "serviceTechnician" ? "metrics-secondary" : ""}"><h3>${escapeHtml(metricsTitle)}</h3><ul>${item.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul></div>` : ""}
+          ${showMetrics ? `<div class="metrics-block"><h3>${escapeHtml(metricsTitle)}</h3><ul>${item.metrics.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul></div>` : ""}
         </div>`;
 }
 
